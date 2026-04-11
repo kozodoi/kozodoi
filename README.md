@@ -1,6 +1,6 @@
 - 👨‍💻 AI Scientist working at the frontier of research & business
-- 🚀 Building GenAI solutions driving impact across industries
-- 🎓 PhD and 7+ years in applied AI/ML, currently at AWS
+- 🚀 Building AI solutions that drive impact across industries
+- 🎓 PhD and 8 years in applied AI/ML, currently at AWS
 - 🎙️ Speaker at 25+ top tech summits and conferences
 
 [Check out my AI blog](https://kozodoi.me) with my talks, publications and portfolio.
