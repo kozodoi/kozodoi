@@ -3,7 +3,7 @@
 - 🎓 PhD and 8 years in applied AI/ML, currently at AWS
 - 🎙️ Speaker at 25+ top tech summits and conferences
 
-[Check out my AI blog](https://kozodoi.me) with my talks, publications and portfolio.
+[Check out my AI blog](https://kozodoi.com) with my talks, publications and portfolio.
 
 [![Linkedin](https://img.shields.io/badge/-LinkedIn-306EA8?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kozodoi/)](https://www.linkedin.com/in/kozodoi/) 
 [![GitHub](https://img.shields.io/badge/-GitHub-2F2F2F?style=flat&logo=github&logoColor=white&link=https://www.github.com/kozodoi)](https://www.github.com/kozodoi)
