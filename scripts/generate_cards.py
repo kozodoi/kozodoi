@@ -277,15 +277,9 @@ def k_formatter(num: int) -> str:
     return str(num)
 
 
-def render_merged_svg(
-    stars: int, commits: int, prs: int, langs: list, count: int, height: int, width: int = 480
-) -> str:
+def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int, width: int = 340) -> str:
     """
-    Render the combined GitHub stats + top languages card
-
-    The left column holds the stat rows; the right column mirrors them with a
-    "Top Languages" header aligned to the first stat row, then the languages in
-    two pairs aligned to the remaining rows.
+    Render the GitHub stats SVG card
 
     Parameters
     ----------
@@ -295,61 +289,107 @@ def render_merged_svg(
         Total commits
     prs : int
         Total pull requests
-    langs : list
-        List of (name, byte_size, color) tuples ordered by size
-    count : int
-        Maximum number of languages to display (the layout fits up to 4)
+    title : str
+        Card title
     height : int
-        Card height in pixels (shared with the citations card so both align)
+        Card height in pixels (shared with the languages card so both align)
     width : int
         Card width in pixels
     """
     w, h = width, height
     t = THEME
-    row_ys = (82, 112, 142)
-
-    top = langs[: min(count, 4)]
-    total = sum(size for _, size, _ in top) or 1
-    items = [(name, size / total * 100) for name, size, _ in top]
-
-    parts = [
-        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="10" fill="#{t["bg_color"]}" '
-        f'stroke="#{t["border_color"]}"/>',
-        f'<text x="22" y="40" fill="#{t["title_color"]}" font-weight="600" font-size="18">GitHub Stats</text>',
-    ]
-
-    # left column: stat rows
-    stat_rows = [
+    rows = [
         ("star", "Total Stars:", k_formatter(stars)),
         ("commits", "Total Commits:", k_formatter(commits)),
         ("prs", "Total PRs:", k_formatter(prs)),
     ]
-    for (icon, label, value), y in zip(stat_rows, row_ys):
-        parts.append(
-            f'<g transform="translate(22,{y - 13})"><svg width="16" height="16" viewBox="0 0 16 16" '
-            f'fill="#{t["icon_color"]}">{ICONS[icon]}</svg></g>'
+    body = []
+    y = 82
+    for icon, label, value in rows:
+        body.append(
+            f'<g transform="translate(22,{y - 13})">'
+            f'<svg width="16" height="16" viewBox="0 0 16 16" fill="#{t["icon_color"]}">{ICONS[icon]}</svg></g>'
         )
-        parts.append(f'<text x="46" y="{y}" fill="#{t["text_color"]}" font-weight="600" font-size="14">{label}</text>')
-        parts.append(
-            f'<text x="205" y="{y}" fill="#{t["text_color"]}" font-weight="700" '
+        body.append(
+            f'<text x="46" y="{y}" fill="#{t["text_color"]}" font-weight="600" font-size="14">{label}</text>'
+        )
+        body.append(
+            f'<text x="{w - 22}" y="{y}" fill="#{t["text_color"]}" font-weight="700" '
             f'font-size="14" text-anchor="end">{value}</text>'
         )
+        y += 30
+    return (
+        f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" '
+        f'font-family="\'Segoe UI\',Ubuntu,Sans-Serif">'
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="10" fill="#{t["bg_color"]}" '
+        f'stroke="#{t["border_color"]}"/>'
+        f'<text x="22" y="40" fill="#{t["title_color"]}" font-weight="600" font-size="18">{title}</text>'
+        + "".join(body)
+        + "</svg>"
+    )
 
-    # divider between the two columns
-    parts.append(f'<line x1="222" y1="26" x2="222" y2="150" stroke="#{t["border_color"]}"/>')
 
-    # right column: header aligned with the first row, language pairs with the rest
-    xr, col_b = 236, 346
-    parts.append(f'<text x="{xr}" y="82" fill="#{t["text_color"]}" font-weight="700" font-size="14">Top Languages</text>')
-    for i, (name, pct) in enumerate(items):
-        cx = xr if i % 2 == 0 else col_b
-        cy = row_ys[1] + (i // 2) * 30  # rows at 112 and 142, matching the left column
-        parts.append(f'<circle cx="{cx + 5}" cy="{cy - 4}" r="5" fill="{PALETTE[i % len(PALETTE)]}"/>')
-        parts.append(f'<text x="{cx + 16}" y="{cy}" fill="#{t["text_color"]}" font-size="12">{name}: {pct:.0f}%</text>')
+def render_langs_svg(langs: list, count: int, title: str, height: int, width: int = 340) -> str:
+    """
+    Render the top-languages SVG card in compact layout
+
+    Parameters
+    ----------
+    langs : list
+        List of (name, byte_size, color) tuples ordered by size
+    count : int
+        Maximum number of languages to display
+    title : str
+        Card title
+    height : int
+        Card height in pixels (shared with the stats card so both align)
+    width : int
+        Card width in pixels
+    """
+    t = THEME
+    top = langs[:count]
+    total = sum(size for _, size, _ in top) or 1
+    items = [(name, size / total * 100, color) for name, size, color in top]
+    legend_font = 14 if width >= 300 else 12
+
+    w, h = width, height
+    bar_x, bar_y, bar_w, bar_h = 25, 70, w - 50, 8
+
+    # stacked progress bar, clipped to rounded corners
+    segments, cursor = [], bar_x
+    for i, (_, pct, _color) in enumerate(items):
+        seg_w = pct / 100 * bar_w
+        fill = PALETTE[i % len(PALETTE)]
+        segments.append(f'<rect x="{cursor:.2f}" y="{bar_y}" width="{seg_w:.2f}" height="{bar_h}" fill="{fill}"/>')
+        cursor += seg_w
+    bar = (
+        f'<clipPath id="barclip"><rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="{bar_h}" rx="4"/></clipPath>'
+        f'<g clip-path="url(#barclip)">{"".join(segments)}</g>'
+    )
+
+    # two-column legend, bottom-aligned so its last row matches the other cards
+    legend = []
+    col_x = [25, 25 + bar_w // 2 + 5]
+    rows_per_col = (len(items) + 1) // 2
+    start_y = (h - 23) - 26 * (rows_per_col - 1)
+    for i, (name, pct, _color) in enumerate(items):
+        cx = col_x[i % 2]
+        cy = start_y + (i // 2) * 26
+        fill = PALETTE[i % len(PALETTE)]
+        legend.append(f'<circle cx="{cx + 5}" cy="{cy - 4}" r="5" fill="{fill}"/>')
+        legend.append(
+            f'<text x="{cx + 16}" y="{cy}" fill="#{t["text_color"]}" font-size="{legend_font}">{name}: {pct:.0f}%</text>'
+        )
 
     return (
         f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" '
-        f'font-family="\'Segoe UI\',Ubuntu,Sans-Serif">' + "".join(parts) + "</svg>"
+        f'font-family="\'Segoe UI\',Ubuntu,Sans-Serif">'
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="10" fill="#{t["bg_color"]}" '
+        f'stroke="#{t["border_color"]}"/>'
+        f'<text x="22" y="40" fill="#{t["title_color"]}" font-weight="600" font-size="18">{title}</text>'
+        + bar
+        + "".join(legend)
+        + "</svg>"
     )
 
 
@@ -389,7 +429,8 @@ def main() -> None:
     exclude = set(os.environ.get("EXCLUDE_REPOS", "").split())
     hide = {x.strip().lower() for x in os.environ.get("LANGS_HIDE", "").split(",") if x.strip()}
     langs_count = int(os.environ.get("LANGS_COUNT", "4"))
-    card_width = int(os.environ.get("CARD_WIDTH", "480"))
+    stats_width = int(os.environ.get("STATS_WIDTH", "215"))
+    langs_width = int(os.environ.get("LANGS_WIDTH", "250"))
     out_dir = os.environ.get("OUT_DIR", "profile")
 
     repos = fetch_owned_repos(login, token)
@@ -409,9 +450,16 @@ def main() -> None:
     print(f"repos counted: {len(repos)} | stars: {total_stars} | commits: {total_commits} | prs: {total_prs}")
     print("top languages:", [(n, f"{s}") for n, s, _ in langs[:langs_count]])
 
+    # share a single height so both cards align (stats needs 165 for 3 rows;
+    # languages needs 100 + 26 per legend row)
+    lang_rows = (min(len(langs), langs_count) + 1) // 2
+    card_height = max(165, 100 + lang_rows * 26)
+
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "stats.svg"), "w") as f:
-        f.write(render_merged_svg(total_stars, total_commits, total_prs, langs, langs_count, 165, card_width))
+        f.write(render_stats_svg(total_stars, total_commits, total_prs, "GitHub Stats", card_height, stats_width))
+    with open(os.path.join(out_dir, "top-langs.svg"), "w") as f:
+        f.write(render_langs_svg(langs, langs_count, "Languages", card_height, langs_width))
 
     total_bytes = sum(s for _, s, _ in langs) or 1
     update_json(
