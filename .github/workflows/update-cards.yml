@@ -29,13 +29,22 @@ jobs:
           EXCLUDE_REPOS: "" # drop repos, e.g. "aws-samples/tiny-typo-fix"
           LANGS_HIDE: "jupyter notebook,html"
           LANGS_COUNT: "4"
+          STATS_WIDTH: "215"
+          LANGS_WIDTH: "250"
           OUT_DIR: "profile"
         run: python scripts/generate_cards.py
+
+      - name: Generate Google Scholar card
+        env:
+          SCHOLAR_ID: "58tMuD0AAAAJ"
+          SCHOLAR_LANG: "en"
+          OUT_DIR: "profile"
+        run: python scripts/generate_scholar_card.py
 
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg
+          git add profile/*.svg profile/data.json
           git commit -m "Update README cards" || exit 0
           git push

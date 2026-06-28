@@ -277,7 +277,7 @@ def k_formatter(num: int) -> str:
     return str(num)
 
 
-def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int) -> str:
+def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int, width: int = 340) -> str:
     """
     Render the GitHub stats SVG card
 
@@ -293,11 +293,13 @@ def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int
         Card title
     height : int
         Card height in pixels (shared with the languages card so both align)
+    width : int
+        Card width in pixels
     """
-    w, h = 340, height
+    w, h = width, height
     t = THEME
     rows = [
-        ("star", "Total Stars Earned:", k_formatter(stars)),
+        ("star", "Total Stars:", k_formatter(stars)),
         ("commits", "Total Commits:", k_formatter(commits)),
         ("prs", "Total PRs:", k_formatter(prs)),
     ]
@@ -309,11 +311,11 @@ def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int
             f'<svg width="16" height="16" viewBox="0 0 16 16" fill="#{t["icon_color"]}">{ICONS[icon]}</svg></g>'
         )
         body.append(
-            f'<text x="50" y="{y}" fill="#{t["text_color"]}" font-weight="600" font-size="15">{label}</text>'
+            f'<text x="48" y="{y}" fill="#{t["text_color"]}" font-weight="600" font-size="14">{label}</text>'
         )
         body.append(
-            f'<text x="{w - 25}" y="{y}" fill="#{t["text_color"]}" font-weight="700" '
-            f'font-size="15" text-anchor="end">{value}</text>'
+            f'<text x="{w - 22}" y="{y}" fill="#{t["text_color"]}" font-weight="700" '
+            f'font-size="14" text-anchor="end">{value}</text>'
         )
         y += 30
     return (
@@ -321,13 +323,13 @@ def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int
         f'font-family="\'Segoe UI\',Ubuntu,Sans-Serif">'
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="10" fill="#{t["bg_color"]}" '
         f'stroke="#{t["border_color"]}"/>'
-        f'<text x="25" y="42" fill="#{t["title_color"]}" font-weight="600" font-size="19">{title}</text>'
+        f'<text x="22" y="40" fill="#{t["title_color"]}" font-weight="600" font-size="18">{title}</text>'
         + "".join(body)
         + "</svg>"
     )
 
 
-def render_langs_svg(langs: list, count: int, title: str, height: int) -> str:
+def render_langs_svg(langs: list, count: int, title: str, height: int, width: int = 340) -> str:
     """
     Render the top-languages SVG card in compact layout
 
@@ -341,13 +343,16 @@ def render_langs_svg(langs: list, count: int, title: str, height: int) -> str:
         Card title
     height : int
         Card height in pixels (shared with the stats card so both align)
+    width : int
+        Card width in pixels
     """
     t = THEME
     top = langs[:count]
     total = sum(size for _, size, _ in top) or 1
     items = [(name, size / total * 100, color) for name, size, color in top]
+    legend_font = 14 if width >= 300 else 12
 
-    w, h = 340, height
+    w, h = width, height
     bar_x, bar_y, bar_w, bar_h = 25, 70, w - 50, 8
 
     # stacked progress bar, clipped to rounded corners
@@ -362,17 +367,18 @@ def render_langs_svg(langs: list, count: int, title: str, height: int) -> str:
         f'<g clip-path="url(#barclip)">{"".join(segments)}</g>'
     )
 
-    # two-column legend
+    # two-column legend, bottom-aligned so its last row matches the other cards
     legend = []
     col_x = [25, 25 + bar_w // 2 + 5]
-    start_y = 100
+    rows_per_col = (len(items) + 1) // 2
+    start_y = (h - 23) - 26 * (rows_per_col - 1)
     for i, (name, pct, _color) in enumerate(items):
         cx = col_x[i % 2]
         cy = start_y + (i // 2) * 26
         fill = PALETTE[i % len(PALETTE)]
         legend.append(f'<circle cx="{cx + 5}" cy="{cy - 4}" r="5" fill="{fill}"/>')
         legend.append(
-            f'<text x="{cx + 18}" y="{cy}" fill="#{t["text_color"]}" font-size="14">{name} {pct:.2f}%</text>'
+            f'<text x="{cx + 16}" y="{cy}" fill="#{t["text_color"]}" font-size="{legend_font}">{name} {pct:.0f}%</text>'
         )
 
     return (
@@ -380,11 +386,38 @@ def render_langs_svg(langs: list, count: int, title: str, height: int) -> str:
         f'font-family="\'Segoe UI\',Ubuntu,Sans-Serif">'
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="10" fill="#{t["bg_color"]}" '
         f'stroke="#{t["border_color"]}"/>'
-        f'<text x="25" y="42" fill="#{t["title_color"]}" font-weight="600" font-size="19">{title}</text>'
+        f'<text x="22" y="40" fill="#{t["title_color"]}" font-weight="600" font-size="18">{title}</text>'
         + bar
         + "".join(legend)
         + "</svg>"
     )
+
+
+def update_json(out_dir: str, key: str, payload: dict) -> None:
+    """
+    Merge a section into the shared profile/data.json snapshot file
+
+    Parameters
+    ----------
+    out_dir : str
+        Output directory holding data.json
+    key : str
+        Top-level key to write the payload under (e.g. 'github' or 'scholar')
+    payload : dict
+        Data to store under the given key
+    """
+    path = os.path.join(out_dir, "data.json")
+    data: dict = {}
+    if os.path.exists(path):
+        with open(path) as f:
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = {}
+    data[key] = payload
+    data["updated_at"] = datetime.now(timezone.utc).isoformat()
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2)
 
 
 def main() -> None:
@@ -396,6 +429,8 @@ def main() -> None:
     exclude = set(os.environ.get("EXCLUDE_REPOS", "").split())
     hide = {x.strip().lower() for x in os.environ.get("LANGS_HIDE", "").split(",") if x.strip()}
     langs_count = int(os.environ.get("LANGS_COUNT", "4"))
+    stats_width = int(os.environ.get("STATS_WIDTH", "215"))
+    langs_width = int(os.environ.get("LANGS_WIDTH", "250"))
     out_dir = os.environ.get("OUT_DIR", "profile")
 
     repos = fetch_owned_repos(login, token)
@@ -422,9 +457,24 @@ def main() -> None:
 
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "stats.svg"), "w") as f:
-        f.write(render_stats_svg(total_stars, total_commits, total_prs, "GitHub Stats", card_height))
+        f.write(render_stats_svg(total_stars, total_commits, total_prs, "GitHub Stats", card_height, stats_width))
     with open(os.path.join(out_dir, "top-langs.svg"), "w") as f:
-        f.write(render_langs_svg(langs, langs_count, "Top Languages", card_height))
+        f.write(render_langs_svg(langs, langs_count, "Languages", card_height, langs_width))
+
+    total_bytes = sum(s for _, s, _ in langs) or 1
+    update_json(
+        out_dir,
+        "github",
+        {
+            "stars": total_stars,
+            "commits": total_commits,
+            "prs": total_prs,
+            "repos_counted": len(repos),
+            "languages": [
+                {"name": n, "bytes": s, "percentage": round(s / total_bytes * 100, 2)} for n, s, _ in langs
+            ],
+        },
+    )
 
 
 if __name__ == "__main__":
