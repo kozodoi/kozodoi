@@ -130,7 +130,7 @@ def render_scholar_svg(data: dict, title: str, width: int = 320, height: int = 1
     # one-line summary in the top-right corner
     summary = (
         f'<text x="{right}" y="38" text-anchor="end" font-size="11">'
-        f'<tspan fill="#{t["muted_color"]}">Citations: </tspan>'
+        f'<tspan fill="#{t["muted_color"]}">Total: </tspan>'
         f'<tspan font-weight="700" fill="#{t["icon_color"]}">{data["citations"]}</tspan>'
         f'<tspan fill="#{t["muted_color"]}">  |  h-index: </tspan>'
         f'<tspan font-weight="700" fill="#{t["icon_color"]}">{data["h_index"]}</tspan>'
@@ -196,7 +196,7 @@ def main() -> None:
 
     os.makedirs(out_dir, exist_ok=True)
     with open(out_path, "w") as f:
-        f.write(render_scholar_svg(data, "Google Scholar"))
+        f.write(render_scholar_svg(data, "Citations"))
 
     update_json(
         out_dir,
