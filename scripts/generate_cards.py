@@ -36,8 +36,9 @@ ICONS = {
     "prs": '<path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>',
 }
 
-# fallback colors for languages GitHub returns without a color
-FALLBACK_COLORS = ["#3572A5", "#198CE7", "#c6538c", "#f1e05a", "#e34c26", "#89e051"]
+# distinct palette assigned by rank so adjacent languages stay easy to tell apart
+# (GitHub's own colors make Python/TypeScript/R all blue)
+PALETTE = ["#4C9AFF", "#FF9F40", "#36D399", "#F472B6", "#A78BFA", "#FBBF24", "#F87171", "#22D3EE"]
 
 
 def gql(query: str, variables: dict, token: str) -> dict:
@@ -276,7 +277,7 @@ def k_formatter(num: int) -> str:
     return str(num)
 
 
-def render_stats_svg(stars: int, commits: int, prs: int, title: str) -> str:
+def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int) -> str:
     """
     Render the GitHub stats SVG card
 
@@ -290,8 +291,10 @@ def render_stats_svg(stars: int, commits: int, prs: int, title: str) -> str:
         Total pull requests
     title : str
         Card title
+    height : int
+        Card height in pixels (shared with the languages card so both align)
     """
-    w, h = 340, 165
+    w, h = 340, height
     t = THEME
     rows = [
         ("star", "Total Stars Earned:", k_formatter(stars)),
@@ -324,7 +327,7 @@ def render_stats_svg(stars: int, commits: int, prs: int, title: str) -> str:
     )
 
 
-def render_langs_svg(langs: list, count: int, title: str) -> str:
+def render_langs_svg(langs: list, count: int, title: str, height: int) -> str:
     """
     Render the top-languages SVG card in compact layout
 
@@ -336,22 +339,22 @@ def render_langs_svg(langs: list, count: int, title: str) -> str:
         Maximum number of languages to display
     title : str
         Card title
+    height : int
+        Card height in pixels (shared with the stats card so both align)
     """
     t = THEME
     top = langs[:count]
     total = sum(size for _, size, _ in top) or 1
     items = [(name, size / total * 100, color) for name, size, color in top]
 
-    w = 340
+    w, h = 340, height
     bar_x, bar_y, bar_w, bar_h = 25, 70, w - 50, 8
-    rows = (len(items) + 1) // 2
-    h = 100 + rows * 26
 
     # stacked progress bar, clipped to rounded corners
     segments, cursor = [], bar_x
-    for i, (_, pct, color) in enumerate(items):
+    for i, (_, pct, _color) in enumerate(items):
         seg_w = pct / 100 * bar_w
-        fill = color or FALLBACK_COLORS[i % len(FALLBACK_COLORS)]
+        fill = PALETTE[i % len(PALETTE)]
         segments.append(f'<rect x="{cursor:.2f}" y="{bar_y}" width="{seg_w:.2f}" height="{bar_h}" fill="{fill}"/>')
         cursor += seg_w
     bar = (
@@ -363,10 +366,10 @@ def render_langs_svg(langs: list, count: int, title: str) -> str:
     legend = []
     col_x = [25, 25 + bar_w // 2 + 5]
     start_y = 100
-    for i, (name, pct, color) in enumerate(items):
+    for i, (name, pct, _color) in enumerate(items):
         cx = col_x[i % 2]
         cy = start_y + (i // 2) * 26
-        fill = color or FALLBACK_COLORS[i % len(FALLBACK_COLORS)]
+        fill = PALETTE[i % len(PALETTE)]
         legend.append(f'<circle cx="{cx + 5}" cy="{cy - 4}" r="5" fill="{fill}"/>')
         legend.append(
             f'<text x="{cx + 18}" y="{cy}" fill="#{t["text_color"]}" font-size="14">{name} {pct:.2f}%</text>'
@@ -412,11 +415,16 @@ def main() -> None:
     print(f"repos counted: {len(repos)} | stars: {total_stars} | commits: {total_commits} | prs: {total_prs}")
     print("top languages:", [(n, f"{s}") for n, s, _ in langs[:langs_count]])
 
+    # share a single height so both cards align (stats needs 165 for 3 rows;
+    # languages needs 100 + 26 per legend row)
+    lang_rows = (min(len(langs), langs_count) + 1) // 2
+    card_height = max(165, 100 + lang_rows * 26)
+
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "stats.svg"), "w") as f:
-        f.write(render_stats_svg(total_stars, total_commits, total_prs, "GitHub Stats"))
+        f.write(render_stats_svg(total_stars, total_commits, total_prs, "GitHub Stats", card_height))
     with open(os.path.join(out_dir, "top-langs.svg"), "w") as f:
-        f.write(render_langs_svg(langs, langs_count, "Top Languages"))
+        f.write(render_langs_svg(langs, langs_count, "Top Languages", card_height))
 
 
 if __name__ == "__main__":
