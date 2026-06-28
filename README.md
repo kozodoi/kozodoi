@@ -9,5 +9,4 @@ AI scientist and engineer working at the frontier of research and business. PhD 
 [![Website](profile/social/website.svg)](https://kozodoi.com)
 
 ![GitHub stats](profile/stats.svg)
-![Languages](profile/top-langs.svg)
-[![Google Scholar](profile/scholar.svg)](https://scholar.google.com/citations?user=58tMuD0AAAAJ&hl=en)
+[![Citations](profile/scholar.svg)](https://scholar.google.com/citations?user=58tMuD0AAAAJ&hl=en)

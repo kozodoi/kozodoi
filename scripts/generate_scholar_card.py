@@ -100,7 +100,7 @@ def render_scholar_svg(data: dict, title: str, width: int = 320, height: int = 1
     years, counts = data["years"], data["counts"]
 
     left, right = 26, width - 18
-    baseline_y, top_y = height - 37, 72  # year labels land at baseline+14, matching other cards
+    baseline_y, top_y = height - 37, 60  # year labels land at baseline+14, matching other cards
     chart_w = right - left
     n = len(years)
     slot = chart_w / n
