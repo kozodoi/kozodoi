@@ -5,8 +5,8 @@ AI scientist and engineer working at the frontier of research and business. PhD 
 [![Google Scholar](profile/social/scholar.svg)](https://scholar.google.com/citations?user=58tMuD0AAAAJ&hl=en)
 [![Twitter](profile/social/twitter.svg)](https://twitter.com/n_kozodoi)
 [![Instagram](profile/social/instagram.svg)](https://www.instagram.com/n_kozodoi/)
-[![CV](profile/social/cv.svg)](https://kozodoi.me/CV.pdf)
-[![Website](profile/social/website.svg)](https://kozodoi.me)
+[![CV](profile/social/cv.svg)](https://kozodoi.com/CV.pdf)
+[![Website](profile/social/website.svg)](https://kozodoi.com)
 
 ![GitHub stats](profile/stats.svg)
 ![Languages](profile/top-langs.svg)
