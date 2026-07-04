@@ -398,9 +398,10 @@ def main() -> None:
     print(f"citations: {data['citations']} | h-index: {data['h_index']} | years: {data['years']}")
     print(f"counts: {data['counts']}")
 
+    card_width = int(os.environ.get("CARD_WIDTH", "400"))
     os.makedirs(out_dir, exist_ok=True)
     with open(out_path, "w") as f:
-        f.write(render_scholar_svg(data, "Citations"))
+        f.write(render_scholar_svg(data, "Citations", width=card_width))
 
     update_json(
         out_dir,

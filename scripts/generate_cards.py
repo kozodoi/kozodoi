@@ -1,11 +1,13 @@
 """
-Generate custom GitHub stats and top-languages SVG cards.
+Generate a combined GitHub stats + top-languages SVG card.
 
-Renders two SVGs (algolia-themed) that replicate github-readme-stats but with
-full control over the data, so that stars and top languages can include repos
-from organizations the user contributed to (e.g. aws-samples) in addition to
-their own repositories. Commits and PRs already span org contributions via
-GitHub's contributionsCollection, so they need no special handling.
+Renders one algolia-themed SVG (stats on the left, top languages on the right)
+that replicates github-readme-stats but with full control over the data, so that
+stars and top languages can include repos from organizations the user
+contributed to (e.g. aws-samples) in addition to their own repositories. Commits
+and PRs already span org contributions via GitHub's contributionsCollection, so
+they need no special handling. The card width matches the citations card so the
+two render as an aligned pair.
 """
 
 from __future__ import annotations
@@ -277,9 +279,21 @@ def k_formatter(num: int) -> str:
     return str(num)
 
 
-def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int, width: int = 340) -> str:
+def render_github_svg(
+    stars: int,
+    commits: int,
+    prs: int,
+    langs: list,
+    count: int,
+    title: str,
+    width: int = 400,
+    height: int = 165,
+) -> str:
     """
-    Render the GitHub stats SVG card
+    Render a combined GitHub card: stats on the left, top languages on the right
+
+    The two columns are separated by a vertical divider. Languages are shown as a
+    color-dot legend with percentages (no progress bar).
 
     Parameters
     ----------
@@ -289,97 +303,65 @@ def render_stats_svg(stars: int, commits: int, prs: int, title: str, height: int
         Total commits
     prs : int
         Total pull requests
-    title : str
-        Card title
-    height : int
-        Card height in pixels (shared with the languages card so both align)
-    width : int
-        Card width in pixels
-    """
-    w, h = width, height
-    t = THEME
-    rows = [
-        ("star", "Total Stars:", k_formatter(stars)),
-        ("commits", "Total Commits:", k_formatter(commits)),
-        ("prs", "Total PRs:", k_formatter(prs)),
-    ]
-    body = []
-    y = 82
-    for icon, label, value in rows:
-        body.append(
-            f'<g transform="translate(22,{y - 13})">'
-            f'<svg width="16" height="16" viewBox="0 0 16 16" fill="#{t["icon_color"]}">{ICONS[icon]}</svg></g>'
-        )
-        body.append(
-            f'<text x="46" y="{y}" fill="#{t["text_color"]}" font-weight="600" font-size="14">{label}</text>'
-        )
-        body.append(
-            f'<text x="{w - 22}" y="{y}" fill="#{t["text_color"]}" font-weight="700" '
-            f'font-size="14" text-anchor="end">{value}</text>'
-        )
-        y += 30
-    return (
-        f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" '
-        f'font-family="\'Segoe UI\',Ubuntu,Sans-Serif">'
-        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="10" fill="#{t["bg_color"]}" '
-        f'stroke="#{t["border_color"]}"/>'
-        f'<text x="22" y="40" fill="#{t["title_color"]}" font-weight="600" font-size="18">{title}</text>'
-        + "".join(body)
-        + "</svg>"
-    )
-
-
-def render_langs_svg(langs: list, count: int, title: str, height: int, width: int = 340) -> str:
-    """
-    Render the top-languages SVG card in compact layout
-
-    Parameters
-    ----------
     langs : list
         List of (name, byte_size, color) tuples ordered by size
     count : int
-        Maximum number of languages to display
+        Maximum number of languages to display in the right column
     title : str
         Card title
-    height : int
-        Card height in pixels (shared with the stats card so both align)
     width : int
-        Card width in pixels
+        Card width in pixels (shared with the citations card so both align)
+    height : int
+        Card height in pixels (shared with the citations card so both align)
     """
     t = THEME
+    w, h = width, height
+    divider_x = 214  # pushed right to give the stats column more room
+
+    # left column: stat rows with octicons, values right-aligned before the divider
+    rows = [
+        ("star", "Total Stars", k_formatter(stars)),
+        ("commits", "Total Commits", k_formatter(commits)),
+        ("prs", "Total PRs", k_formatter(prs)),
+    ]
+    stats_body = []
+    y = 82
+    for icon, label, value in rows:
+        stats_body.append(
+            f'<g transform="translate(22,{y - 13})">'
+            f'<svg width="16" height="16" viewBox="0 0 16 16" fill="#{t["icon_color"]}">{ICONS[icon]}</svg></g>'
+        )
+        stats_body.append(
+            f'<text x="46" y="{y}" fill="#{t["text_color"]}" font-weight="600" font-size="14">{label}</text>'
+        )
+        stats_body.append(
+            f'<text x="{divider_x - 22}" y="{y}" fill="#{t["text_color"]}" font-weight="700" '
+            f'font-size="14" text-anchor="end">{value}</text>'
+        )
+        y += 30
+
+    # divider spans only the three bullet rows (first cap height to last baseline)
+    divider = f'<line x1="{divider_x}" y1="70" x2="{divider_x}" y2="143" stroke="#{t["border_color"]}"/>'
+
+    # right column: top languages as a color-dot legend, matching the stat rows'
+    # font, baselines, and spacing (no header, no bar)
     top = langs[:count]
     total = sum(size for _, size, _ in top) or 1
-    items = [(name, size / total * 100, color) for name, size, color in top]
-    legend_font = 14 if width >= 300 else 12
-
-    w, h = width, height
-    bar_x, bar_y, bar_w, bar_h = 25, 70, w - 50, 8
-
-    # stacked progress bar, clipped to rounded corners
-    segments, cursor = [], bar_x
-    for i, (_, pct, _color) in enumerate(items):
-        seg_w = pct / 100 * bar_w
+    dot_x, text_x = divider_x + 20, divider_x + 32
+    lang_body = []
+    ly = 82
+    for i, (name, size, _color) in enumerate(top):
+        pct = size / total * 100
         fill = PALETTE[i % len(PALETTE)]
-        segments.append(f'<rect x="{cursor:.2f}" y="{bar_y}" width="{seg_w:.2f}" height="{bar_h}" fill="{fill}"/>')
-        cursor += seg_w
-    bar = (
-        f'<clipPath id="barclip"><rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="{bar_h}" rx="4"/></clipPath>'
-        f'<g clip-path="url(#barclip)">{"".join(segments)}</g>'
-    )
-
-    # two-column legend, bottom-aligned so its last row matches the other cards
-    legend = []
-    col_x = [25, 25 + bar_w // 2 + 5]
-    rows_per_col = (len(items) + 1) // 2
-    start_y = (h - 23) - 26 * (rows_per_col - 1)
-    for i, (name, pct, _color) in enumerate(items):
-        cx = col_x[i % 2]
-        cy = start_y + (i // 2) * 26
-        fill = PALETTE[i % len(PALETTE)]
-        legend.append(f'<circle cx="{cx + 5}" cy="{cy - 4}" r="5" fill="{fill}"/>')
-        legend.append(
-            f'<text x="{cx + 16}" y="{cy}" fill="#{t["text_color"]}" font-size="{legend_font}">{name}: {pct:.0f}%</text>'
+        lang_body.append(f'<circle cx="{dot_x}" cy="{ly - 5}" r="5" fill="{fill}"/>')
+        lang_body.append(
+            f'<text x="{text_x}" y="{ly}" fill="#{t["text_color"]}" font-weight="600" font-size="14">{name}</text>'
         )
+        lang_body.append(
+            f'<text x="{w - 22}" y="{ly}" fill="#{t["text_color"]}" font-weight="700" '
+            f'font-size="14" text-anchor="end">{pct:.0f}%</text>'
+        )
+        ly += 30
 
     return (
         f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" '
@@ -387,8 +369,9 @@ def render_langs_svg(langs: list, count: int, title: str, height: int, width: in
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="10" fill="#{t["bg_color"]}" '
         f'stroke="#{t["border_color"]}"/>'
         f'<text x="22" y="40" fill="#{t["title_color"]}" font-weight="600" font-size="18">{title}</text>'
-        + bar
-        + "".join(legend)
+        + "".join(stats_body)
+        + divider
+        + "".join(lang_body)
         + "</svg>"
     )
 
@@ -428,9 +411,8 @@ def main() -> None:
     include_extra = os.environ.get("INCLUDE_EXTRA", "").split()
     exclude = set(os.environ.get("EXCLUDE_REPOS", "").split())
     hide = {x.strip().lower() for x in os.environ.get("LANGS_HIDE", "").split(",") if x.strip()}
-    langs_count = int(os.environ.get("LANGS_COUNT", "4"))
-    stats_width = int(os.environ.get("STATS_WIDTH", "215"))
-    langs_width = int(os.environ.get("LANGS_WIDTH", "250"))
+    langs_count = int(os.environ.get("LANGS_COUNT", "3"))
+    card_width = int(os.environ.get("CARD_WIDTH", "400"))
     out_dir = os.environ.get("OUT_DIR", "profile")
 
     repos = fetch_owned_repos(login, token)
@@ -450,16 +432,11 @@ def main() -> None:
     print(f"repos counted: {len(repos)} | stars: {total_stars} | commits: {total_commits} | prs: {total_prs}")
     print("top languages:", [(n, f"{s}") for n, s, _ in langs[:langs_count]])
 
-    # share a single height so both cards align (stats needs 165 for 3 rows;
-    # languages needs 100 + 26 per legend row)
-    lang_rows = (min(len(langs), langs_count) + 1) // 2
-    card_height = max(165, 100 + lang_rows * 26)
-
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "stats.svg"), "w") as f:
-        f.write(render_stats_svg(total_stars, total_commits, total_prs, "GitHub Stats", card_height, stats_width))
-    with open(os.path.join(out_dir, "top-langs.svg"), "w") as f:
-        f.write(render_langs_svg(langs, langs_count, "Languages", card_height, langs_width))
+    with open(os.path.join(out_dir, "github.svg"), "w") as f:
+        f.write(
+            render_github_svg(total_stars, total_commits, total_prs, langs, langs_count, "GitHub Stats", card_width)
+        )
 
     total_bytes = sum(s for _, s, _ in langs) or 1
     update_json(
