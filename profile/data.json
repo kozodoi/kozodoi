@@ -1,68 +1,68 @@
 {
   "github": {
-    "stars": 340,
+    "stars": 379,
     "commits": 3893,
     "prs": 18,
-    "repos_counted": 27,
+    "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 1777537,
-        "percentage": 73.0
+        "bytes": 2100298,
+        "percentage": 69.4
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 526449,
+        "percentage": 17.4
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 12.93
-      },
-      {
-        "name": "TypeScript",
-        "bytes": 268406,
-        "percentage": 11.02
+        "percentage": 10.4
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.83
+        "percentage": 0.67
       },
       {
         "name": "Shell",
         "bytes": 20178,
-        "percentage": 0.83
+        "percentage": 0.67
       },
       {
         "name": "JavaScript",
-        "bytes": 17418,
-        "percentage": 0.72
+        "bytes": 20024,
+        "percentage": 0.66
       },
       {
         "name": "CSS",
-        "bytes": 5038,
-        "percentage": 0.21
+        "bytes": 10076,
+        "percentage": 0.33
       },
       {
         "name": "Dockerfile",
-        "bytes": 4773,
-        "percentage": 0.2
+        "bytes": 6700,
+        "percentage": 0.22
       },
       {
         "name": "Makefile",
-        "bytes": 2839,
-        "percentage": 0.12
+        "bytes": 3985,
+        "percentage": 0.13
       },
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.08
+        "percentage": 0.06
       },
       {
         "name": "Smarty",
         "bytes": 1750,
-        "percentage": 0.07
+        "percentage": 0.06
       }
     ]
   },
-  "updated_at": "2026-07-03T02:07:06.369819+00:00",
+  "updated_at": "2026-07-04T02:04:54.114975+00:00",
   "scholar": {
     "citations": 595,
     "h_index": 7,
