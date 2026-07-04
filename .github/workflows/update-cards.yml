@@ -38,6 +38,8 @@ jobs:
         env:
           SCHOLAR_ID: "58tMuD0AAAAJ"
           SCHOLAR_LANG: "en"
+          # SerpApi key (repo secret) for a reliable read; scraping is the fallback
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           OUT_DIR: "profile"
         run: python scripts/generate_scholar_card.py
 

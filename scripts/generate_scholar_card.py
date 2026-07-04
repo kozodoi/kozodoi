@@ -2,18 +2,29 @@
 Generate a Google Scholar SVG card (algolia-themed) with total citations,
 h-index, and a citations-per-year bar chart.
 
-Scrapes the public Scholar profile page (as the referenced PHP script does).
-Google Scholar may rate-limit or serve a CAPTCHA to datacenter IPs (e.g. CI
-runners); in that case the script exits without overwriting the existing card,
-so the last good version is preserved.
+Google Scholar aggressively rate-limits or 403-blocks datacenter IPs (e.g. CI
+runners). To get a reliable read the script prefers the SerpApi Google Scholar
+Author API when a SERPAPI_KEY is set, and otherwise scrapes the public profile
+page directly (rotating User-Agents, retrying with backoff, and falling back to
+a pool of free public HTTP proxies). If every attempt still fails the script
+exits without overwriting the existing card, so the last good version is kept.
+
+Environment variables:
+    SCHOLAR_ID    Google Scholar user id (required)
+    SCHOLAR_LANG  interface language code (default: en)
+    SERPAPI_KEY   SerpApi key; enables the reliable API path (optional)
+    OUT_DIR       output directory for the SVG + data.json (default: profile)
 """
 
 from __future__ import annotations
 
 import json
 import os
+import random
 import re
 import sys
+import time
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
@@ -27,15 +38,104 @@ THEME = {
     "bar_color": "2EA8FF",
 }
 
-UA = (
+# rotate a handful of realistic desktop User-Agents to look less like a bot
+USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-)
+    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0",
+]
+
+# overall wall-clock budget for the proxy fallback loop (dead proxies can hang);
+# generous because this runs once a day and reliability matters more than speed
+PROXY_BUDGET_SECONDS = 900
+
+# free proxy list endpoints (plain text, one host:port per line)
+PROXY_SOURCES = [
+    "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&ssl=all&anonymity=all",
+    "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt",
+    "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
+]
+
+
+def _build_request(url: str) -> urllib.request.Request:
+    """Build a Scholar request with a random User-Agent and browser-like headers"""
+    return urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": random.choice(USER_AGENTS),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+        },
+    )
+
+
+def _looks_valid(html: str) -> bool:
+    """Return True if the HTML is a real profile page and not a CAPTCHA/block page"""
+    if re.search(r"captcha|unusual traffic|not a robot", html, re.I):
+        return False
+    return 'gsc_rsb_std">' in html
+
+
+def _fetch(url: str, proxy: str | None, timeout: int) -> str:
+    """
+    Fetch a URL, optionally through an HTTP proxy
+
+    Parameters
+    ----------
+    url : str
+        URL to fetch
+    proxy : str | None
+        Proxy as ``host:port``, or None for a direct connection
+    timeout : int
+        Socket timeout in seconds
+    """
+    handler = (
+        urllib.request.ProxyHandler({"http": f"http://{proxy}", "https": f"http://{proxy}"})
+        if proxy
+        else urllib.request.ProxyHandler({})
+    )
+    opener = urllib.request.build_opener(handler)
+    with opener.open(_build_request(url), timeout=timeout) as resp:
+        return resp.read().decode("utf-8", errors="replace")
+
+
+def _get_free_proxies(limit: int = 120) -> list[str]:
+    """
+    Collect a shuffled pool of free HTTP proxies from public list endpoints
+
+    Parameters
+    ----------
+    limit : int
+        Maximum number of proxies to return
+    """
+    proxies: set[str] = set()
+    for src in PROXY_SOURCES:
+        try:
+            with urllib.request.urlopen(_build_request(src), timeout=20) as resp:
+                text = resp.read().decode("utf-8", errors="replace")
+        except Exception as exc:  # noqa: BLE001 - a dead proxy source must not abort the run
+            print(f"  proxy source failed ({src.split('/')[2]}): {exc}")
+            continue
+        for line in text.splitlines():
+            host = line.strip()
+            if re.fullmatch(r"\d{1,3}(\.\d{1,3}){3}:\d{2,5}", host):
+                proxies.add(host)
+    pool = list(proxies)
+    random.shuffle(pool)
+    return pool[:limit]
 
 
 def fetch_profile(user_id: str, lang: str) -> str:
     """
-    Fetch the raw HTML of a Google Scholar profile page
+    Fetch the raw HTML of a Google Scholar profile page, resiliently
+
+    Tries a direct connection first (a few retries with backoff), then rotates
+    through a pool of free HTTP proxies until one returns a valid profile page.
 
     Parameters
     ----------
@@ -45,9 +145,114 @@ def fetch_profile(user_id: str, lang: str) -> str:
         Interface language code (the `hl=` query parameter)
     """
     url = f"https://scholar.google.com/citations?user={user_id}&hl={lang}"
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+
+    # direct connection first: cheap and works from residential IPs
+    for attempt in range(3):
+        try:
+            html = _fetch(url, proxy=None, timeout=60)
+            if _looks_valid(html):
+                print(f"fetched directly (attempt {attempt + 1})")
+                return html
+            print(f"direct attempt {attempt + 1}: blocked / CAPTCHA page")
+        except Exception as exc:  # noqa: BLE001 - fall through to proxy retries
+            print(f"direct attempt {attempt + 1} failed: {exc}")
+        time.sleep(2 + random.random() * 3)
+
+    # proxy fallback for datacenter IPs (CI runners) that Scholar 403-blocks
+    proxies = _get_free_proxies()
+    print(f"trying {len(proxies)} free proxies (up to {PROXY_BUDGET_SECONDS}s budget)")
+    deadline = time.monotonic() + PROXY_BUDGET_SECONDS
+    for i, proxy in enumerate(proxies):
+        if time.monotonic() > deadline:
+            print(f"proxy time budget exhausted after {i} proxies")
+            break
+        try:
+            html = _fetch(url, proxy=proxy, timeout=15)
+            if _looks_valid(html):
+                print(f"fetched via proxy {proxy} (proxy {i + 1}/{len(proxies)})")
+                return html
+        except Exception:  # noqa: BLE001 - dead/slow proxies are expected; keep going
+            continue
+
+    raise RuntimeError("all direct and proxy fetch attempts failed")
+
+
+def fetch_via_serpapi(user_id: str, lang: str, api_key: str) -> dict:
+    """
+    Fetch citation stats via the SerpApi Google Scholar Author API
+
+    Returns the same shape as ``parse_profile``. SerpApi runs the Scholar query
+    from its own residential-grade infrastructure, so it is not subject to the
+    datacenter-IP 403s that block direct scraping from CI runners.
+
+    Parameters
+    ----------
+    user_id : str
+        Google Scholar user id (the SerpApi `author_id` parameter)
+    lang : str
+        Interface language code (the `hl` parameter)
+    api_key : str
+        SerpApi private API key
+    """
+    params = urllib.parse.urlencode(
+        {
+            "engine": "google_scholar_author",
+            "author_id": user_id,
+            "hl": lang,
+            "num": "0",  # metadata only; we don't need the article list
+            "api_key": api_key,
+        }
+    )
+    url = f"https://serpapi.com/search.json?{params}"
+    req = urllib.request.Request(url, headers={"User-Agent": random.choice(USER_AGENTS)})
     with urllib.request.urlopen(req, timeout=60) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+        payload = json.loads(resp.read().decode("utf-8", errors="replace"))
+
+    if payload.get("error"):
+        raise RuntimeError(f"SerpApi error: {payload['error']}")
+
+    cited_by = payload.get("cited_by", {})
+    table = cited_by.get("table", [])
+
+    def _all(metric: str) -> int | None:
+        # the table is a list of single-key rows, e.g. {"citations": {"all": 599, ...}}
+        for row in table:
+            if metric in row:
+                return row[metric].get("all")
+        return None
+
+    citations, h_index = _all("citations"), _all("h_index")
+    graph = cited_by.get("graph", [])
+    years = [int(g["year"]) for g in graph]
+    counts = [int(g["citations"]) for g in graph]
+
+    if citations is None or h_index is None or not years:
+        raise RuntimeError("SerpApi response missing expected citation fields")
+
+    return {"citations": citations, "h_index": h_index, "years": years, "counts": counts}
+
+
+def load_profile_data(user_id: str, lang: str) -> dict:
+    """
+    Load citation stats, preferring SerpApi when a key is set, else scraping
+
+    Parameters
+    ----------
+    user_id : str
+        Google Scholar user id
+    lang : str
+        Interface language code
+    """
+    api_key = os.environ.get("SERPAPI_KEY")
+    if api_key:
+        try:
+            data = fetch_via_serpapi(user_id, lang, api_key)
+            print("fetched via SerpApi")
+            return data
+        except Exception as exc:  # noqa: BLE001 - fall back to scraping on any SerpApi issue
+            print(f"SerpApi fetch failed, falling back to scraping: {exc}")
+
+    return parse_profile(fetch_profile(user_id, lang))
 
 
 def parse_profile(html: str) -> dict:
@@ -185,8 +390,7 @@ def main() -> None:
     out_path = os.path.join(out_dir, "scholar.svg")
 
     try:
-        html = fetch_profile(user_id, lang)
-        data = parse_profile(html)
+        data = load_profile_data(user_id, lang)
     except Exception as exc:  # noqa: BLE001 - any failure must not clobber the last good card
         print(f"WARNING: keeping existing Scholar card, fetch/parse failed: {exc}")
         sys.exit(0)
