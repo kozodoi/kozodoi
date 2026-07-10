@@ -1,39 +1,39 @@
 {
   "github": {
-    "stars": 394,
-    "commits": 3895,
+    "stars": 395,
+    "commits": 3896,
     "prs": 18,
     "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2107270,
-        "percentage": 69.47
+        "bytes": 2140631,
+        "percentage": 69.79
       },
       {
         "name": "TypeScript",
-        "bytes": 526449,
-        "percentage": 17.36
+        "bytes": 526887,
+        "percentage": 17.18
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 10.38
+        "percentage": 10.26
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.67
+        "percentage": 0.66
       },
       {
         "name": "Shell",
         "bytes": 20178,
-        "percentage": 0.67
+        "percentage": 0.66
       },
       {
         "name": "JavaScript",
         "bytes": 20024,
-        "percentage": 0.66
+        "percentage": 0.65
       },
       {
         "name": "CSS",
@@ -62,17 +62,17 @@
       }
     ]
   },
-  "updated_at": "2026-07-09T02:07:38.113810+00:00",
+  "updated_at": "2026-07-10T02:06:26.919201+00:00",
   "scholar": {
-    "citations": 602,
+    "citations": 601,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
       "2020": 27,
       "2021": 37,
-      "2022": 73,
-      "2023": 84,
-      "2024": 110,
+      "2022": 75,
+      "2023": 82,
+      "2024": 109,
       "2025": 142,
       "2026": 119
     }
