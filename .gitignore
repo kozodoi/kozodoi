@@ -1,0 +1,10 @@
+.amazonq/
+.vercel
+.next/
+node_modules/
+build/
+.terraform/
+.DS_Store
+.env*.local
+.playwright-mcp
+tsconfig.tsbuildinfo
