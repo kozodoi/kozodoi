@@ -1,7 +1,7 @@
 {
   "github": {
     "stars": 358,
-    "commits": 3981,
+    "commits": 3983,
     "prs": 18,
     "repos_counted": 27,
     "languages": [
@@ -62,9 +62,9 @@
       }
     ]
   },
-  "updated_at": "2026-08-13T01:13:24.803740+00:00",
+  "updated_at": "2026-08-14T01:11:55.804334+00:00",
   "scholar": {
-    "citations": 621,
+    "citations": 623,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -74,7 +74,7 @@
       "2023": 80,
       "2024": 105,
       "2025": 145,
-      "2026": 141
+      "2026": 143
     }
   }
 }
