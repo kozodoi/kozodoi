@@ -1,68 +1,73 @@
 {
   "github": {
-    "stars": 359,
+    "stars": 401,
     "commits": 3989,
     "prs": 18,
-    "repos_counted": 27,
+    "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 1784501,
-        "percentage": 73.04
+        "bytes": 2182903,
+        "percentage": 69.86
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 537769,
+        "percentage": 17.21
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 12.88
+        "percentage": 10.07
       },
       {
-        "name": "TypeScript",
-        "bytes": 269665,
-        "percentage": 11.04
+        "name": "Shell",
+        "bytes": 21762,
+        "percentage": 0.7
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 20338,
+        "percentage": 0.65
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.83
-      },
-      {
-        "name": "Shell",
-        "bytes": 20178,
-        "percentage": 0.83
-      },
-      {
-        "name": "JavaScript",
-        "bytes": 17418,
-        "percentage": 0.71
+        "percentage": 0.65
       },
       {
         "name": "CSS",
-        "bytes": 5038,
-        "percentage": 0.21
+        "bytes": 10076,
+        "percentage": 0.32
       },
       {
         "name": "Dockerfile",
-        "bytes": 4773,
-        "percentage": 0.2
+        "bytes": 7504,
+        "percentage": 0.24
       },
       {
         "name": "Makefile",
-        "bytes": 2839,
-        "percentage": 0.12
+        "bytes": 3985,
+        "percentage": 0.13
       },
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.08
+        "percentage": 0.06
       },
       {
         "name": "Smarty",
         "bytes": 1750,
-        "percentage": 0.07
+        "percentage": 0.06
+      },
+      {
+        "name": "Ragel",
+        "bytes": 1496,
+        "percentage": 0.05
       }
     ]
   },
-  "updated_at": "2026-08-24T00:45:54.119622+00:00",
+  "updated_at": "2026-08-25T00:45:34.471358+00:00",
   "scholar": {
     "citations": 629,
     "h_index": 7,
