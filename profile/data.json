@@ -1,49 +1,49 @@
 {
   "github": {
-    "stars": 401,
+    "stars": 374,
     "commits": 3989,
     "prs": 18,
-    "repos_counted": 30,
+    "repos_counted": 28,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2182903,
-        "percentage": 69.86
+        "bytes": 2102516,
+        "percentage": 69.07
       },
       {
         "name": "TypeScript",
         "bytes": 537769,
-        "percentage": 17.21
+        "percentage": 17.67
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 10.07
+        "percentage": 10.34
       },
       {
         "name": "Shell",
         "bytes": 21762,
-        "percentage": 0.7
+        "percentage": 0.71
       },
       {
         "name": "JavaScript",
         "bytes": 20338,
-        "percentage": 0.65
+        "percentage": 0.67
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.65
+        "percentage": 0.66
       },
       {
         "name": "CSS",
         "bytes": 10076,
-        "percentage": 0.32
+        "percentage": 0.33
       },
       {
         "name": "Dockerfile",
         "bytes": 7504,
-        "percentage": 0.24
+        "percentage": 0.25
       },
       {
         "name": "Makefile",
@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-08-25T00:45:34.471358+00:00",
+  "updated_at": "2026-08-26T00:46:48.766742+00:00",
   "scholar": {
-    "citations": 629,
+    "citations": 631,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,7 +79,7 @@
       "2023": 80,
       "2024": 105,
       "2025": 146,
-      "2026": 148
+      "2026": 150
     }
   }
 }
