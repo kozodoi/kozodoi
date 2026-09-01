@@ -1,70 +1,75 @@
 {
   "github": {
-    "stars": 362,
+    "stars": 376,
     "commits": 3991,
     "prs": 18,
-    "repos_counted": 27,
+    "repos_counted": 28,
     "languages": [
       {
         "name": "Python",
-        "bytes": 1872584,
-        "percentage": 72.57
+        "bytes": 2190599,
+        "percentage": 68.86
       },
       {
         "name": "TypeScript",
-        "bytes": 318752,
-        "percentage": 12.35
+        "bytes": 586856,
+        "percentage": 18.45
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 12.2
+        "percentage": 9.89
+      },
+      {
+        "name": "Shell",
+        "bytes": 21762,
+        "percentage": 0.68
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 20338,
+        "percentage": 0.64
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.78
-      },
-      {
-        "name": "Shell",
-        "bytes": 20178,
-        "percentage": 0.78
-      },
-      {
-        "name": "JavaScript",
-        "bytes": 17418,
-        "percentage": 0.68
+        "percentage": 0.64
       },
       {
         "name": "CSS",
-        "bytes": 5038,
-        "percentage": 0.2
+        "bytes": 10076,
+        "percentage": 0.32
       },
       {
         "name": "Dockerfile",
-        "bytes": 4773,
-        "percentage": 0.18
+        "bytes": 7504,
+        "percentage": 0.24
       },
       {
         "name": "Makefile",
-        "bytes": 2839,
-        "percentage": 0.11
+        "bytes": 3985,
+        "percentage": 0.13
       },
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.08
+        "percentage": 0.06
       },
       {
         "name": "Smarty",
         "bytes": 1750,
-        "percentage": 0.07
+        "percentage": 0.06
+      },
+      {
+        "name": "Ragel",
+        "bytes": 1496,
+        "percentage": 0.05
       }
     ]
   },
-  "updated_at": "2026-08-31T02:36:35.460863+00:00",
+  "updated_at": "2026-09-01T02:50:34.832323+00:00",
   "scholar": {
-    "citations": 634,
+    "citations": 638,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -74,7 +79,7 @@
       "2023": 80,
       "2024": 105,
       "2025": 146,
-      "2026": 153
+      "2026": 157
     }
   }
 }
