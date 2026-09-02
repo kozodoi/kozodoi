@@ -1,73 +1,68 @@
 {
   "github": {
-    "stars": 376,
+    "stars": 362,
     "commits": 3991,
     "prs": 18,
-    "repos_counted": 28,
+    "repos_counted": 27,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2190599,
-        "percentage": 68.86
+        "bytes": 1872584,
+        "percentage": 72.57
       },
       {
         "name": "TypeScript",
-        "bytes": 586856,
-        "percentage": 18.45
+        "bytes": 318752,
+        "percentage": 12.35
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 9.89
-      },
-      {
-        "name": "Shell",
-        "bytes": 21762,
-        "percentage": 0.68
-      },
-      {
-        "name": "JavaScript",
-        "bytes": 20338,
-        "percentage": 0.64
+        "percentage": 12.2
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.64
+        "percentage": 0.78
+      },
+      {
+        "name": "Shell",
+        "bytes": 20178,
+        "percentage": 0.78
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 17418,
+        "percentage": 0.68
       },
       {
         "name": "CSS",
-        "bytes": 10076,
-        "percentage": 0.32
+        "bytes": 5038,
+        "percentage": 0.2
       },
       {
         "name": "Dockerfile",
-        "bytes": 7504,
-        "percentage": 0.24
+        "bytes": 4773,
+        "percentage": 0.18
       },
       {
         "name": "Makefile",
-        "bytes": 3985,
-        "percentage": 0.13
+        "bytes": 2839,
+        "percentage": 0.11
       },
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.06
+        "percentage": 0.08
       },
       {
         "name": "Smarty",
         "bytes": 1750,
-        "percentage": 0.06
-      },
-      {
-        "name": "Ragel",
-        "bytes": 1496,
-        "percentage": 0.05
+        "percentage": 0.07
       }
     ]
   },
-  "updated_at": "2026-09-01T02:50:34.832323+00:00",
+  "updated_at": "2026-09-02T02:09:12.396602+00:00",
   "scholar": {
     "citations": 638,
     "h_index": 7,
