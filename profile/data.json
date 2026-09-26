@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-09-26T02:44:14.836750+00:00",
+  "updated_at": "2026-09-26T09:49:59.323093+00:00",
   "scholar": {
     "citations": 659,
     "h_index": 7,
@@ -81,5 +81,43 @@
       "2025": 148,
       "2026": 173
     }
+  },
+  "linkedin": {
+    "profile": "https://www.linkedin.com/in/kozodoi/",
+    "posts": [
+      {
+        "id": "7508856804710227970",
+        "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
+        "date": "2026-09-24T11:56:10.056Z",
+        "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
+        "video": true,
+        "reactions": 17,
+        "comments": 0,
+        "shares": 0,
+        "image": "https://cdn.jsdelivr.net/gh/kozodoi/kozodoi@master/profile/linkedin/7508856804710227970.jpg"
+      },
+      {
+        "id": "7501383431176675328",
+        "url": "https://www.linkedin.com/posts/kozodoi_great-time-at-aws-summit-zurich-philipp-activity-7501383431176675328-WOKQ",
+        "date": "2026-09-03T20:59:38.957Z",
+        "text": "🇨🇭 Great time at AWS Summit Zurich!\n\nPhilipp Kaindl and I gave a talk on red teaming. As more applications rely on LLMs and AI agents, it becomes critical to know how to protect them against adversarial attacks like prompt injection, agent goal hijacking, context poisoning and many others. Always happy to discuss this topic with the community!",
+        "video": false,
+        "reactions": 46,
+        "comments": 0,
+        "shares": 2,
+        "image": "https://cdn.jsdelivr.net/gh/kozodoi/kozodoi@master/profile/linkedin/7501383431176675328.jpg"
+      },
+      {
+        "id": "7500129781859147776",
+        "url": "https://www.linkedin.com/posts/kozodoi_i-completed-all-four-anthropic-certifications-activity-7500129781859147776-Gkbe",
+        "date": "2026-08-31T09:58:05.668Z",
+        "text": "🎓 I completed all four Anthropic certifications this month: Associate, Developer, Architect Foundations, and Architect Professional.\n\nThe material generalizes well beyond Claude. Context management, tool and prompt design, MCP, evaluation, and cost and latency tradeoffs are the same problems whether you build on Claude, Codex, Kiro, or anything else. I face most of these regularly in customer projects.\n\nI would recommend these exams to two groups: anyone building AI agents, and engineers who use coding assistants daily and want to get more out of them. Preparing for the exams showed me a few gaps in my own setup.",
+        "video": false,
+        "reactions": 58,
+        "comments": 6,
+        "shares": 0,
+        "image": "https://cdn.jsdelivr.net/gh/kozodoi/kozodoi@master/profile/linkedin/7500129781859147776.jpg"
+      }
+    ]
   }
 }

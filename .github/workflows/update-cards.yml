@@ -42,10 +42,20 @@ jobs:
           OUT_DIR: "profile"
         run: python scripts/generate_scholar_card.py
 
+      - name: Fetch latest LinkedIn posts
+        env:
+          # Apify API token (repo secret); the step keeps the last posts without it
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          APIFY_ACTOR: "harvestapi~linkedin-profile-posts"
+          LINKEDIN_PROFILE: "https://www.linkedin.com/in/kozodoi/"
+          LINKEDIN_COUNT: "3"
+          OUT_DIR: "profile"
+        run: python scripts/fetch_linkedin_posts.py
+
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg profile/data.json
+          git add profile/*.svg profile/data.json profile/linkedin
           git commit -m "Update README cards" || exit 0
           git push
