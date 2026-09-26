@@ -1,7 +1,4 @@
 """
-Copyright © Amazon.com and Affiliates
-This code is being licensed under the terms of the Amazon Software License available at https://aws.amazon.com/asl/
-
 Fetch the latest LinkedIn posts into profile/data.json for the kozodoi.com home page.
 
 LinkedIn offers no API for reading your own posts, so the posts are read through
