@@ -6,7 +6,7 @@ an Apify actor that scrapes the public profile while logged out (no cookies, no
 LinkedIn account involved). The actor sits behind one function, `normalize_post`,
 so switching to another actor means changing APIFY_ACTOR and that mapping only.
 
-Each post's image is saved into profile/linkedin/ and served from jsDelivr,
+Each post's image is saved into profile/linkedin/ and served from raw GitHub,
 because the signed media.licdn.com URLs the actor returns expire after a few
 weeks. Images are never deleted, so a fallback snapshot baked into the site keeps
 resolving after the posts it shows have rotated out of the feed.
@@ -19,7 +19,7 @@ Environment variables:
     APIFY_ACTOR        actor id (default: harvestapi~linkedin-profile-posts)
     LINKEDIN_PROFILE   public profile URL (default: https://www.linkedin.com/in/kozodoi/)
     LINKEDIN_COUNT     number of posts to keep (default: 3)
-    CDN_BASE           public base URL of the repo (default: jsDelivr, kozodoi@master)
+    CDN_BASE           public base URL of the repo (default: raw GitHub, master)
     OUT_DIR            output directory for data.json and images (default: profile)
 """
 
@@ -33,7 +33,7 @@ from datetime import datetime, timezone
 
 DEFAULT_ACTOR = "harvestapi~linkedin-profile-posts"
 DEFAULT_PROFILE = "https://www.linkedin.com/in/kozodoi/"
-DEFAULT_CDN_BASE = "https://cdn.jsdelivr.net/gh/kozodoi/kozodoi@master"
+DEFAULT_CDN_BASE = "https://raw.githubusercontent.com/kozodoi/kozodoi/master"
 
 # the actor is asked for a few more posts than are kept, so that reposts it
 # still returns or posts without text do not leave the row short

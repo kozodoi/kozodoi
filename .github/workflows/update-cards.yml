@@ -59,8 +59,3 @@ jobs:
           git add profile/*.svg profile/data.json profile/linkedin
           git commit -m "Update README cards" || exit 0
           git push
-
-      # kozodoi.com reads data.json through jsDelivr, which caches a branch for
-      # up to 12 hours; purging makes the day's stats and posts show straight away
-      - name: Purge jsDelivr cache
-        run: curl -fsS https://purge.jsdelivr.net/gh/kozodoi/kozodoi@master/profile/data.json > /dev/null || true
