@@ -1,13 +1,13 @@
 {
   "github": {
     "stars": 405,
-    "commits": 4008,
+    "commits": 4011,
     "prs": 18,
     "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2433988,
+        "bytes": 2433990,
         "percentage": 70.85
       },
       {
@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-09-26T09:57:16.536908+00:00",
+  "updated_at": "2026-09-27T02:44:54.305471+00:00",
   "scholar": {
-    "citations": 659,
+    "citations": 661,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -77,9 +77,9 @@
       "2021": 38,
       "2022": 73,
       "2023": 80,
-      "2024": 106,
+      "2024": 105,
       "2025": 148,
-      "2026": 173
+      "2026": 174
     }
   },
   "linkedin": {
@@ -91,10 +91,10 @@
         "date": "2026-09-24T11:56:10.056Z",
         "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
         "video": true,
-        "reactions": 17,
+        "reactions": 18,
         "comments": 0,
         "shares": 0,
-        "image": "https://cdn.jsdelivr.net/gh/kozodoi/kozodoi@master/profile/linkedin/7508856804710227970.jpg"
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
       },
       {
         "id": "7501383431176675328",
@@ -105,7 +105,7 @@
         "reactions": 46,
         "comments": 0,
         "shares": 2,
-        "image": "https://cdn.jsdelivr.net/gh/kozodoi/kozodoi@master/profile/linkedin/7501383431176675328.jpg"
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7501383431176675328.jpg"
       },
       {
         "id": "7500129781859147776",
@@ -116,7 +116,7 @@
         "reactions": 58,
         "comments": 6,
         "shares": 0,
-        "image": "https://cdn.jsdelivr.net/gh/kozodoi/kozodoi@master/profile/linkedin/7500129781859147776.jpg"
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7500129781859147776.jpg"
       }
     ]
   }
