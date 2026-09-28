@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-09-27T02:44:54.305471+00:00",
+  "updated_at": "2026-09-28T02:46:35.441775+00:00",
   "scholar": {
-    "citations": 661,
+    "citations": 662,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,7 +79,7 @@
       "2023": 80,
       "2024": 105,
       "2025": 148,
-      "2026": 174
+      "2026": 175
     }
   },
   "linkedin": {
@@ -91,7 +91,7 @@
         "date": "2026-09-24T11:56:10.056Z",
         "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
         "video": true,
-        "reactions": 18,
+        "reactions": 19,
         "comments": 0,
         "shares": 0,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
