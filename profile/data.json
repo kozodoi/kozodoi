@@ -7,18 +7,18 @@
     "languages": [
       {
         "name": "Python",
-        "bytes": 2433990,
-        "percentage": 70.85
+        "bytes": 2447037,
+        "percentage": 70.88
       },
       {
         "name": "TypeScript",
-        "bytes": 593077,
-        "percentage": 17.26
+        "bytes": 596896,
+        "percentage": 17.29
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 9.16
+        "percentage": 9.12
       },
       {
         "name": "Shell",
@@ -38,7 +38,7 @@
       {
         "name": "Dockerfile",
         "bytes": 11193,
-        "percentage": 0.33
+        "percentage": 0.32
       },
       {
         "name": "CSS",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-09-28T02:46:35.441775+00:00",
+  "updated_at": "2026-09-29T03:28:15.478829+00:00",
   "scholar": {
     "citations": 662,
     "h_index": 7,
@@ -91,9 +91,9 @@
         "date": "2026-09-24T11:56:10.056Z",
         "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
         "video": true,
-        "reactions": 19,
+        "reactions": 21,
         "comments": 0,
-        "shares": 0,
+        "shares": 1,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
       },
       {
@@ -102,7 +102,7 @@
         "date": "2026-09-03T20:59:38.957Z",
         "text": "🇨🇭 Great time at AWS Summit Zurich!\n\nPhilipp Kaindl and I gave a talk on red teaming. As more applications rely on LLMs and AI agents, it becomes critical to know how to protect them against adversarial attacks like prompt injection, agent goal hijacking, context poisoning and many others. Always happy to discuss this topic with the community!",
         "video": false,
-        "reactions": 46,
+        "reactions": 47,
         "comments": 0,
         "shares": 2,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7501383431176675328.jpg"
