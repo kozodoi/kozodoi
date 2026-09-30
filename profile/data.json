@@ -1,24 +1,24 @@
 {
   "github": {
     "stars": 405,
-    "commits": 4011,
+    "commits": 4012,
     "prs": 18,
     "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2447037,
-        "percentage": 70.88
+        "bytes": 2449765,
+        "percentage": 70.9
       },
       {
         "name": "TypeScript",
-        "bytes": 596896,
-        "percentage": 17.29
+        "bytes": 597632,
+        "percentage": 17.3
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 9.12
+        "percentage": 9.11
       },
       {
         "name": "Shell",
@@ -32,8 +32,8 @@
       },
       {
         "name": "JavaScript",
-        "bytes": 19288,
-        "percentage": 0.56
+        "bytes": 18552,
+        "percentage": 0.54
       },
       {
         "name": "Dockerfile",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-09-29T03:28:15.478829+00:00",
+  "updated_at": "2026-09-30T03:12:03.393929+00:00",
   "scholar": {
     "citations": 662,
     "h_index": 7,
@@ -91,7 +91,7 @@
         "date": "2026-09-24T11:56:10.056Z",
         "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
         "video": true,
-        "reactions": 21,
+        "reactions": 22,
         "comments": 0,
         "shares": 1,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
