@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-10-01T03:18:53.625986+00:00",
+  "updated_at": "2026-10-02T03:19:29.267907+00:00",
   "scholar": {
     "citations": 662,
     "h_index": 7,
@@ -91,8 +91,8 @@
         "date": "2026-09-24T11:56:10.056Z",
         "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
         "video": true,
-        "reactions": 22,
-        "comments": 0,
+        "reactions": 23,
+        "comments": 1,
         "shares": 1,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
       },
@@ -102,7 +102,7 @@
         "date": "2026-09-03T20:59:38.957Z",
         "text": "🇨🇭 Great time at AWS Summit Zurich!\n\nPhilipp Kaindl and I gave a talk on red teaming. As more applications rely on LLMs and AI agents, it becomes critical to know how to protect them against adversarial attacks like prompt injection, agent goal hijacking, context poisoning and many others. Always happy to discuss this topic with the community!",
         "video": false,
-        "reactions": 47,
+        "reactions": 48,
         "comments": 0,
         "shares": 2,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7501383431176675328.jpg"
