@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-10-02T03:19:29.267907+00:00",
+  "updated_at": "2026-10-03T03:05:13.129263+00:00",
   "scholar": {
-    "citations": 662,
+    "citations": 663,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -78,13 +78,24 @@
       "2022": 73,
       "2023": 80,
       "2024": 105,
-      "2025": 148,
-      "2026": 175
+      "2025": 147,
+      "2026": 177
     }
   },
   "linkedin": {
     "profile": "https://www.linkedin.com/in/kozodoi/",
     "posts": [
+      {
+        "id": "7511804375695261696",
+        "url": "https://www.linkedin.com/posts/kozodoi_great-energy-at-aws-summit-dubai-it-was-activity-7511804375695261696-4KTk",
+        "date": "2026-10-02T15:08:45.742Z",
+        "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team’s work to customers across the region.",
+        "video": false,
+        "reactions": 33,
+        "comments": 2,
+        "shares": 0,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
+      },
       {
         "id": "7508856804710227970",
         "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
@@ -106,17 +117,6 @@
         "comments": 0,
         "shares": 2,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7501383431176675328.jpg"
-      },
-      {
-        "id": "7500129781859147776",
-        "url": "https://www.linkedin.com/posts/kozodoi_i-completed-all-four-anthropic-certifications-activity-7500129781859147776-Gkbe",
-        "date": "2026-08-31T09:58:05.668Z",
-        "text": "🎓 I completed all four Anthropic certifications this month: Associate, Developer, Architect Foundations, and Architect Professional.\n\nThe material generalizes well beyond Claude. Context management, tool and prompt design, MCP, evaluation, and cost and latency tradeoffs are the same problems whether you build on Claude, Codex, Kiro, or anything else. I face most of these regularly in customer projects.\n\nI would recommend these exams to two groups: anyone building AI agents, and engineers who use coding assistants daily and want to get more out of them. Preparing for the exams showed me a few gaps in my own setup.",
-        "video": false,
-        "reactions": 58,
-        "comments": 6,
-        "shares": 0,
-        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7500129781859147776.jpg"
       }
     ]
   }
