@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-10-03T03:05:13.129263+00:00",
+  "updated_at": "2026-10-04T03:33:33.532218+00:00",
   "scholar": {
-    "citations": 663,
+    "citations": 666,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,7 +79,7 @@
       "2023": 80,
       "2024": 105,
       "2025": 147,
-      "2026": 177
+      "2026": 180
     }
   },
   "linkedin": {
@@ -91,7 +91,7 @@
         "date": "2026-10-02T15:08:45.742Z",
         "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team’s work to customers across the region.",
         "video": false,
-        "reactions": 33,
+        "reactions": 46,
         "comments": 2,
         "shares": 0,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
