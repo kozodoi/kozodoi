@@ -1,6 +1,6 @@
 {
   "github": {
-    "stars": 407,
+    "stars": 408,
     "commits": 4012,
     "prs": 18,
     "repos_counted": 30,
@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-10-05T03:14:51.883993+00:00",
+  "updated_at": "2026-10-06T04:02:20.693670+00:00",
   "scholar": {
-    "citations": 665,
+    "citations": 667,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -78,8 +78,8 @@
       "2022": 73,
       "2023": 80,
       "2024": 105,
-      "2025": 147,
-      "2026": 179
+      "2025": 148,
+      "2026": 180
     }
   },
   "linkedin": {
@@ -91,7 +91,7 @@
         "date": "2026-10-02T15:08:45.742Z",
         "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team’s work to customers across the region.",
         "video": false,
-        "reactions": 50,
+        "reactions": 53,
         "comments": 2,
         "shares": 0,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
