@@ -1,70 +1,75 @@
 {
   "github": {
-    "stars": 365,
+    "stars": 408,
     "commits": 4012,
     "prs": 18,
-    "repos_counted": 27,
+    "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 1883115,
-        "percentage": 72.68
+        "bytes": 2456676,
+        "percentage": 70.96
       },
       {
         "name": "TypeScript",
-        "bytes": 319488,
-        "percentage": 12.33
+        "bytes": 597632,
+        "percentage": 17.26
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 12.15
+        "percentage": 9.09
+      },
+      {
+        "name": "Shell",
+        "bytes": 23360,
+        "percentage": 0.67
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.78
-      },
-      {
-        "name": "Shell",
-        "bytes": 20178,
-        "percentage": 0.78
+        "percentage": 0.58
       },
       {
         "name": "JavaScript",
-        "bytes": 16682,
-        "percentage": 0.64
-      },
-      {
-        "name": "CSS",
-        "bytes": 5038,
-        "percentage": 0.19
+        "bytes": 18552,
+        "percentage": 0.54
       },
       {
         "name": "Dockerfile",
-        "bytes": 4773,
-        "percentage": 0.18
+        "bytes": 11193,
+        "percentage": 0.32
+      },
+      {
+        "name": "CSS",
+        "bytes": 10076,
+        "percentage": 0.29
       },
       {
         "name": "Makefile",
-        "bytes": 2839,
-        "percentage": 0.11
+        "bytes": 3985,
+        "percentage": 0.12
       },
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.08
+        "percentage": 0.06
+      },
+      {
+        "name": "Ragel",
+        "bytes": 1913,
+        "percentage": 0.06
       },
       {
         "name": "Smarty",
         "bytes": 1750,
-        "percentage": 0.07
+        "percentage": 0.05
       }
     ]
   },
-  "updated_at": "2026-10-10T03:33:28.407129+00:00",
+  "updated_at": "2026-10-11T03:06:31.309116+00:00",
   "scholar": {
-    "citations": 669,
+    "citations": 673,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -74,7 +79,7 @@
       "2023": 80,
       "2024": 105,
       "2025": 148,
-      "2026": 181
+      "2026": 185
     }
   },
   "linkedin": {
@@ -97,7 +102,7 @@
         "date": "2026-09-24T11:56:10.056Z",
         "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
         "video": true,
-        "reactions": 23,
+        "reactions": 24,
         "comments": 1,
         "shares": 1,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
