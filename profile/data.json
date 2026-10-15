@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-10-14T02:52:51.959528+00:00",
+  "updated_at": "2026-10-15T02:31:42.648285+00:00",
   "scholar": {
-    "citations": 677,
+    "citations": 676,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,30 +79,19 @@
       "2023": 80,
       "2024": 105,
       "2025": 148,
-      "2026": 189
+      "2026": 188
     }
   },
   "linkedin": {
     "profile": "https://www.linkedin.com/in/kozodoi/",
     "posts": [
       {
-        "id": "7515665718399410176",
-        "url": "https://www.linkedin.com/posts/activity-7515512593214611456-FTvg",
-        "date": "2026-10-13T06:52:21.583Z",
-        "text": "Delighted to present two papers at COLM 2026 workshops. We also had a chance to show a few demos at the Amazon booth and speak with many PhD students and scientists looking for new opportunities in the Generative AI space. Our work covered:\n\nTest-Time Augmentation for LLMs: When Input Diversity Beats Output Diversity at Matched Compute (https://lnkd.in/gJvaiZ4g)\n> We benchmark test-time prompt transformation methods to identify which deliver the best accuracy per $ spent.\n\nImpact of Expert Training Duration on Model Merging for LLMs (https://lnkd.in/gsTCdu_T)\n> We find that for some merging methods, the merged model accuracy is the best when we overfit the expert LLMs\n\nKudos to my co-authors on this work: Nikita Kozodoi, PhD and Zainab A.",
-        "video": false,
-        "reactions": 42,
-        "comments": 0,
-        "shares": 0,
-        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7515665718399410176.jpg"
-      },
-      {
         "id": "7514968623652876288",
         "url": "https://www.linkedin.com/posts/kozodoi_excited-to-present-3-papers-on-llm-optimization-activity-7514968623652876288-6k-L",
         "date": "2026-10-11T08:42:21.244Z",
         "text": "Excited to present 3 papers on LLM optimization, scaling and merging at COLM in San Francisco! 🇺🇸 \n\nAlways happy to chat with fellow scientists at the Amazon booth and exchange ideas on where the field is going, and how to keep up with the speed of research.\n\nKudos to my co-authors from the AWS FDE team: Jack Butler, Zainab A., Egor Krasheninnikov, Sergey I., Natalia Tarasova",
         "video": false,
-        "reactions": 79,
+        "reactions": 81,
         "comments": 5,
         "shares": 1,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7514968623652876288.jpg"
@@ -117,6 +106,17 @@
         "comments": 2,
         "shares": 0,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
+      },
+      {
+        "id": "7508856804710227970",
+        "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
+        "date": "2026-09-24T11:56:10.056Z",
+        "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
+        "video": true,
+        "reactions": 24,
+        "comments": 1,
+        "shares": 1,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
       }
     ]
   }
