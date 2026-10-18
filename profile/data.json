@@ -1,7 +1,7 @@
 {
   "github": {
     "stars": 409,
-    "commits": 4031,
+    "commits": 4049,
     "prs": 18,
     "repos_counted": 30,
     "languages": [
@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-10-17T02:19:09.142256+00:00",
+  "updated_at": "2026-10-18T02:18:57.382518+00:00",
   "scholar": {
-    "citations": 681,
+    "citations": 684,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -78,8 +78,8 @@
       "2022": 73,
       "2023": 80,
       "2024": 105,
-      "2025": 149,
-      "2026": 192
+      "2025": 150,
+      "2026": 194
     }
   },
   "linkedin": {
@@ -91,7 +91,7 @@
         "date": "2026-10-11T08:42:21.244Z",
         "text": "Excited to present 3 papers on LLM optimization, scaling and merging at COLM in San Francisco! 🇺🇸 \n\nAlways happy to chat with fellow scientists at the Amazon booth and exchange ideas on where the field is going, and how to keep up with the speed of research.\n\nKudos to my co-authors from the AWS FDE team: Jack Butler, Zainab A., Egor Krasheninnikov, Sergey I., Natalia Tarasova",
         "video": false,
-        "reactions": 82,
+        "reactions": 84,
         "comments": 5,
         "shares": 1,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7514968623652876288.jpg"
