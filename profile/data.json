@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-10-29T03:40:45.021109+00:00",
+  "updated_at": "2026-10-30T03:43:43.049322+00:00",
   "scholar": {
     "citations": 704,
     "h_index": 7,
@@ -86,12 +86,23 @@
     "profile": "https://www.linkedin.com/in/kozodoi/",
     "posts": [
       {
+        "id": "7521147203466485760",
+        "url": "https://www.linkedin.com/posts/zinov-liza_generation-and-verification-human-agent-activity-7521117006717235200-5k5I",
+        "date": "2026-10-28T09:53:49.464Z",
+        "text": "Happy to be in Budapest for EMNLP 2026! 🇭🇺\n\nTomorrow I'm presenting our joint work from the collaboration between AUMOVIO and the Amazon Web Services (AWS) Generative AI Innovation Center at the REALM workshop: the journey of building an engineering assistant for automotive software, and the tooling behind it. It has been a great collaboration, and I'm really looking forward to sharing it with the research community.\n\nThank you to my co-authors Aiham Taleb, Nikita Kozodoi, PhD, Daniel Schleicher, Amir Mahdi Namazi, Martin Kraus, Levent Kent and Brian Jensen.\n\nIf you're in Budapest and would like to chat about automotive, agentic systems, time series or anything else, let me know or come find me at our poster. Always happy to meet!  😊 \n\nPaper: https://lnkd.in/d3_gRhCd \nWorkshop: https://lnkd.in/dvRykybn",
+        "video": false,
+        "reactions": 39,
+        "comments": 4,
+        "shares": 2,
+        "image": null
+      },
+      {
         "id": "7514968623652876288",
         "url": "https://www.linkedin.com/posts/kozodoi_excited-to-present-3-papers-on-llm-optimization-activity-7514968623652876288-6k-L",
         "date": "2026-10-11T08:42:21.244Z",
         "text": "Excited to present 3 papers on LLM optimization, scaling and merging at COLM in San Francisco! 🇺🇸 \n\nAlways happy to chat with fellow scientists at the Amazon booth and exchange ideas on where the field is going, and how to keep up with the speed of research.\n\nKudos to my co-authors from the AWS FDE team: Jack Butler, Zainab A., Egor Krasheninnikov, Sergey I., Natalia Tarasova",
         "video": false,
-        "reactions": 84,
+        "reactions": 85,
         "comments": 5,
         "shares": 1,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7514968623652876288.jpg"
@@ -106,17 +117,6 @@
         "comments": 2,
         "shares": 0,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
-      },
-      {
-        "id": "7508856804710227970",
-        "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
-        "date": "2026-09-24T11:56:10.056Z",
-        "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
-        "video": true,
-        "reactions": 24,
-        "comments": 1,
-        "shares": 1,
-        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
       }
     ]
   }
