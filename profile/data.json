@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-10-30T03:43:43.049322+00:00",
+  "updated_at": "2026-10-31T03:27:30.483513+00:00",
   "scholar": {
-    "citations": 704,
+    "citations": 708,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,7 +79,7 @@
       "2023": 81,
       "2024": 109,
       "2025": 149,
-      "2026": 208
+      "2026": 212
     }
   },
   "linkedin": {
@@ -91,8 +91,8 @@
         "date": "2026-10-28T09:53:49.464Z",
         "text": "Happy to be in Budapest for EMNLP 2026! 🇭🇺\n\nTomorrow I'm presenting our joint work from the collaboration between AUMOVIO and the Amazon Web Services (AWS) Generative AI Innovation Center at the REALM workshop: the journey of building an engineering assistant for automotive software, and the tooling behind it. It has been a great collaboration, and I'm really looking forward to sharing it with the research community.\n\nThank you to my co-authors Aiham Taleb, Nikita Kozodoi, PhD, Daniel Schleicher, Amir Mahdi Namazi, Martin Kraus, Levent Kent and Brian Jensen.\n\nIf you're in Budapest and would like to chat about automotive, agentic systems, time series or anything else, let me know or come find me at our poster. Always happy to meet!  😊 \n\nPaper: https://lnkd.in/d3_gRhCd \nWorkshop: https://lnkd.in/dvRykybn",
         "video": false,
-        "reactions": 39,
-        "comments": 4,
+        "reactions": 40,
+        "comments": 6,
         "shares": 2,
         "image": null
       },
