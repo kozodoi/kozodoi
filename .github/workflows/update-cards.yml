@@ -48,7 +48,7 @@ jobs:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           APIFY_ACTOR: "harvestapi~linkedin-profile-posts"
           LINKEDIN_PROFILE: "https://www.linkedin.com/in/kozodoi/"
-          LINKEDIN_COUNT: "3"
+          LINKEDIN_COUNT: "9"
           OUT_DIR: "profile"
         run: python scripts/fetch_linkedin_posts.py
 

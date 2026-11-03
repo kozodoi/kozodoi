@@ -27,7 +27,7 @@ Environment variables:
     APIFY_TOKEN        Apify API token (required; the step is skipped without it)
     APIFY_ACTOR        actor id (default: harvestapi~linkedin-profile-posts)
     LINKEDIN_PROFILE   public profile URL (default: https://www.linkedin.com/in/kozodoi/)
-    LINKEDIN_COUNT     number of posts to keep (default: 3)
+    LINKEDIN_COUNT     number of posts to keep (default: 3; the workflow sets 9)
     CDN_BASE           public base URL of the repo (default: raw GitHub, master)
     OUT_DIR            output directory for data.json and images (default: profile)
 """
@@ -200,7 +200,7 @@ def merge_posts(fresh: list[dict], previous: list[dict], count: int) -> list[dic
     Parameters
     ----------
     fresh : list[dict]
-        Posts returned by this run, which take precedence for the same id
+        Posts returned by this run, which take precedence for the same url
     previous : list[dict]
         Posts from the last snapshot
     count : int
@@ -211,8 +211,10 @@ def merge_posts(fresh: list[dict], previous: list[dict], count: int) -> list[dic
     list[dict]
         The newest ``count`` posts across both lists, newest first
     """
-    merged = {post["id"]: post for post in previous}
-    merged.update({post["id"]: post for post in fresh})
+    # keyed on the url, since a co-authored post can come back under a
+    # different id depending on whether it was reached through the profile
+    merged = {post["url"]: post for post in previous}
+    merged.update({post["url"]: post for post in fresh})
     return sorted(merged.values(), key=lambda p: p["date"], reverse=True)[:count]
 
 
