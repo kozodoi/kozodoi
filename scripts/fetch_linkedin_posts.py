@@ -118,10 +118,17 @@ def normalize_post(item: dict) -> dict | None:
     if item.get("type") != "post" or not text or not posted.get("date"):
         return None
 
+    # a quote post carries its picture inside the post it quotes, so fall back
+    # to that one's media when the post itself has none
+    quoted = item.get("repost") or {}
     images = item.get("postImages") or []
     video = item.get("postVideo") or {}
-    engagement = item.get("engagement") or {}
     article = item.get("article") or {}
+    if not (images or video or article):
+        images = quoted.get("postImages") or []
+        video = quoted.get("postVideo") or {}
+        article = quoted.get("article") or {}
+    engagement = item.get("engagement") or {}
     attachment = None
     if article.get("title") and article.get("link"):
         attachment = {
