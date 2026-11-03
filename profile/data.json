@@ -1,19 +1,19 @@
 {
   "github": {
     "stars": 409,
-    "commits": 4062,
+    "commits": 4067,
     "prs": 18,
     "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2459951,
+        "bytes": 2460305,
         "percentage": 70.99
       },
       {
         "name": "TypeScript",
         "bytes": 597632,
-        "percentage": 17.25
+        "percentage": 17.24
       },
       {
         "name": "R",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-11-03T21:18:55.706179+00:00",
+  "updated_at": "2026-11-03T21:28:04.126215+00:00",
   "scholar": {
     "citations": 715,
     "h_index": 7,
@@ -183,7 +183,12 @@
         "reactions": 9,
         "comments": 0,
         "shares": 0,
-        "attachment": null,
+        "attachment": {
+          "title": "AUMOVIO improves quality of automotive software at scale using multi-agent AI on Amazon Bedrock | Amazon Web Services",
+          "source": "aws.amazon.com",
+          "url": "https://aws.amazon.com/blogs/industries/aumovio-improves-quality-of-automotive-software-at-scale-using-multi-agent-ai-on-amazon-bedrock/",
+          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7492605627840667648-attachment.jpg"
+        },
         "image": null
       },
       {
