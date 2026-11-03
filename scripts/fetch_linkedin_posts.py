@@ -14,6 +14,12 @@ served from raw GitHub, because the signed media.licdn.com URLs the actor return
 expire after a few weeks. Images are never deleted, so a fallback snapshot baked into the site keeps
 resolving after the posts it shows have rotated out of the feed.
 
+Each run is merged into the previous snapshot rather than replacing it. Read
+logged out, the profile only sometimes lists the posts written by someone else
+with this profile as a co-author, so a run can come back without the newest post
+on the feed. A post missed this way keeps its last known numbers until newer
+posts push it out of the window.
+
 If the run fails or returns nothing usable, the script exits without touching
 data.json, so the last good posts stay on the site.
 
@@ -163,6 +169,51 @@ def save_image(source_url: str, name: str, out_dir: str) -> str:
     return rel_path
 
 
+def load_previous_posts(out_dir: str) -> list[dict]:
+    """
+    Read the posts currently stored in data.json, if there are any
+
+    Parameters
+    ----------
+    out_dir : str
+        Output directory holding data.json
+
+    Returns
+    -------
+    list[dict]
+        Posts from the last snapshot, or an empty list when none can be read
+    """
+    path = os.path.join(out_dir, "data.json")
+    try:
+        with open(path) as f:
+            return list((json.load(f).get("linkedin") or {}).get("posts") or [])
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
+def merge_posts(fresh: list[dict], previous: list[dict], count: int) -> list[dict]:
+    """
+    Merge freshly fetched posts into the previous snapshot and keep the newest
+
+    Parameters
+    ----------
+    fresh : list[dict]
+        Posts returned by this run, which take precedence for the same id
+    previous : list[dict]
+        Posts from the last snapshot
+    count : int
+        Number of posts to keep
+
+    Returns
+    -------
+    list[dict]
+        The newest ``count`` posts across both lists, newest first
+    """
+    merged = {post["id"]: post for post in previous}
+    merged.update({post["id"]: post for post in fresh})
+    return sorted(merged.values(), key=lambda p: p["date"], reverse=True)[:count]
+
+
 def update_json(out_dir: str, key: str, payload: dict) -> None:
     """
     Merge a section into the shared profile/data.json snapshot file
@@ -205,13 +256,13 @@ def main() -> None:
 
     try:
         items = run_actor(token, actor, profile, count + FETCH_MARGIN)
-        posts = [p for p in (normalize_post(i) for i in items) if p]
-        posts.sort(key=lambda p: p["date"], reverse=True)
-        posts = posts[:count]
-        if not posts:
+        fresh = [p for p in (normalize_post(i) for i in items) if p]
+        if not fresh:
             raise ValueError(f"no usable posts among {len(items)} items")
+        posts = merge_posts(fresh, load_previous_posts(out_dir), count)
 
-        for post in posts:
+        # only posts from this run still carry the signed source urls
+        for post in (p for p in posts if "source_image" in p):
             source = post.pop("source_image")
             post["image"] = None
             if source:

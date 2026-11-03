@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-11-03T21:05:22.668947+00:00",
+  "updated_at": "2026-11-03T21:06:20.360009+00:00",
   "scholar": {
     "citations": 715,
     "h_index": 7,
@@ -86,6 +86,35 @@
     "profile": "https://www.linkedin.com/in/kozodoi/",
     "posts": [
       {
+        "id": "7523282805733089281",
+        "url": "https://www.linkedin.com/posts/ahmed-abdelazim-_generativeai-aws-intelligentdocumentprocessing-activity-7523148909054025728-uHmL",
+        "date": "2026-11-03T07:19:56.722Z",
+        "text": "🚀 From Documents to Decisions: Reimagining Intelligent Document Processing with GenAI\n\n📄 How can Generative AI take document processing beyond simple data extraction to drive smarter business decisions? 🧠\n\n🎤 Join Aiham Taleb, Nikita Kozodoi, PhD, and me at AWS Deep Dive Days – Generative AI!\n\n💡 We'll explore how multimodal AI is transforming Intelligent Document Processing (IDP), and what it takes to bring these solutions from prototype to production. ⚙️\n\n📅 November 5, 2026\n⏰ 13:30–14:15 CET\n📍 AWS Munich (MUC14)\n\n🔗 Event details: https://lnkd.in/eFB-VhyS\n\n🙌 Looking forward to seeing you there!\n#GenerativeAI #AWS #IntelligentDocumentProcessing #MultimodalAI",
+        "video": false,
+        "reactions": 37,
+        "comments": 0,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7523282805733089281.jpg"
+      },
+      {
+        "id": "7521147203466485760",
+        "url": "https://www.linkedin.com/posts/zinov-liza_generation-and-verification-human-agent-activity-7521117006717235200-5k5I",
+        "date": "2026-10-28T09:53:49.464Z",
+        "text": "Happy to be in Budapest for EMNLP 2026! 🇭🇺\n\nTomorrow I'm presenting our joint work from the collaboration between AUMOVIO and the Amazon Web Services (AWS) Generative AI Innovation Center at the REALM workshop: the journey of building an engineering assistant for automotive software, and the tooling behind it. It has been a great collaboration, and I'm really looking forward to sharing it with the research community.\n\nThank you to my co-authors Aiham Taleb, Nikita Kozodoi, PhD, Daniel Schleicher, Amir Mahdi Namazi, Martin Kraus, Levent Kent and Brian Jensen.\n\nIf you're in Budapest and would like to chat about automotive, agentic systems, time series or anything else, let me know or come find me at our poster. Always happy to meet!  😊 \n\nPaper: https://lnkd.in/d3_gRhCd \nWorkshop: https://lnkd.in/dvRykybn",
+        "video": false,
+        "reactions": 41,
+        "comments": 6,
+        "shares": 2,
+        "attachment": {
+          "title": "Generation and Verification: Human-Agent Collaboration for Safety-Critical Automotive Software Engineering",
+          "source": "aclanthology.org",
+          "url": "https://aclanthology.org/2026.realm-1.38/",
+          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7521147203466485760-attachment.jpg"
+        },
+        "image": null
+      },
+      {
         "id": "7514968623652876288",
         "url": "https://www.linkedin.com/posts/kozodoi_excited-to-present-3-papers-on-llm-optimization-activity-7514968623652876288-6k-L",
         "date": "2026-10-11T08:42:21.244Z",
@@ -96,30 +125,6 @@
         "shares": 1,
         "attachment": null,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7514968623652876288.jpg"
-      },
-      {
-        "id": "7511804375695261696",
-        "url": "https://www.linkedin.com/posts/kozodoi_great-energy-at-aws-summit-dubai-it-was-activity-7511804375695261696-4KTk",
-        "date": "2026-10-02T15:08:45.742Z",
-        "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team’s work to customers across the region.",
-        "video": false,
-        "reactions": 58,
-        "comments": 2,
-        "shares": 0,
-        "attachment": null,
-        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
-      },
-      {
-        "id": "7508856804710227970",
-        "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
-        "date": "2026-09-24T11:56:10.056Z",
-        "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
-        "video": true,
-        "reactions": 24,
-        "comments": 1,
-        "shares": 1,
-        "attachment": null,
-        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
       }
     ]
   }
