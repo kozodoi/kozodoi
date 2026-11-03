@@ -1,13 +1,13 @@
 {
   "github": {
     "stars": 409,
-    "commits": 4061,
+    "commits": 4062,
     "prs": 18,
     "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2459781,
+        "bytes": 2459951,
         "percentage": 70.99
       },
       {
@@ -48,7 +48,7 @@
       {
         "name": "Makefile",
         "bytes": 3985,
-        "percentage": 0.12
+        "percentage": 0.11
       },
       {
         "name": "Ruby",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-11-03T21:11:50.193832+00:00",
+  "updated_at": "2026-11-03T21:18:55.706179+00:00",
   "scholar": {
     "citations": 715,
     "h_index": 7,
@@ -125,6 +125,78 @@
         "shares": 1,
         "attachment": null,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7514968623652876288.jpg"
+      },
+      {
+        "id": "7511804375695261696",
+        "url": "https://www.linkedin.com/posts/kozodoi_great-energy-at-aws-summit-dubai-it-was-activity-7511804375695261696-4KTk",
+        "date": "2026-10-02T15:08:45.742Z",
+        "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team’s work to customers across the region.",
+        "video": false,
+        "reactions": 58,
+        "comments": 2,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
+      },
+      {
+        "id": "7508856804710227970",
+        "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
+        "date": "2026-09-24T11:56:10.056Z",
+        "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
+        "video": true,
+        "reactions": 24,
+        "comments": 1,
+        "shares": 1,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
+      },
+      {
+        "id": "7501383431176675328",
+        "url": "https://www.linkedin.com/posts/kozodoi_great-time-at-aws-summit-zurich-philipp-activity-7501383431176675328-WOKQ",
+        "date": "2026-09-03T20:59:38.957Z",
+        "text": "🇨🇭 Great time at AWS Summit Zurich!\n\nPhilipp Kaindl and I gave a talk on red teaming. As more applications rely on LLMs and AI agents, it becomes critical to know how to protect them against adversarial attacks like prompt injection, agent goal hijacking, context poisoning and many others. Always happy to discuss this topic with the community!",
+        "video": false,
+        "reactions": 48,
+        "comments": 0,
+        "shares": 2,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7501383431176675328.jpg"
+      },
+      {
+        "id": "7500129781859147776",
+        "url": "https://www.linkedin.com/posts/kozodoi_i-completed-all-four-anthropic-certifications-activity-7500129781859147776-Gkbe",
+        "date": "2026-08-31T09:58:05.668Z",
+        "text": "🎓 I completed all four Anthropic certifications this month: Associate, Developer, Architect Foundations, and Architect Professional.\n\nThe material generalizes well beyond Claude. Context management, tool and prompt design, MCP, evaluation, and cost and latency tradeoffs are the same problems whether you build on Claude, Codex, Kiro, or anything else. I face most of these regularly in customer projects.\n\nI would recommend these exams to two groups: anyone building AI agents, and engineers who use coding assistants daily and want to get more out of them. Preparing for the exams showed me a few gaps in my own setup.",
+        "video": false,
+        "reactions": 58,
+        "comments": 6,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7500129781859147776.jpg"
+      },
+      {
+        "id": "7492605627840667648",
+        "url": "https://www.linkedin.com/posts/kozodoi_aumovio-improves-quality-of-automotive-software-activity-7492605627840667648-6Wkk",
+        "date": "2026-08-10T15:39:47.558Z",
+        "text": "Check out our new blog post on how we worked with AUMOVIO to build agents that detect software issues and vulnerabilities in automotive C/C++ code.",
+        "video": false,
+        "reactions": 9,
+        "comments": 0,
+        "shares": 0,
+        "attachment": null,
+        "image": null
+      },
+      {
+        "id": "7490303890987421696",
+        "url": "https://www.linkedin.com/posts/kozodoi_excited-to-have-presented-at-agentic-ai-summit-activity-7490303890987421696-v9v6",
+        "date": "2026-08-04T07:13:30.728Z",
+        "text": "Excited to have presented at Agentic AI Summit 2026 at 🇺🇸 University of California, Berkeley, bringing together over 5,000 people across research & business!\n\nWe showed our work on generative AI for voice-to-voice applications and infrastructure-as-code development. Kudos to my colleagues working with me on these projects!\n\n🔗 Paper: https://lnkd.in/d9jsW39k",
+        "video": false,
+        "reactions": 69,
+        "comments": 0,
+        "shares": 1,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7490303890987421696.jpg"
       }
     ]
   }
