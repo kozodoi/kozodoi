@@ -6,9 +6,12 @@ an Apify actor that scrapes the public profile while logged out (no cookies, no
 LinkedIn account involved). The actor sits behind one function, `normalize_post`,
 so switching to another actor means changing APIFY_ACTOR and that mapping only.
 
-Each post's image is saved into profile/linkedin/ and served from raw GitHub,
-because the signed media.licdn.com URLs the actor returns expire after a few
-weeks. Images are never deleted, so a fallback snapshot baked into the site keeps
+Posts without a photo often carry a link preview instead (a paper, a blog), which
+is kept as ``attachment`` with its title, source domain, link and thumbnail.
+
+Each post's image and preview thumbnail are saved into profile/linkedin/ and
+served from raw GitHub, because the signed media.licdn.com URLs the actor returns
+expire after a few weeks. Images are never deleted, so a fallback snapshot baked into the site keeps
 resolving after the posts it shows have rotated out of the feed.
 
 If the run fails or returns nothing usable, the script exits without touching
@@ -110,6 +113,15 @@ def normalize_post(item: dict) -> dict | None:
     images = item.get("postImages") or []
     video = item.get("postVideo") or {}
     engagement = item.get("engagement") or {}
+    article = item.get("article") or {}
+    attachment = None
+    if article.get("title") and article.get("link"):
+        attachment = {
+            "title": article["title"].strip(),
+            "source": (article.get("subtitle") or "").strip() or None,
+            "url": article["link"],
+            "source_image": (article.get("image") or {}).get("url"),
+        }
     return {
         "id": str(item.get("entityId") or item["id"]),
         "url": item["linkedinUrl"].split("?")[0],
@@ -120,10 +132,11 @@ def normalize_post(item: dict) -> dict | None:
         "reactions": int(engagement.get("likes") or 0),
         "comments": int(engagement.get("comments") or 0),
         "shares": int(engagement.get("shares") or 0),
+        "attachment": attachment,
     }
 
 
-def save_image(source_url: str, post_id: str, out_dir: str) -> str:
+def save_image(source_url: str, name: str, out_dir: str) -> str:
     """
     Download a post image into the repo, unless it is already there
 
@@ -131,8 +144,8 @@ def save_image(source_url: str, post_id: str, out_dir: str) -> str:
     ----------
     source_url : str
         Signed media.licdn.com URL returned by the actor
-    post_id : str
-        LinkedIn post id, used as the file name
+    name : str
+        File name without extension, the post id or ``<post id>-attachment``
     out_dir : str
         Output directory; the image is written to ``<out_dir>/linkedin/``
 
@@ -141,7 +154,7 @@ def save_image(source_url: str, post_id: str, out_dir: str) -> str:
     str
         Path of the image relative to the repo root
     """
-    rel_path = f"{out_dir}/linkedin/{post_id}.jpg"
+    rel_path = f"{out_dir}/linkedin/{name}.jpg"
     if not os.path.exists(rel_path):
         os.makedirs(os.path.dirname(rel_path), exist_ok=True)
         req = urllib.request.Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
@@ -209,6 +222,19 @@ def main() -> None:
                     Exception
                 ) as exc:  # noqa: BLE001 - a missing image must not drop the post
                     print(f"WARNING: could not save image for post {post['id']}: {exc}")
+
+            attachment = post["attachment"]
+            if attachment:
+                thumb = attachment.pop("source_image")
+                attachment["image"] = None
+                if thumb:
+                    try:
+                        rel_path = save_image(thumb, f"{post['id']}-attachment", out_dir)
+                        attachment["image"] = f"{cdn_base}/{rel_path}"
+                    except Exception as exc:  # noqa: BLE001
+                        print(
+                            f"WARNING: could not save attachment for post {post['id']}: {exc}"
+                        )
     except (
         Exception
     ) as exc:  # noqa: BLE001 - any failure must not clobber the last good posts
