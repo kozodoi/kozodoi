@@ -44,9 +44,11 @@ DEFAULT_ACTOR = "harvestapi~linkedin-profile-posts"
 DEFAULT_PROFILE = "https://www.linkedin.com/in/kozodoi/"
 DEFAULT_CDN_BASE = "https://raw.githubusercontent.com/kozodoi/kozodoi/master"
 
-# the actor is asked for a few more posts than are kept, so that reposts it
-# still returns or posts without text do not leave the row short
-FETCH_MARGIN = 3
+# the logged-out profile lists posts in a shuffled order rather than newest
+# first, so the actor is asked for a wide window and the newest are picked after
+# sorting; with only a few more than are kept, recent posts (co-authored ones in
+# particular) regularly fell outside it. Billed per post, ~$0.03 a run
+FETCH_POSTS = 15
 
 RUN_TIMEOUT_SECONDS = 280
 
@@ -255,7 +257,7 @@ def main() -> None:
     out_dir = os.environ.get("OUT_DIR", "profile")
 
     try:
-        items = run_actor(token, actor, profile, count + FETCH_MARGIN)
+        items = run_actor(token, actor, profile, max(FETCH_POSTS, count))
         fresh = [p for p in (normalize_post(i) for i in items) if p]
         if not fresh:
             raise ValueError(f"no usable posts among {len(items)} items")
