@@ -1,7 +1,7 @@
 {
   "github": {
     "stars": 410,
-    "commits": 4079,
+    "commits": 4088,
     "prs": 18,
     "repos_counted": 30,
     "languages": [
@@ -67,19 +67,19 @@
       }
     ]
   },
-  "updated_at": "2026-11-07T03:53:05.950124+00:00",
+  "updated_at": "2026-11-08T03:36:30.205212+00:00",
   "scholar": {
-    "citations": 717,
+    "citations": 720,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
       "2020": 27,
-      "2021": 38,
+      "2021": 39,
       "2022": 73,
       "2023": 81,
       "2024": 110,
       "2025": 149,
-      "2026": 221
+      "2026": 223
     }
   },
   "linkedin": {
@@ -91,7 +91,7 @@
         "date": "2026-11-03T07:19:56.722Z",
         "text": "🚀 From Documents to Decisions: Reimagining Intelligent Document Processing with GenAI\n\n📄 How can Generative AI take document processing beyond simple data extraction to drive smarter business decisions? 🧠\n\n🎤 Join Aiham Taleb, Nikita Kozodoi, PhD, and me at AWS Deep Dive Days – Generative AI!\n\n💡 We'll explore how multimodal AI is transforming Intelligent Document Processing (IDP), and what it takes to bring these solutions from prototype to production. ⚙️\n\n📅 November 5, 2026\n⏰ 13:30–14:15 CET\n📍 AWS Munich (MUC14)\n\n🔗 Event details: https://lnkd.in/eFB-VhyS\n\n🙌 Looking forward to seeing you there!\n#GenerativeAI #AWS #IntelligentDocumentProcessing #MultimodalAI",
         "video": false,
-        "reactions": 47,
+        "reactions": 48,
         "comments": 0,
         "shares": 0,
         "attachment": null,
@@ -120,7 +120,7 @@
         "date": "2026-10-11T08:42:21.244Z",
         "text": "Excited to present 3 papers on LLM optimization, scaling and merging at COLM in San Francisco! 🇺🇸 \n\nAlways happy to chat with fellow scientists at the Amazon booth and exchange ideas on where the field is going, and how to keep up with the speed of research.\n\nKudos to my co-authors from the AWS FDE team: Jack Butler, Zainab A., Egor Krasheninnikov, Sergey I., Natalia Tarasova",
         "video": false,
-        "reactions": 85,
+        "reactions": 86,
         "comments": 5,
         "shares": 1,
         "attachment": null,
