@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-11-11T03:55:04.222597+00:00",
+  "updated_at": "2026-11-12T05:03:29.490903+00:00",
   "scholar": {
-    "citations": 728,
+    "citations": 729,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,19 +79,31 @@
       "2023": 81,
       "2024": 110,
       "2025": 150,
-      "2026": 230
+      "2026": 231
     }
   },
   "linkedin": {
     "profile": "https://www.linkedin.com/in/kozodoi/",
     "posts": [
       {
+        "id": "7526286062118313984",
+        "url": "https://www.linkedin.com/posts/activity-7526285794425217025-0v-C",
+        "date": "2026-11-11T14:13:48.842Z",
+        "text": "Happy to share that our paper \"NaijaFacts: A Framework for Disentangling Language from Knowledge in Facts about Nigeria\" has been accepted at a NeurIPS 2026 workshop in Atlanta!  🎉 \n\nWhen an AI model gets a question about Nigeria wrong in Yorùbá, there are two possible reasons. Either it knows the fact but loses it in the language, or it never learned the fact at all. Benchmarks that translate generic questions into African languages cannot tell the two apart.\n\nNaijaFacts can. Native speakers wrote questions grounded in Nigeria's official statistics. We asked each one in five languages (English, Nigerian Pidgin, Yorùbá, Igbo and Hausa) about Nigeria, the UK and the US.\n\nWhat we found across 8 models:\n- Asked in English, LLMs score 49 to 50% on UK and US statistics, but 20% on Nigeria\n- Letting LLMs answer in English instead of the question's language recovers almost nothing\n- Across all 54 African countries, frontier models score 96% on culture but 26% on statistics\n\nThis means that serving African users needs models with more African training data, not just African languages.\n\n  🎥 Attached is a 2-minute explainer (sound on)\n  🔗 Paper: https://lnkd.in/eUwunCH9\n\n🙌 Grateful to my co-authors Zainab A., Nikita Kozodoi, PhD and Jack Butler at Amazon Web Services (AWS) Forward Deployed Engineering, and to our collaborators at Obafemi Awolowo University!",
+        "video": true,
+        "reactions": 41,
+        "comments": 5,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7526286062118313984.jpg"
+      },
+      {
         "id": "7523282805733089281",
         "url": "https://www.linkedin.com/posts/ahmed-abdelazim-_generativeai-aws-intelligentdocumentprocessing-activity-7523148909054025728-uHmL",
         "date": "2026-11-03T07:19:56.722Z",
         "text": "🚀 From Documents to Decisions: Reimagining Intelligent Document Processing with GenAI\n\n📄 How can Generative AI take document processing beyond simple data extraction to drive smarter business decisions? 🧠\n\n🎤 Join Aiham Taleb, Nikita Kozodoi, PhD, and me at AWS Deep Dive Days – Generative AI!\n\n💡 We'll explore how multimodal AI is transforming Intelligent Document Processing (IDP), and what it takes to bring these solutions from prototype to production. ⚙️\n\n📅 November 5, 2026\n⏰ 13:30–14:15 CET\n📍 AWS Munich (MUC14)\n\n🔗 Event details: https://lnkd.in/eFB-VhyS\n\n🙌 Looking forward to seeing you there!\n#GenerativeAI #AWS #IntelligentDocumentProcessing #MultimodalAI",
         "video": false,
-        "reactions": 50,
+        "reactions": 51,
         "comments": 0,
         "shares": 0,
         "attachment": null,
@@ -190,18 +202,6 @@
           "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7492605627840667648-attachment.jpg"
         },
         "image": null
-      },
-      {
-        "id": "7490303890987421696",
-        "url": "https://www.linkedin.com/posts/kozodoi_excited-to-have-presented-at-agentic-ai-summit-activity-7490303890987421696-v9v6",
-        "date": "2026-08-04T07:13:30.728Z",
-        "text": "Excited to have presented at Agentic AI Summit 2026 at 🇺🇸 University of California, Berkeley, bringing together over 5,000 people across research & business!\n\nWe showed our work on generative AI for voice-to-voice applications and infrastructure-as-code development. Kudos to my colleagues working with me on these projects!\n\n🔗 Paper: https://lnkd.in/d9jsW39k",
-        "video": false,
-        "reactions": 69,
-        "comments": 0,
-        "shares": 1,
-        "attachment": null,
-        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7490303890987421696.jpg"
       }
     ]
   }
