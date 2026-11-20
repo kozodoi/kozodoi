@@ -1,49 +1,49 @@
 {
   "github": {
-    "stars": 384,
+    "stars": 411,
     "commits": 4128,
     "prs": 18,
-    "repos_counted": 28,
+    "repos_counted": 30,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2466923,
-        "percentage": 69.82
+        "bytes": 2554221,
+        "percentage": 70.54
       },
       {
         "name": "TypeScript",
         "bytes": 658858,
-        "percentage": 18.65
+        "percentage": 18.2
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 8.91
+        "percentage": 8.69
       },
       {
         "name": "Shell",
         "bytes": 23360,
-        "percentage": 0.66
+        "percentage": 0.65
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.57
+        "percentage": 0.56
       },
       {
         "name": "JavaScript",
         "bytes": 18552,
-        "percentage": 0.53
+        "percentage": 0.51
       },
       {
         "name": "Dockerfile",
         "bytes": 11133,
-        "percentage": 0.32
+        "percentage": 0.31
       },
       {
         "name": "CSS",
         "bytes": 10076,
-        "percentage": 0.29
+        "percentage": 0.28
       },
       {
         "name": "Makefile",
@@ -53,7 +53,7 @@
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.06
+        "percentage": 0.05
       },
       {
         "name": "Ragel",
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-11-20T05:00:29.680867+00:00",
+  "updated_at": "2026-11-20T13:36:48.812773+00:00",
   "scholar": {
     "citations": 733,
     "h_index": 7,
@@ -89,10 +89,10 @@
         "id": "7526286062118313984",
         "url": "https://www.linkedin.com/posts/activity-7526285794425217025-0v-C",
         "date": "2026-11-11T14:13:48.842Z",
-        "text": "Happy to share that our paper \"NaijaFacts: A Framework for Disentangling Language from Knowledge in Facts about Nigeria\" has been accepted at a NeurIPS 2026 workshop in Atlanta!  \ud83c\udf89 \n\nWhen an AI model gets a question about Nigeria wrong in Yor\u00f9b\u00e1, there are two possible reasons. Either it knows the fact but loses it in the language, or it never learned the fact at all. Benchmarks that translate generic questions into African languages cannot tell the two apart.\n\nNaijaFacts can. Native speakers wrote questions grounded in Nigeria's official statistics. We asked each one in five languages (English, Nigerian Pidgin, Yor\u00f9b\u00e1, Igbo and Hausa) about Nigeria, the UK and the US.\n\nWhat we found across 8 models:\n- Asked in English, LLMs score 49 to 50% on UK and US statistics, but 20% on Nigeria\n- Letting LLMs answer in English instead of the question's language recovers almost nothing\n- Across all 54 African countries, frontier models score 96% on culture but 26% on statistics\n\nThis means that serving African users needs models with more African training data, not just African languages.\n\n  \ud83c\udfa5 Attached is a 2-minute explainer (sound on)\n  \ud83d\udd17 Paper: https://lnkd.in/eUwunCH9\n\n\ud83d\ude4c Grateful to my co-authors Zainab A., Nikita Kozodoi, PhD and Jack Butler at Amazon Web Services (AWS) Forward Deployed Engineering, and to our collaborators at Obafemi Awolowo University!",
+        "text": "Happy to share that our paper \"NaijaFacts: A Framework for Disentangling Language from Knowledge in Facts about Nigeria\" has been accepted at a NeurIPS 2026 workshop in Atlanta!  🎉 \n\nWhen an AI model gets a question about Nigeria wrong in Yorùbá, there are two possible reasons. Either it knows the fact but loses it in the language, or it never learned the fact at all. Benchmarks that translate generic questions into African languages cannot tell the two apart.\n\nNaijaFacts can. Native speakers wrote questions grounded in Nigeria's official statistics. We asked each one in five languages (English, Nigerian Pidgin, Yorùbá, Igbo and Hausa) about Nigeria, the UK and the US.\n\nWhat we found across 8 models:\n- Asked in English, LLMs score 49 to 50% on UK and US statistics, but 20% on Nigeria\n- Letting LLMs answer in English instead of the question's language recovers almost nothing\n- Across all 54 African countries, frontier models score 96% on culture but 26% on statistics\n\nThis means that serving African users needs models with more African training data, not just African languages.\n\n  🎥 Attached is a 2-minute explainer (sound on)\n  🔗 Paper: https://lnkd.in/eUwunCH9\n\n🙌 Grateful to my co-authors Zainab A., Nikita Kozodoi, PhD and Jack Butler at Amazon Web Services (AWS) Forward Deployed Engineering, and to our collaborators at Obafemi Awolowo University!",
         "video": true,
-        "reactions": 41,
-        "comments": 5,
+        "reactions": 57,
+        "comments": 8,
         "shares": 0,
         "attachment": null,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7526286062118313984.jpg"
@@ -101,9 +101,9 @@
         "id": "7523282805733089281",
         "url": "https://www.linkedin.com/posts/ahmed-abdelazim-_generativeai-aws-intelligentdocumentprocessing-activity-7523148909054025728-uHmL",
         "date": "2026-11-03T07:19:56.722Z",
-        "text": "\ud83d\ude80 From Documents to Decisions: Reimagining Intelligent Document Processing with GenAI\n\n\ud83d\udcc4 How can Generative AI take document processing beyond simple data extraction to drive smarter business decisions? \ud83e\udde0\n\n\ud83c\udfa4 Join Aiham Taleb, Nikita Kozodoi, PhD, and me at AWS Deep Dive Days \u2013 Generative AI!\n\n\ud83d\udca1 We'll explore how multimodal AI is transforming Intelligent Document Processing (IDP), and what it takes to bring these solutions from prototype to production. \u2699\ufe0f\n\n\ud83d\udcc5 November 5, 2026\n\u23f0 13:30\u201314:15 CET\n\ud83d\udccd AWS Munich (MUC14)\n\n\ud83d\udd17 Event details: https://lnkd.in/eFB-VhyS\n\n\ud83d\ude4c Looking forward to seeing you there!\n#GenerativeAI #AWS #IntelligentDocumentProcessing #MultimodalAI",
+        "text": "🚀 From Documents to Decisions: Reimagining Intelligent Document Processing with GenAI\n\n📄 How can Generative AI take document processing beyond simple data extraction to drive smarter business decisions? 🧠\n\n🎤 Join Aiham Taleb, Nikita Kozodoi, PhD, and me at AWS Deep Dive Days – Generative AI!\n\n💡 We'll explore how multimodal AI is transforming Intelligent Document Processing (IDP), and what it takes to bring these solutions from prototype to production. ⚙️\n\n📅 November 5, 2026\n⏰ 13:30–14:15 CET\n📍 AWS Munich (MUC14)\n\n🔗 Event details: https://lnkd.in/eFB-VhyS\n\n🙌 Looking forward to seeing you there!\n#GenerativeAI #AWS #IntelligentDocumentProcessing #MultimodalAI",
         "video": false,
-        "reactions": 51,
+        "reactions": 53,
         "comments": 0,
         "shares": 0,
         "attachment": null,
@@ -113,9 +113,9 @@
         "id": "7521147203466485760",
         "url": "https://www.linkedin.com/posts/zinov-liza_generation-and-verification-human-agent-activity-7521117006717235200-5k5I",
         "date": "2026-10-28T09:53:49.464Z",
-        "text": "Happy to be in Budapest for EMNLP 2026! \ud83c\udded\ud83c\uddfa\n\nTomorrow I'm presenting our joint work from the collaboration between AUMOVIO and the Amazon Web Services (AWS) Generative AI Innovation Center at the REALM workshop: the journey of building an engineering assistant for automotive software, and the tooling behind it. It has been a great collaboration, and I'm really looking forward to sharing it with the research community.\n\nThank you to my co-authors Aiham Taleb, Nikita Kozodoi, PhD, Daniel Schleicher, Amir Mahdi Namazi, Martin Kraus, Levent Kent and Brian Jensen.\n\nIf you're in Budapest and would like to chat about automotive, agentic systems, time series or anything else, let me know or come find me at our poster. Always happy to meet!  \ud83d\ude0a \n\nPaper: https://lnkd.in/d3_gRhCd \nWorkshop: https://lnkd.in/dvRykybn",
+        "text": "Happy to be in Budapest for EMNLP 2026! 🇭🇺\n\nTomorrow I'm presenting our joint work from the collaboration between AUMOVIO and the Amazon Web Services (AWS) Generative AI Innovation Center at the REALM workshop: the journey of building an engineering assistant for automotive software, and the tooling behind it. It has been a great collaboration, and I'm really looking forward to sharing it with the research community.\n\nThank you to my co-authors Aiham Taleb, Nikita Kozodoi, PhD, Daniel Schleicher, Amir Mahdi Namazi, Martin Kraus, Levent Kent and Brian Jensen.\n\nIf you're in Budapest and would like to chat about automotive, agentic systems, time series or anything else, let me know or come find me at our poster. Always happy to meet!  😊 \n\nPaper: https://lnkd.in/d3_gRhCd \nWorkshop: https://lnkd.in/dvRykybn",
         "video": false,
-        "reactions": 41,
+        "reactions": 42,
         "comments": 6,
         "shares": 2,
         "attachment": {
@@ -130,7 +130,7 @@
         "id": "7514968623652876288",
         "url": "https://www.linkedin.com/posts/kozodoi_excited-to-present-3-papers-on-llm-optimization-activity-7514968623652876288-6k-L",
         "date": "2026-10-11T08:42:21.244Z",
-        "text": "Excited to present 3 papers on LLM optimization, scaling and merging at COLM in San Francisco! \ud83c\uddfa\ud83c\uddf8 \n\nAlways happy to chat with fellow scientists at the Amazon booth and exchange ideas on where the field is going, and how to keep up with the speed of research.\n\nKudos to my co-authors from the AWS FDE team: Jack Butler, Zainab A., Egor Krasheninnikov, Sergey I., Natalia Tarasova",
+        "text": "Excited to present 3 papers on LLM optimization, scaling and merging at COLM in San Francisco! 🇺🇸 \n\nAlways happy to chat with fellow scientists at the Amazon booth and exchange ideas on where the field is going, and how to keep up with the speed of research.\n\nKudos to my co-authors from the AWS FDE team: Jack Butler, Zainab A., Egor Krasheninnikov, Sergey I., Natalia Tarasova",
         "video": false,
         "reactions": 86,
         "comments": 5,
@@ -142,7 +142,7 @@
         "id": "7511804375695261696",
         "url": "https://www.linkedin.com/posts/kozodoi_great-energy-at-aws-summit-dubai-it-was-activity-7511804375695261696-4KTk",
         "date": "2026-10-02T15:08:45.742Z",
-        "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team\u2019s work to customers across the region.",
+        "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team’s work to customers across the region.",
         "video": false,
         "reactions": 58,
         "comments": 2,
@@ -154,7 +154,7 @@
         "id": "7508856804710227970",
         "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
         "date": "2026-09-24T11:56:10.056Z",
-        "text": "Meet us at AWS Summit Dubai next week! \ud83c\udde6\ud83c\uddea\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n\ud83d\udcc5 September 30, Dubai World Trade Centre\n\ud83d\udd17 Register: https://lnkd.in/ehjXFrW3",
+        "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
         "video": true,
         "reactions": 24,
         "comments": 1,
@@ -166,7 +166,7 @@
         "id": "7501383431176675328",
         "url": "https://www.linkedin.com/posts/kozodoi_great-time-at-aws-summit-zurich-philipp-activity-7501383431176675328-WOKQ",
         "date": "2026-09-03T20:59:38.957Z",
-        "text": "\ud83c\udde8\ud83c\udded Great time at AWS Summit Zurich!\n\nPhilipp Kaindl and I gave a talk on red teaming. As more applications rely on LLMs and AI agents, it becomes critical to know how to protect them against adversarial attacks like prompt injection, agent goal hijacking, context poisoning and many others. Always happy to discuss this topic with the community!",
+        "text": "🇨🇭 Great time at AWS Summit Zurich!\n\nPhilipp Kaindl and I gave a talk on red teaming. As more applications rely on LLMs and AI agents, it becomes critical to know how to protect them against adversarial attacks like prompt injection, agent goal hijacking, context poisoning and many others. Always happy to discuss this topic with the community!",
         "video": false,
         "reactions": 48,
         "comments": 0,
@@ -178,7 +178,7 @@
         "id": "7500129781859147776",
         "url": "https://www.linkedin.com/posts/kozodoi_i-completed-all-four-anthropic-certifications-activity-7500129781859147776-Gkbe",
         "date": "2026-08-31T09:58:05.668Z",
-        "text": "\ud83c\udf93 I completed all four Anthropic certifications this month: Associate, Developer, Architect Foundations, and Architect Professional.\n\nThe material generalizes well beyond Claude. Context management, tool and prompt design, MCP, evaluation, and cost and latency tradeoffs are the same problems whether you build on Claude, Codex, Kiro, or anything else. I face most of these regularly in customer projects.\n\nI would recommend these exams to two groups: anyone building AI agents, and engineers who use coding assistants daily and want to get more out of them. Preparing for the exams showed me a few gaps in my own setup.",
+        "text": "🎓 I completed all four Anthropic certifications this month: Associate, Developer, Architect Foundations, and Architect Professional.\n\nThe material generalizes well beyond Claude. Context management, tool and prompt design, MCP, evaluation, and cost and latency tradeoffs are the same problems whether you build on Claude, Codex, Kiro, or anything else. I face most of these regularly in customer projects.\n\nI would recommend these exams to two groups: anyone building AI agents, and engineers who use coding assistants daily and want to get more out of them. Preparing for the exams showed me a few gaps in my own setup.",
         "video": false,
         "reactions": 58,
         "comments": 6,
