@@ -21,10 +21,15 @@ on the feed. A post missed this way keeps its last known numbers until newer
 posts push it out of the window.
 
 If the run fails or returns nothing usable, the script exits without touching
-data.json, so the last good posts stay on the site.
+data.json, so the last good posts stay on the site. A failure that will not fix
+itself, a missing, rejected or out-of-credit token, also fails the step, so the
+workflow run goes red and GitHub emails about it: the posts on the site are kept
+either way, which is exactly why such a failure used to go unnoticed for days.
+Timeouts and empty results are left green, since the next daily run usually
+recovers from them.
 
 Environment variables:
-    APIFY_TOKEN        Apify API token (required; the step is skipped without it)
+    APIFY_TOKEN        Apify API token (required; the step fails without it)
     APIFY_ACTOR        actor id (default: harvestapi~linkedin-profile-posts)
     LINKEDIN_PROFILE   public profile URL (default: https://www.linkedin.com/in/kozodoi/)
     LINKEDIN_COUNT     number of posts to keep (default: 3; the workflow sets 9)
@@ -37,8 +42,10 @@ from __future__ import annotations
 import json
 import os
 import sys
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
+from typing import NoReturn
 
 DEFAULT_ACTOR = "harvestapi~linkedin-profile-posts"
 DEFAULT_PROFILE = "https://www.linkedin.com/in/kozodoi/"
@@ -49,6 +56,15 @@ DEFAULT_CDN_BASE = "https://raw.githubusercontent.com/kozodoi/kozodoi/master"
 # sorting; with only a few more than are kept, recent posts (co-authored ones in
 # particular) regularly fell outside it. Billed per post, ~$0.03 a run
 FETCH_POSTS = 15
+
+# Apify answers 401 or 403 to a missing, revoked or under-scoped token and 402
+# when the account is out of credit. None of these clear up on a retry, so they
+# fail the run instead of being logged and skipped like a transient error.
+CREDENTIAL_ERRORS = {
+    401: "Apify rejected the token; update the APIFY_TOKEN secret",
+    402: "the Apify account is out of credit; top it up or raise its usage limit",
+    403: "Apify denied access; check the APIFY_TOKEN secret's permissions",
+}
 
 RUN_TIMEOUT_SECONDS = 280
 
@@ -252,12 +268,24 @@ def update_json(out_dir: str, key: str, payload: dict) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
+def fail(message: str) -> NoReturn:
+    """
+    Fail the step, leaving data.json and the posts it holds untouched
+
+    Parameters
+    ----------
+    message : str
+        What went wrong and what to fix, shown as an error annotation on the run
+    """
+    print(f"::error title=LinkedIn posts not updated::{message}. Keeping existing posts.")
+    sys.exit(1)
+
+
 def main() -> None:
     """Fetch the latest posts, save their images, and write them to data.json"""
     token = os.environ.get("APIFY_TOKEN", "")
     if not token:
-        print("WARNING: APIFY_TOKEN is not set, keeping existing LinkedIn posts")
-        sys.exit(0)
+        fail("APIFY_TOKEN is not set, so LinkedIn posts cannot be fetched")
 
     actor = os.environ.get("APIFY_ACTOR") or DEFAULT_ACTOR
     profile = os.environ.get("LINKEDIN_PROFILE") or DEFAULT_PROFILE
@@ -297,6 +325,11 @@ def main() -> None:
                         print(
                             f"WARNING: could not save attachment for post {post['id']}: {exc}"
                         )
+    except urllib.error.HTTPError as exc:
+        if exc.code in CREDENTIAL_ERRORS:
+            fail(f"{CREDENTIAL_ERRORS[exc.code]} (HTTP {exc.code})")
+        print(f"WARNING: keeping existing LinkedIn posts, fetch failed: {exc}")
+        sys.exit(0)
     except (
         Exception
     ) as exc:  # noqa: BLE001 - any failure must not clobber the last good posts
