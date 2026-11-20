@@ -1,49 +1,49 @@
 {
   "github": {
-    "stars": 411,
+    "stars": 384,
     "commits": 4128,
     "prs": 18,
-    "repos_counted": 30,
+    "repos_counted": 28,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2554221,
-        "percentage": 70.54
+        "bytes": 2466923,
+        "percentage": 69.82
       },
       {
         "name": "TypeScript",
         "bytes": 658858,
-        "percentage": 18.2
+        "percentage": 18.65
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 8.69
+        "percentage": 8.91
       },
       {
         "name": "Shell",
         "bytes": 23360,
-        "percentage": 0.65
+        "percentage": 0.66
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.56
+        "percentage": 0.57
       },
       {
         "name": "JavaScript",
         "bytes": 18552,
-        "percentage": 0.51
+        "percentage": 0.53
       },
       {
         "name": "Dockerfile",
         "bytes": 11133,
-        "percentage": 0.31
+        "percentage": 0.32
       },
       {
         "name": "CSS",
         "bytes": 10076,
-        "percentage": 0.28
+        "percentage": 0.29
       },
       {
         "name": "Makefile",
@@ -53,7 +53,7 @@
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.05
+        "percentage": 0.06
       },
       {
         "name": "Ragel",
@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-11-19T05:13:53.574782+00:00",
+  "updated_at": "2026-11-20T05:00:29.680867+00:00",
   "scholar": {
-    "citations": 732,
+    "citations": 733,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,7 +79,7 @@
       "2023": 81,
       "2024": 110,
       "2025": 150,
-      "2026": 234
+      "2026": 235
     }
   },
   "linkedin": {
