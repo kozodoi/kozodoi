@@ -44,7 +44,8 @@ jobs:
 
       - name: Fetch latest LinkedIn posts
         env:
-          # Apify API token (repo secret); the step keeps the last posts without it
+          # Apify API token (repo secret). A missing, rejected or out-of-credit
+          # token fails this step so the run goes red; the last posts are kept
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           APIFY_ACTOR: "harvestapi~linkedin-profile-posts"
           LINKEDIN_PROFILE: "https://www.linkedin.com/in/kozodoi/"
@@ -53,6 +54,9 @@ jobs:
         run: python scripts/fetch_linkedin_posts.py
 
       - name: Commit cards
+        # still runs after a failed LinkedIn fetch, so the GitHub and Scholar
+        # cards keep updating while the token is fixed; the run stays red
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
