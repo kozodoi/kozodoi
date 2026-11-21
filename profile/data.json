@@ -1,73 +1,68 @@
 {
   "github": {
-    "stars": 411,
-    "commits": 4129,
+    "stars": 366,
+    "commits": 4131,
     "prs": 19,
-    "repos_counted": 30,
+    "repos_counted": 27,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2554221,
-        "percentage": 70.54
+        "bytes": 1982141,
+        "percentage": 72.05
       },
       {
         "name": "TypeScript",
-        "bytes": 658858,
-        "percentage": 18.2
+        "bytes": 380714,
+        "percentage": 13.84
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 8.69
-      },
-      {
-        "name": "Shell",
-        "bytes": 23360,
-        "percentage": 0.65
+        "percentage": 11.44
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.56
+        "percentage": 0.74
+      },
+      {
+        "name": "Shell",
+        "bytes": 20178,
+        "percentage": 0.73
       },
       {
         "name": "JavaScript",
-        "bytes": 18552,
-        "percentage": 0.51
-      },
-      {
-        "name": "Dockerfile",
-        "bytes": 11133,
-        "percentage": 0.31
+        "bytes": 16682,
+        "percentage": 0.61
       },
       {
         "name": "CSS",
-        "bytes": 10076,
-        "percentage": 0.28
+        "bytes": 5038,
+        "percentage": 0.18
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 4713,
+        "percentage": 0.17
       },
       {
         "name": "Makefile",
-        "bytes": 3985,
-        "percentage": 0.11
+        "bytes": 2839,
+        "percentage": 0.1
       },
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.05
-      },
-      {
-        "name": "Ragel",
-        "bytes": 1913,
-        "percentage": 0.05
+        "percentage": 0.07
       },
       {
         "name": "Smarty",
         "bytes": 1750,
-        "percentage": 0.05
+        "percentage": 0.06
       }
     ]
   },
-  "updated_at": "2026-11-20T13:45:23.686486+00:00",
+  "updated_at": "2026-11-21T04:56:02.071568+00:00",
   "scholar": {
     "citations": 733,
     "h_index": 7,
@@ -85,6 +80,23 @@
   "linkedin": {
     "profile": "https://www.linkedin.com/in/kozodoi/",
     "posts": [
+      {
+        "id": "7529650328271659009",
+        "url": "https://www.linkedin.com/posts/kozodoi_neurips-2026-activity-7529650328271659009-V5z1",
+        "date": "2026-11-20T21:02:12.398Z",
+        "text": "Excited to present our research at NeurIPS 2026 in Sydney! 🇦🇺\n\nThis year, my colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evaluation. I will be presenting at four workshops and hosting Q&A sessions and demos at the Amazon booth. Come say hello at our posters or the booth!\n\n🙌 My colleagues joining me in Sydney:\nZainab A., Jack Butler, Aiham Taleb, Ph.D., Babs Khalidson, ZHAO GAO, PhD, Egor Krasheninnikov\n\n📚 Amazon Science at NeurIPS 2026:\nhttps://lnkd.in/dRi3vs2a",
+        "video": false,
+        "reactions": 23,
+        "comments": 1,
+        "shares": 2,
+        "attachment": {
+          "title": "NeurIPS 2026",
+          "source": "amazon.science",
+          "url": "https://www.amazon.science/conferences-and-events/neurips-2026",
+          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7529650328271659009-attachment.jpg"
+        },
+        "image": null
+      },
       {
         "id": "7526286062118313984",
         "url": "https://www.linkedin.com/posts/activity-7526285794425217025-0v-C",
@@ -185,23 +197,6 @@
         "shares": 0,
         "attachment": null,
         "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7500129781859147776.jpg"
-      },
-      {
-        "id": "7492605627840667648",
-        "url": "https://www.linkedin.com/posts/kozodoi_aumovio-improves-quality-of-automotive-software-activity-7492605627840667648-6Wkk",
-        "date": "2026-08-10T15:39:47.558Z",
-        "text": "Check out our new blog post on how we worked with AUMOVIO to build agents that detect software issues and vulnerabilities in automotive C/C++ code.",
-        "video": false,
-        "reactions": 9,
-        "comments": 0,
-        "shares": 0,
-        "attachment": {
-          "title": "AUMOVIO improves quality of automotive software at scale using multi-agent AI on Amazon Bedrock | Amazon Web Services",
-          "source": "aws.amazon.com",
-          "url": "https://aws.amazon.com/blogs/industries/aumovio-improves-quality-of-automotive-software-at-scale-using-multi-agent-ai-on-amazon-bedrock/",
-          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7492605627840667648-attachment.jpg"
-        },
-        "image": null
       }
     ]
   }
