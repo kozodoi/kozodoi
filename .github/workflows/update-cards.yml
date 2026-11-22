@@ -2,7 +2,10 @@ name: Update README cards
 
 on:
   schedule:
-    - cron: "0 0 * * *" # runs once daily at midnight
+    # 02:28 UTC daily. Off the hour on purpose: GitHub queues scheduled runs
+    # and is busiest at :00, midnight UTC above all, where this used to start
+    # around five hours late
+    - cron: "28 2 * * *"
   workflow_dispatch:
 
 jobs:
