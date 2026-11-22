@@ -1,0 +1,11 @@
+# Lint and format settings for the scripts behind the profile cards, matching
+# kozodoi-ai-blog so the two repositories format Python the same way. The
+# scripts use only the standard library, so there is nothing to install.
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "C", "W", "R", "B", "Q"]
+pydocstyle = { convention = "numpy" }

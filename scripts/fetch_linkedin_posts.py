@@ -89,10 +89,7 @@ def run_actor(token: str, actor: str, profile: str, count: int) -> list[dict]:
     list[dict]
         Raw items produced by the actor run
     """
-    url = (
-        f"https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items"
-        f"?timeout={RUN_TIMEOUT_SECONDS}"
-    )
+    url = f"https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items?timeout={RUN_TIMEOUT_SECONDS}"
     body = {
         "targetUrls": [profile],
         "maxPosts": count,
@@ -268,6 +265,51 @@ def update_json(out_dir: str, key: str, payload: dict) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
+def store_image(target: dict, name: str, cdn_base: str, out_dir: str) -> None:
+    """
+    Replace a post's or attachment's signed ``source_image`` with a stable copy
+
+    Parameters
+    ----------
+    target : dict
+        Post or attachment holding a ``source_image`` key; ``image`` is set to the
+        stable URL, or to None when there is no image or it cannot be saved
+    name : str
+        File name stem for the saved image
+    cdn_base : str
+        Public base URL the saved image is served from
+    out_dir : str
+        Output directory holding the linkedin/ image folder
+    """
+    source = target.pop("source_image")
+    target["image"] = None
+    if not source:
+        return
+    try:
+        target["image"] = f"{cdn_base}/{save_image(source, name, out_dir)}"
+    except Exception as exc:  # noqa: BLE001 - a missing image must not drop the post
+        print(f"WARNING: could not save image {name}: {exc}")
+
+
+def store_images(posts: list[dict], cdn_base: str, out_dir: str) -> None:
+    """
+    Save the images of the posts fetched in this run and point the posts at them
+
+    Parameters
+    ----------
+    posts : list[dict]
+        Merged posts; only those from this run still carry signed source URLs
+    cdn_base : str
+        Public base URL the saved images are served from
+    out_dir : str
+        Output directory holding the linkedin/ image folder
+    """
+    for post in (p for p in posts if "source_image" in p):
+        store_image(post, post["id"], cdn_base, out_dir)
+        if post["attachment"]:
+            store_image(post["attachment"], f"{post['id']}-attachment", cdn_base, out_dir)
+
+
 def fail(message: str) -> NoReturn:
     """
     Fail the step, leaving data.json and the posts it holds untouched
@@ -300,39 +342,13 @@ def main() -> None:
             raise ValueError(f"no usable posts among {len(items)} items")
         posts = merge_posts(fresh, load_previous_posts(out_dir), count)
 
-        # only posts from this run still carry the signed source urls
-        for post in (p for p in posts if "source_image" in p):
-            source = post.pop("source_image")
-            post["image"] = None
-            if source:
-                try:
-                    rel_path = save_image(source, post["id"], out_dir)
-                    post["image"] = f"{cdn_base}/{rel_path}"
-                except (
-                    Exception
-                ) as exc:  # noqa: BLE001 - a missing image must not drop the post
-                    print(f"WARNING: could not save image for post {post['id']}: {exc}")
-
-            attachment = post["attachment"]
-            if attachment:
-                thumb = attachment.pop("source_image")
-                attachment["image"] = None
-                if thumb:
-                    try:
-                        rel_path = save_image(thumb, f"{post['id']}-attachment", out_dir)
-                        attachment["image"] = f"{cdn_base}/{rel_path}"
-                    except Exception as exc:  # noqa: BLE001
-                        print(
-                            f"WARNING: could not save attachment for post {post['id']}: {exc}"
-                        )
+        store_images(posts, cdn_base, out_dir)
     except urllib.error.HTTPError as exc:
         if exc.code in CREDENTIAL_ERRORS:
             fail(f"{CREDENTIAL_ERRORS[exc.code]} (HTTP {exc.code})")
         print(f"WARNING: keeping existing LinkedIn posts, fetch failed: {exc}")
         sys.exit(0)
-    except (
-        Exception
-    ) as exc:  # noqa: BLE001 - any failure must not clobber the last good posts
+    except Exception as exc:  # noqa: BLE001 - any failure must not clobber the last good posts
         print(f"WARNING: keeping existing LinkedIn posts, fetch failed: {exc}")
         sys.exit(0)
 

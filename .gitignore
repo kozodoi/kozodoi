@@ -9,3 +9,4 @@ build/
 .playwright-mcp
 tsconfig.tsbuildinfo
 __pycache__/
+.ruff_cache/
