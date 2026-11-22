@@ -1,0 +1,44 @@
+# Lint and format checks for the scripts and workflows, on every pull request
+# and push to master. The daily cards workflow commits generated files only, so
+# these checks guard the code that produces them: a broken workflow file stops
+# the daily update without anything failing until the next scheduled run.
+
+name: Checks
+
+on:
+  push:
+    branches: [master]
+    # the daily cards commits touch only generated files
+    paths-ignore: ["profile/**", "README.md"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # the same hooks that run locally before a commit: ruff, ruff format,
+      # typos and the whitespace and YAML checks
+      - uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: --all-files --show-diff-on-failure
+
+      # catches mistakes in the workflow files themselves, including the
+      # ${{ }} expressions, which nothing else checks before they run
+      - name: Lint workflows
+        run: |
+          pip install actionlint-py==1.7.12.25
+          actionlint
+
+      # the scripts run only on the daily schedule, so a syntax error would
+      # otherwise surface there first
+      - name: Compile scripts
+        run: python -m py_compile scripts/*.py

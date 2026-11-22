@@ -40,12 +40,9 @@ THEME = {
 
 # rotate a handful of realistic desktop User-Agents to look less like a bot
 USER_AGENTS = [
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0",
 ]
@@ -278,7 +275,7 @@ def parse_profile(html: str) -> dict:
     if len(counts) < len(years):
         counts = [0] * (len(years) - len(counts)) + counts
     elif len(counts) > len(years):
-        counts = counts[-len(years):]
+        counts = counts[-len(years) :]
 
     if not years:
         raise RuntimeError("could not parse the per-year histogram")
@@ -314,7 +311,7 @@ def render_scholar_svg(data: dict, title: str, width: int = 320, height: int = 1
     usable_h = baseline_y - top_y - 12  # leave headroom for count labels
 
     bars = []
-    for i, (year, count) in enumerate(zip(years, counts)):
+    for i, (year, count) in enumerate(zip(years, counts, strict=True)):
         bar_h = count / max_count * usable_h
         cx = left + slot * (i + 0.5)
         bx = cx - bar_w / 2
@@ -409,7 +406,7 @@ def main() -> None:
         {
             "citations": data["citations"],
             "h_index": data["h_index"],
-            "citations_per_year": dict(zip((str(y) for y in data["years"]), data["counts"])),
+            "citations_per_year": dict(zip((str(y) for y in data["years"]), data["counts"], strict=True)),
         },
     )
 

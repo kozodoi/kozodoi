@@ -1,0 +1,37 @@
+# The same hooks as kozodoi-ai-blog, minus the TypeScript and mypy ones this
+# repository has no use for. CI runs them too (.github/workflows/checks.yml).
+#
+#     pip install pre-commit && pre-commit install
+
+# profile/ holds the cards and data the daily workflow writes, which are
+# generated output rather than code: the whitespace fixers would rewrite them
+# and the next run would undo it.
+exclude: ^profile/
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-yaml
+
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.24.1
+    hooks:
+      - id: validate-pyproject
+        files: pyproject\.toml$
+
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.34.0
+    hooks:
+      - id: typos
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.3
+    hooks:
+      - id: ruff
+        args: [--exit-non-zero-on-fix, --fix]
+      - id: ruff-format
