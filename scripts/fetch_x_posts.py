@@ -255,6 +255,12 @@ def fetch_posts(token: str, handle: str, count: int) -> list[dict]:
             if post:
                 found.append(post)
         print(f"{actor}: {len(found)} posts from {len(items)} items")
+        if items and not found:
+            # say what came back instead, so a changed or placeholder response is visible in the log
+            first = items[0]
+            author = (first.get("author") or {}).get("userName") if isinstance(first.get("author"), dict) else None
+            summary = {k: first.get(k) for k in ("type", "id", "isReply", "message", "code") if k in first}
+            print(f"  first item: author={author!r} {summary} keys={sorted(first)[:12]}")
         for post in found:
             posts.setdefault(post["id"], post)
     return sorted(posts.values(), key=lambda p: p["date"], reverse=True)
