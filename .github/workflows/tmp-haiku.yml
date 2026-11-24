@@ -1,0 +1,39 @@
+# Temporary: Haiku verdicts on the X posts saved by an earlier preview, without scraping.
+name: Check Haiku filter
+on:
+  push:
+    branches: [claude/charming-ptolemy-izqynp]
+    paths: [.github/workflows/tmp-haiku.yml]
+permissions:
+  contents: read
+jobs:
+  haiku:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Haiku verdicts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          pip install --quiet anthropic==2.12.0
+          git show c385df6:preview/data.json > "$RUNNER_TEMP/saved.json"
+          cd scripts && python - "$RUNNER_TEMP/saved.json" <<'PY'
+          import json, sys
+          import fetch_x_posts as fx
+          data = json.load(open(sys.argv[1]))
+          posts, linkedin = data["x"]["posts"], data["linkedin"]["posts"]
+          decisions = fx.haiku_filter(posts, linkedin)
+          titles = {p["id"]: p["text"].splitlines()[0][:60] for p in linkedin}
+          for p in posts:
+              d = decisions.get(p["id"], {"show": True, "reason": "ai (no verdict)", "duplicate_of": None})
+              who = "repost @" + p["repost_of"]["handle"] if p.get("repost_of") else "own/quote"
+              verdict = "SHOW" if d["show"] else "HIDE " + d["reason"]
+              print(f"VERDICT {verdict:<15} | {p['date'][:10]} | {who:<22} | {p['text'][:60]!r}")
+              if d.get("duplicate_of"):
+                  print(f"VERDICT {'':15} |   duplicate of LinkedIn: {titles.get(d['duplicate_of'])!r}")
+          PY
