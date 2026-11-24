@@ -62,6 +62,7 @@ from fetch_linkedin_posts import (
     fail,
     load_previous_posts,
     merge_posts,
+    store_image,
     store_images,
     update_json,
 )
@@ -157,6 +158,41 @@ def first_media(tweet: dict) -> tuple[str | None, bool]:
     return None, False
 
 
+def author_of(tweet: dict) -> dict:
+    """
+    Name, handle and avatar of a post's author, for labelling reposts and quotes
+
+    The avatar is X's 73px size rather than the 48px it reports, so it stays
+    sharp at twice the size the card draws it.
+    """
+    author = tweet.get("author") or {}
+    picture = author.get("profilePicture") or None
+    if picture:
+        picture = picture.replace("_normal.", "_bigger.")
+    return {
+        "name": author.get("name") or author.get("userName"),
+        "handle": author.get("userName"),
+        "source_image": picture,
+    }
+
+
+def store_avatars(posts: list[dict], cdn_base: str, out_dir: str) -> None:
+    """
+    Save the avatars of reposted and quoted authors next to the post images
+
+    Stored under the handle plus a hash of the source url, so a new profile
+    picture gets a new file instead of the old one being kept forever.
+    """
+    for post in posts:
+        for key in ("repost_of", "quote_of"):
+            author = post.get(key)
+            if not author or "source_image" not in author:
+                continue
+            digest = hashlib.sha256((author["source_image"] or "").encode()).hexdigest()[:8]
+            store_image(author, f"avatar-{author['handle']}-{digest}", cdn_base, out_dir, "x")
+            author["avatar"] = author.pop("image")
+
+
 def normalize_post(item: dict, handle: str) -> dict | None:
     """
     Map one scraped post onto the shape the site renders for LinkedIn posts
@@ -205,16 +241,14 @@ def normalize_post(item: dict, handle: str) -> dict | None:
         "quote_of": None,
     }
     if source is not item:
-        author = source.get("author") or {}
-        post["repost_of"] = {"name": author.get("name") or author.get("userName"), "handle": author.get("userName")}
+        post["repost_of"] = author_of(source)
 
     quoted = source.get("quoted_tweet") or source.get("quote")
     if isinstance(quoted, dict) and quoted.get("url"):
         quoted_image, _ = first_media(quoted)
-        quoted_by = quoted.get("author") or {}
-        quoted_author = quoted_by.get("userName")
+        quoted_author = (quoted.get("author") or {}).get("userName")
         if quoted_author:
-            post["quote_of"] = {"name": quoted_by.get("name") or quoted_author, "handle": quoted_author}
+            post["quote_of"] = author_of(quoted)
         post["attachment"] = {
             "title": clean_text(quoted)[:280],
             "source": f"@{quoted_author} on X" if quoted_author else "x.com",
@@ -356,6 +390,8 @@ def haiku_filter(posts: list[dict], linkedin: list[dict]) -> dict[str, dict]:
         item = {"id": post["id"], "date": post["date"][:10], "text": post["text"][:600]}
         if post.get("repost_of"):
             item["repost_of"] = "@" + str(post["repost_of"]["handle"])
+        if post.get("quote_of"):
+            item["quotes_post_by"] = "@" + str(post["quote_of"]["handle"])
         if post.get("attachment"):
             item["quotes"] = post["attachment"]["title"][:300]
         return item
@@ -500,6 +536,7 @@ def update_posts() -> None:
     filter_info = apply_filter(posts, linkedin, previous_filter, out_dir)
     # hidden posts get their images too, so a post shown on a later verdict has one
     store_images(posts, cdn_base, out_dir, folder="x")
+    store_avatars(posts, cdn_base, out_dir)
 
     for post in posts:
         mark = "show" if post["show"] else f"hide ({post['reason']})"

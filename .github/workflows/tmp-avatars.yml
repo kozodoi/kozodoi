@@ -1,0 +1,37 @@
+# Temporary: download avatars for the posts in the site's bundled X snapshot.
+name: Fetch snapshot avatars
+on:
+  push:
+    branches: [claude/charming-ptolemy-izqynp]
+    paths: [.github/workflows/tmp-avatars.yml]
+permissions:
+  contents: write
+jobs:
+  avatars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Download avatars
+        run: |
+          git show 01c4abc:preview/x_raw_kaitoeasyapi.json > "$RUNNER_TEMP/raw.json"
+          cd scripts && python - "$RUNNER_TEMP/raw.json" <<'PY'
+          import json, sys
+          import fetch_x_posts as fx
+          items = json.load(open(sys.argv[1]))
+          posts = [p for p in (fx.normalize_post(i, "n_kozodoi") for i in items) if p]
+          fx.store_avatars(posts, "https://raw.githubusercontent.com/kozodoi/kozodoi/master", "../profile")
+          found = {a["handle"]: a["avatar"] for p in posts for a in (p["repost_of"], p["quote_of"]) if a}
+          print("AVATARS " + json.dumps(found))
+          PY
+      - name: Commit avatars
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/x
+          git commit -m "Add avatars for the bundled X snapshot" || exit 0
+          git push
