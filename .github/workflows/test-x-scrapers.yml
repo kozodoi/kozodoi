@@ -14,29 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      # the real X step, writing to preview/ with today's LinkedIn posts to
-      # compare against, and images served from this branch
-      - name: Preview the X feed
+      # Haiku verdicts on the X posts an earlier preview saved, so no
+      # scraper quota is spent
+      - name: Haiku verdicts on saved posts
         env:
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          X_HANDLE: "n_kozodoi"
-          X_COUNT: "20"
-          OUT_DIR: "preview"
-          CDN_BASE: "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp"
         run: |
           pip install --quiet anthropic==2.12.0
-          mkdir -p preview && cp profile/data.json preview/data.json
-          python scripts/fetch_x_posts.py
-
-      # hand the raw output back to the session drafting the feed
-      - name: Commit preview output
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add preview
-          git commit -m "Preview: X feed output" || exit 0
-          git push
+          git show c385df6:preview/data.json > "$RUNNER_TEMP/saved.json"
+          cd scripts && python preview_haiku.py "$RUNNER_TEMP/saved.json"
