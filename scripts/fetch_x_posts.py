@@ -27,8 +27,12 @@ finds repeated on LinkedIn, so the feed degrades rather than breaks.
 
 FAILURES
 --------
-As for LinkedIn: a rejected or out-of-credit Apify token fails the step so the
-run goes red, while empty results and outages keep the last posts and warn.
+Nothing here may hold LinkedIn back. Any X failure, an empty result, an outage
+or an unexpected error, keeps the last X posts, leaves the rest of data.json
+untouched, and ends the step green with a warning. A warning also appears when
+no fetch has succeeded for STALE_AFTER_DAYS, so a quiet outage gets noticed.
+The one exception is a rejected or out-of-credit Apify token: that fails the
+step, since the LinkedIn step uses the same token and is failing too.
 
 Environment variables:
     APIFY_TOKEN        Apify API token (required; the step fails without it)
@@ -46,10 +50,9 @@ import html
 import json
 import os
 import re
-import sys
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 
 from fetch_linkedin_posts import (
     CREDENTIAL_ERRORS,
@@ -86,6 +89,8 @@ STOPWORDS = frozenset(
 OVERLAP_THRESHOLD = 0.6
 OVERLAP_MIN_WORDS = 6
 MAX_DAYS_APART = 7
+
+STALE_AFTER_DAYS = 3
 
 
 def run_actor(token: str, actor: str, body: dict) -> list[dict]:
@@ -234,13 +239,21 @@ def fetch_posts(token: str, handle: str, count: int) -> list[dict]:
             items = run_actor(token, actor, make_input(handle, count))
         except urllib.error.HTTPError as exc:
             if exc.code in CREDENTIAL_ERRORS:
-                fail(f"{CREDENTIAL_ERRORS[exc.code]} (HTTP {exc.code})")
+                fail(f"{CREDENTIAL_ERRORS[exc.code]} (HTTP {exc.code})", title="X posts not updated")
             print(f"WARNING: {actor} failed: {exc}")
             continue
         except Exception as exc:  # noqa: BLE001 - one actor failing must not stop the other
             print(f"WARNING: {actor} failed: {exc}")
             continue
-        found = [p for p in (normalize_post(i, handle) for i in items) if p]
+        found = []
+        for item in items:
+            try:
+                post = normalize_post(item, handle)
+            except Exception as exc:  # noqa: BLE001 - one odd item must not cost the rest
+                print(f"WARNING: skipping an item {actor} returned in an unexpected shape: {exc}")
+                continue
+            if post:
+                found.append(post)
         print(f"{actor}: {len(found)} posts from {len(items)} items")
         for post in found:
             posts.setdefault(post["id"], post)
@@ -424,11 +437,33 @@ def apply_filter(posts: list[dict], linkedin: list[dict], previous: dict, out_di
     return {"method": "overlap", "signature": signature}
 
 
+def warn_if_stale(out_dir: str) -> None:
+    """Raise a run warning when X posts have not refreshed for STALE_AFTER_DAYS"""
+    try:
+        with open(os.path.join(out_dir, "data.json")) as f:
+            fetched_at = (json.load(f).get("x") or {}).get("fetched_at")
+        age = datetime.now(timezone.utc) - datetime.fromisoformat(fetched_at)
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        return
+    if age.days >= STALE_AFTER_DAYS:
+        print(f"::warning title=X posts are stale::No X fetch has succeeded for {age.days} days")
+
+
 def main() -> None:
+    """Update the X posts, or keep the last ones on any failure but a bad Apify token"""
+    out_dir = os.environ.get("OUT_DIR", "profile")
+    try:
+        update_posts()
+    except Exception as exc:  # noqa: BLE001 - X must never stop the LinkedIn feed
+        print(f"::warning title=X posts not updated::{type(exc).__name__}: {exc}. Keeping existing posts.")
+    warn_if_stale(out_dir)
+
+
+def update_posts() -> None:
     """Fetch the latest posts, filter them, save their images, and write them to data.json"""
     token = os.environ.get("APIFY_TOKEN", "")
     if not token:
-        fail("APIFY_TOKEN is not set, so X posts cannot be fetched")
+        fail("APIFY_TOKEN is not set, so X posts cannot be fetched", title="X posts not updated")
 
     handle = os.environ.get("X_HANDLE") or DEFAULT_HANDLE
     count = int(os.environ.get("X_COUNT") or 20)
@@ -438,7 +473,7 @@ def main() -> None:
     fresh = fetch_posts(token, handle, count)
     if not fresh:
         print("WARNING: keeping existing X posts, no actor returned any")
-        sys.exit(0)
+        return
 
     posts = merge_posts(fresh, load_previous_posts(out_dir, "x"), count)
     try:
@@ -458,7 +493,12 @@ def main() -> None:
     update_json(
         out_dir,
         "x",
-        {"profile": f"https://x.com/{handle}", "filter": filter_info, "posts": posts},
+        {
+            "profile": f"https://x.com/{handle}",
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "filter": filter_info,
+            "posts": posts,
+        },
     )
 
 

@@ -57,6 +57,9 @@ jobs:
         run: python scripts/fetch_linkedin_posts.py
 
       - name: Fetch latest X posts
+        # runs even when the LinkedIn step failed, and never fails on its own
+        # account: X trouble only means no new X posts (see the script)
+        if: ${{ !cancelled() }}
         env:
           # the same Apify token; both X scrapers run and their posts are merged
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -67,7 +70,9 @@ jobs:
           X_COUNT: "20"
           OUT_DIR: "profile"
         run: |
-          pip install --quiet anthropic==2.12.0
+          # without the SDK the filter falls back to word overlap, so an
+          # install failure must not stop the step
+          pip install --quiet anthropic==2.12.0 || echo "::warning::anthropic SDK not installed"
           python scripts/fetch_x_posts.py
 
       - name: Commit cards

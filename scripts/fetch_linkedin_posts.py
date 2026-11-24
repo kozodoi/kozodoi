@@ -265,8 +265,13 @@ def update_json(out_dir: str, key: str, payload: dict) -> None:
                 data = {}
     data[key] = payload
     data["updated_at"] = datetime.now(timezone.utc).isoformat()
-    with open(path, "w") as f:
+    # written beside the file and swapped in, so a step that dies mid-write
+    # leaves the previous snapshot whole rather than a truncated file that
+    # would take every section of the site's feed down with it
+    tmp_path = f"{path}.tmp"
+    with open(tmp_path, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp_path, path)
 
 
 def store_image(target: dict, name: str, cdn_base: str, out_dir: str, folder: str = "linkedin") -> None:
@@ -318,7 +323,7 @@ def store_images(posts: list[dict], cdn_base: str, out_dir: str, folder: str = "
             store_image(post["attachment"], f"{post['id']}-attachment", cdn_base, out_dir, folder)
 
 
-def fail(message: str) -> NoReturn:
+def fail(message: str, title: str = "LinkedIn posts not updated") -> NoReturn:
     """
     Fail the step, leaving data.json and the posts it holds untouched
 
@@ -326,8 +331,10 @@ def fail(message: str) -> NoReturn:
     ----------
     message : str
         What went wrong and what to fix, shown as an error annotation on the run
+    title : str
+        Title of the annotation, naming the feed that was not updated
     """
-    print(f"::error title=LinkedIn posts not updated::{message}. Keeping existing posts.")
+    print(f"::error title={title}::{message}. Keeping existing posts.")
     sys.exit(1)
 
 
