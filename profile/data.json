@@ -1,7 +1,7 @@
 {
   "github": {
     "stars": 411,
-    "commits": 4145,
+    "commits": 4146,
     "prs": 21,
     "repos_counted": 30,
     "languages": [
@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-11-23T10:56:12.402212+00:00",
+  "updated_at": "2026-11-24T12:41:20.138874+00:00",
   "scholar": {
     "citations": 738,
     "h_index": 7,
@@ -91,7 +91,7 @@
         "date": "2026-11-20T21:02:12.398Z",
         "text": "Excited to present our research at NeurIPS 2026 in Sydney! 🇦🇺\n\nThis year, my colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evaluation. I will be presenting at four workshops and hosting Q&A sessions and demos at the Amazon booth. Come say hello at our posters or the booth!\n\n🙌 My colleagues joining me in Sydney:\nZainab A., Jack Butler, Aiham Taleb, Ph.D., Babs Khalidson, ZHAO GAO, PhD, Egor Krasheninnikov\n\n📚 Amazon Science at NeurIPS 2026:\nhttps://lnkd.in/dRi3vs2a",
         "video": false,
-        "reactions": 49,
+        "reactions": 54,
         "comments": 3,
         "shares": 2,
         "attachment": {
