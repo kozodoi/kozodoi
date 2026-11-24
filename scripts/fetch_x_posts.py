@@ -164,7 +164,9 @@ def normalize_post(item: dict, handle: str) -> dict | None:
     Likes become ``reactions``, replies ``comments``, reposts and quotes
     ``shares``. A repost takes the original post's text, image, counts and
     link, keeps the date it was reposted, and names the author in
-    ``repost_of``. A quote post shows the quoted post as its link preview.
+    ``repost_of``. A quote post, a repost with the author's own comment, keeps
+    that comment as its text, shows the quoted post as its link preview, and
+    names the quoted author in ``quote_of``.
     Replies, the author's own thread continuations included, are skipped: the
     feed shows posts, not conversations.
 
@@ -200,6 +202,7 @@ def normalize_post(item: dict, handle: str) -> dict | None:
         "shares": (source.get("retweetCount") or 0) + (source.get("quoteCount") or 0),
         "attachment": None,
         "repost_of": None,
+        "quote_of": None,
     }
     if source is not item:
         author = source.get("author") or {}
@@ -208,7 +211,10 @@ def normalize_post(item: dict, handle: str) -> dict | None:
     quoted = source.get("quoted_tweet") or source.get("quote")
     if isinstance(quoted, dict) and quoted.get("url"):
         quoted_image, _ = first_media(quoted)
-        quoted_author = (quoted.get("author") or {}).get("userName")
+        quoted_by = quoted.get("author") or {}
+        quoted_author = quoted_by.get("userName")
+        if quoted_author:
+            post["quote_of"] = {"name": quoted_by.get("name") or quoted_author, "handle": quoted_author}
         post["attachment"] = {
             "title": clean_text(quoted)[:280],
             "source": f"@{quoted_author} on X" if quoted_author else "x.com",
