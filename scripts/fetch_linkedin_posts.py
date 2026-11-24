@@ -164,7 +164,7 @@ def normalize_post(item: dict) -> dict | None:
     }
 
 
-def save_image(source_url: str, name: str, out_dir: str) -> str:
+def save_image(source_url: str, name: str, out_dir: str, folder: str = "linkedin") -> str:
     """
     Download a post image into the repo, unless it is already there
 
@@ -175,14 +175,16 @@ def save_image(source_url: str, name: str, out_dir: str) -> str:
     name : str
         File name without extension, the post id or ``<post id>-attachment``
     out_dir : str
-        Output directory; the image is written to ``<out_dir>/linkedin/``
+        Output directory; the image is written to ``<out_dir>/<folder>/``
+    folder : str
+        Image folder under the output directory, one per network
 
     Returns
     -------
     str
         Path of the image relative to the repo root
     """
-    rel_path = f"{out_dir}/linkedin/{name}.jpg"
+    rel_path = f"{out_dir}/{folder}/{name}.jpg"
     if not os.path.exists(rel_path):
         os.makedirs(os.path.dirname(rel_path), exist_ok=True)
         req = urllib.request.Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
@@ -191,7 +193,7 @@ def save_image(source_url: str, name: str, out_dir: str) -> str:
     return rel_path
 
 
-def load_previous_posts(out_dir: str) -> list[dict]:
+def load_previous_posts(out_dir: str, key: str = "linkedin") -> list[dict]:
     """
     Read the posts currently stored in data.json, if there are any
 
@@ -199,6 +201,8 @@ def load_previous_posts(out_dir: str) -> list[dict]:
     ----------
     out_dir : str
         Output directory holding data.json
+    key : str
+        Feed to read, ``linkedin`` or ``x``
 
     Returns
     -------
@@ -208,7 +212,7 @@ def load_previous_posts(out_dir: str) -> list[dict]:
     path = os.path.join(out_dir, "data.json")
     try:
         with open(path) as f:
-            return list((json.load(f).get("linkedin") or {}).get("posts") or [])
+            return list((json.load(f).get(key) or {}).get("posts") or [])
     except (OSError, json.JSONDecodeError):
         return []
 
@@ -265,7 +269,7 @@ def update_json(out_dir: str, key: str, payload: dict) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def store_image(target: dict, name: str, cdn_base: str, out_dir: str) -> None:
+def store_image(target: dict, name: str, cdn_base: str, out_dir: str, folder: str = "linkedin") -> None:
     """
     Replace a post's or attachment's signed ``source_image`` with a stable copy
 
@@ -279,19 +283,21 @@ def store_image(target: dict, name: str, cdn_base: str, out_dir: str) -> None:
     cdn_base : str
         Public base URL the saved image is served from
     out_dir : str
-        Output directory holding the linkedin/ image folder
+        Output directory holding the image folder
+    folder : str
+        Image folder under the output directory, one per network
     """
     source = target.pop("source_image")
     target["image"] = None
     if not source:
         return
     try:
-        target["image"] = f"{cdn_base}/{save_image(source, name, out_dir)}"
+        target["image"] = f"{cdn_base}/{save_image(source, name, out_dir, folder)}"
     except Exception as exc:  # noqa: BLE001 - a missing image must not drop the post
         print(f"WARNING: could not save image {name}: {exc}")
 
 
-def store_images(posts: list[dict], cdn_base: str, out_dir: str) -> None:
+def store_images(posts: list[dict], cdn_base: str, out_dir: str, folder: str = "linkedin") -> None:
     """
     Save the images of the posts fetched in this run and point the posts at them
 
@@ -302,12 +308,14 @@ def store_images(posts: list[dict], cdn_base: str, out_dir: str) -> None:
     cdn_base : str
         Public base URL the saved images are served from
     out_dir : str
-        Output directory holding the linkedin/ image folder
+        Output directory holding the image folder
+    folder : str
+        Image folder under the output directory, one per network
     """
     for post in (p for p in posts if "source_image" in p):
-        store_image(post, post["id"], cdn_base, out_dir)
+        store_image(post, post["id"], cdn_base, out_dir, folder)
         if post["attachment"]:
-            store_image(post["attachment"], f"{post['id']}-attachment", cdn_base, out_dir)
+            store_image(post["attachment"], f"{post['id']}-attachment", cdn_base, out_dir, folder)
 
 
 def fail(message: str) -> NoReturn:

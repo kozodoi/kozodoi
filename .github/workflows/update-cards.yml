@@ -56,6 +56,20 @@ jobs:
           OUT_DIR: "profile"
         run: python scripts/fetch_linkedin_posts.py
 
+      - name: Fetch latest X posts
+        env:
+          # the same Apify token; both X scrapers run and their posts are merged
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          # Claude API key (repo secret) for the Haiku filter that hides posts
+          # unrelated to AI and repeats of LinkedIn posts; optional, see the script
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_HANDLE: "n_kozodoi"
+          X_COUNT: "20"
+          OUT_DIR: "profile"
+        run: |
+          pip install --quiet anthropic==2.12.0
+          python scripts/fetch_x_posts.py
+
       - name: Commit cards
         # still runs after a failed LinkedIn fetch, so the GitHub and Scholar
         # cards keep updating while the token is fixed; the run stays red
@@ -63,6 +77,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg profile/data.json profile/linkedin
+          git add profile/*.svg profile/data.json profile/linkedin profile/x
           git commit -m "Update README cards" || exit 0
           git push
