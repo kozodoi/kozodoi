@@ -20,14 +20,23 @@ def call(url: str, body: dict | None = None, timeout: int = 60):
 
 
 os.makedirs(OUT, exist_ok=True)
-items = call(
-    "https://api.apify.com/v2/acts/apidojo~tweet-scraper/run-sync-get-dataset-items?timeout=240",
-    {"twitterHandles": ["n_kozodoi"], "maxItems": 20, "sort": "Latest"},
-    timeout=280,
-)
-with open(f"{OUT}/x_raw.json", "w") as f:
-    json.dump(items, f, indent=1, ensure_ascii=False)
-print(f"saved {len(items)} raw items")
+RUNS = {
+    "apidojo~tweet-scraper": {"twitterHandles": ["n_kozodoi"], "maxItems": 20, "sort": "Latest"},
+    "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest": {
+        "searchTerms": ["from:n_kozodoi include:nativeretweets"],
+        "maxItems": 20,
+        "queryType": "Latest",
+    },
+}
+for actor, body in RUNS.items():
+    try:
+        items = call(f"https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items?timeout=240", body, timeout=280)
+    except Exception as exc:  # noqa: BLE001 - a test script reports and moves on
+        items = [{"error": str(exc)}]
+    name = actor.split("~")[0]
+    with open(f"{OUT}/x_raw_{name}.json", "w") as f:
+        json.dump(items, f, indent=1, ensure_ascii=False)
+    print(f"{actor}: {len(items)} items, first keys {sorted(items[0].keys())[:8] if items else None}")
 
 # what the account is allowed and has used this month, and what each feed's last run cost
 limits = call("https://api.apify.com/v2/users/me/limits")["data"]
@@ -38,7 +47,7 @@ usage = {
 }
 me = call("https://api.apify.com/v2/users/me")["data"]
 usage["plan"] = (me.get("plan") or {}).get("id")
-for actor in ["harvestapi~linkedin-profile-posts", "apidojo~tweet-scraper"]:
+for actor in ["harvestapi~linkedin-profile-posts", *RUNS]:
     last = call(f"https://api.apify.com/v2/acts/{actor}/runs/last")["data"]
     usage[actor] = {
         "status": last.get("status"),
