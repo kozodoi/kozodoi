@@ -67,7 +67,7 @@
       }
     ]
   },
-  "updated_at": "2026-11-24T21:54:28.500115+00:00",
+  "updated_at": "2026-11-24T21:59:04.632647+00:00",
   "scholar": {
     "citations": 738,
     "h_index": 7,
@@ -207,9 +207,10 @@
   },
   "x": {
     "profile": "https://x.com/n_kozodoi",
+    "fetched_at": "2026-11-24T21:59:04.632527+00:00",
     "filter": {
       "method": "overlap",
-      "signature": "85c8dc6b0c756669"
+      "signature": "55958e503021d3af"
     },
     "posts": [
       {
@@ -221,12 +222,7 @@
         "reactions": 4,
         "comments": 1,
         "shares": 1,
-        "attachment": {
-          "title": "With yesterday’s GLM-5.4 release, there are 5 looped transformers in my LLM Architecture Gallery now.\n\nI see a trend :)",
-          "source": "@rasbt on X",
-          "url": "https://x.com/rasbt/status/2125249956495953973",
-          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2125276805133484348-attachment.jpg"
-        },
+        "attachment": null,
         "repost_of": null,
         "show": true,
         "reason": "ai",
@@ -234,24 +230,8 @@
         "image": null
       },
       {
-        "id": "2124158556631081133",
-        "url": "https://x.com/n_kozodoi/status/2124158556631081133",
-        "date": "2026-11-21T15:10:39.000Z",
-        "text": "Excited to go to NeurIPS 2026! 🇦🇺\n\nMy colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evals. I’ll be presenting at four workshops and hosting Q&A sessions and demos at the Amazon booth. Come say hello!",
-        "video": false,
-        "reactions": 1,
-        "comments": 1,
-        "shares": 0,
-        "attachment": null,
-        "repost_of": null,
-        "show": false,
-        "reason": "duplicate",
-        "duplicate_of": "7529650328271659009",
-        "image": null
-      },
-      {
         "id": "2124157155834003696",
-        "url": "https://x.com/miramurati/status/2123872534970208421",
+        "url": "https://x.com/n_kozodoi/status/2124157155834003696",
         "date": "2026-11-21T15:05:05.000Z",
         "text": "Inkling 2 Mini is a looped transformer that runs on a laptop.\n\nLooping lets a model think more and write less. At this scale, its thought process remains monitorable; this may not stay the case. We’re also sharing a variable-loop research model to enable further study.",
         "video": false,
@@ -270,9 +250,9 @@
       },
       {
         "id": "2120160000240693347",
-        "url": "https://x.com/Memoirs/status/2119499187771322765",
+        "url": "https://x.com/n_kozodoi/status/2120160000240693347",
         "date": "2026-11-10T14:21:49.000Z",
-        "text": "Model Merging Does Not Require Uniform LoRA Ranks\n\nZirong Xie, Zainab Afolabi, Nikita Kozodoi, Jack Butler\nhttps://arxiv.org/abs/2611.06486 [𝚌𝚜.𝙻𝙶 𝚌𝚜.𝙰𝙸]",
+        "text": "Model Merging Does Not Require Uniform LoRA Ranks\n\nZirong Xie, Zainab Afolabi, Nikita Kozodoi, Jack Butler\narxiv.org/abs/2611.06486 [𝚌𝚜.𝙻𝙶 𝚌𝚜.𝙰𝙸]",
         "video": false,
         "reactions": 9,
         "comments": 0,
@@ -289,7 +269,7 @@
       },
       {
         "id": "2054303770037657722",
-        "url": "https://x.com/AndrewYNg/status/2054236506756370865",
+        "url": "https://x.com/n_kozodoi/status/2054303770037657722",
         "date": "2026-05-12T20:52:40.000Z",
         "text": "There will be no AI jobpocalypse.\n\nThe story that AI will lead to massive unemployment is stoking unnecessary fear. AI — like any other technology — does affect jobs, but telling overblown stories of large-scale unemployment is irresponsible and damaging. Let’s put a stop to it.\n\nI’ve expressed skepticism about the jobpocalypse in previous posts. I’m glad to see that the popular press is now pushing back on this narrative. The image below features some recent headlines.\n\nSoftware engineering is the sector most affected by AI tools, as coding agents race ahead. Yet hiring of software engineers remains strong! So while there are examples of AI taking away jobs, the trends strongly suggest the net job creation is vastly greater than the job destruction — just like earlier waves of technology. Further, despite all the exciting progress in AI, the U.S. unemployment rate remains a healthy 4.3%.\n\nWhy is the AI jobpocalypse narrative so popular? For one thing, frontier AI labs have a strong incentive to tell stories that make AI technology sound more powerful. At their most extreme, they promote science-fiction scenarios of AI “taking over” and causing human extinction. If a technology can replace many employees, surely that technology must be very valuable!\n\nAlso, a lot of SaaS software companies charge around $100-$1000 per user/year. But if an AI company can replace an employee who makes $100,000 — or make them 50% more productive — then charging even $10,000 starts to look reasonable. By anchoring not to typical SaaS prices but to salaries of employees, AI companies can charge a lot more.\n\nAdditionally, businesses have a strong incentive to talk about layoffs as if they were caused by AI. After all, talking about how they’re using AI to be far more productive with fewer staff makes them look smart. This is a better message than admitting they overhired during the pandemic when capital was abundant due to low interest rates and a massive government financial stimulus.\n\nTo be clear, I recognize that AI is causing a lot of people’s work to change. This is hard. This is stressful. (And to some, it can be fun.) I empathize with everyone affected. At the same time, this is very different from predicting a collapse of the job market.\n\nSocieties are capable of telling themselves stories for years that have little basis in reality and lead to poor society-wide decision making. For example, fears over nuclear plant safety led to under-investment in nuclear power. Fears of the “population bomb” in the 1960s led countries to implement harsh policies to reduce their populations. And worries about dietary fat led governments to promote unhealthy high-sugar diets for decades.\n\nNow that mainstream media is openly skeptical about the jobpocalypse, I hope these stories will start to lose their teeth (much like fears of AI-driven human extinction have).\n\nContrary to the predictions of an AI jobpocalypse, I predict the opposite: There will be an AI jobapalooza! AI will lead to a lot more good AI engineering jobs, and I’m also optimistic about the future of the overall job market. What AI engineers do will be different from traditional software engineering, and many of these jobs will be in businesses other than traditional large employers of developers. In non-AI roles, too, the skills needed will change because of AI. That makes this a good time to encourage more people to become proficient in AI,  and make sure they’re ready for the different but plentiful jobs of the future!\n\n[Original text in The Batch newsletter.]",
         "video": false,
@@ -308,7 +288,7 @@
       },
       {
         "id": "2041497751100231858",
-        "url": "https://x.com/WhiteHouse/status/2041495294911676771",
+        "url": "https://x.com/n_kozodoi/status/2041497751100231858",
         "date": "2026-04-07T12:46:07.000Z",
         "text": "THE ARTEMIS II ECLIPSE.\nApril 6, 2026.\n\nTotality, beyond Earth. From lunar orbit, the Moon eclipses the Sun, revealing a view few in human history have ever witnessed. Photo: NASA",
         "video": false,
@@ -327,7 +307,7 @@
       },
       {
         "id": "2041497739121275381",
-        "url": "https://x.com/WhiteHouse/status/2041493954831540466",
+        "url": "https://x.com/n_kozodoi/status/2041497739121275381",
         "date": "2026-04-07T12:46:04.000Z",
         "text": "EARTHSET. \nApril 6, 2026.\n\nHumanity, from the other side. First photo from the far side of the Moon. Captured from Orion as Earth dips beyond the lunar horizon. Photo: NASA",
         "video": false,
@@ -346,7 +326,7 @@
       },
       {
         "id": "2020029488864849938",
-        "url": "https://x.com/arena/status/2019842691442569566",
+        "url": "https://x.com/n_kozodoi/status/2020029488864849938",
         "date": "2026-02-07T06:58:55.000Z",
         "text": "🚨BREAKING: Claude Opus 4.6 by @AnthropicAI is now #1 across Code, Text and Expert Arena!\n\nOpus 4.6 shows significant gains across the board:\n- #1 Code Arena: +106 score vs Opus 4.5\n- #1 Text Arena: scoring 1496, +10 vs Gemini 3 Pro\n- #1 Expert Arena: +~50 lead\n\nCongrats to the @AnthropicAI team on the incredible milestone! The frontier just moved.",
         "video": false,
@@ -365,11 +345,11 @@
       },
       {
         "id": "2010975495605588132",
-        "url": "https://x.com/claudeai/status/2010805682434666759",
+        "url": "https://x.com/n_kozodoi/status/2010975495605588132",
         "date": "2026-01-13T07:21:34.000Z",
         "text": "Introducing Cowork: Claude Code for the rest of your work.\n\nCowork lets you complete non-technical tasks much like how developers use Claude Code.",
         "video": true,
-        "reactions": 85114,
+        "reactions": 85108,
         "comments": 2486,
         "shares": 15037,
         "attachment": null,
