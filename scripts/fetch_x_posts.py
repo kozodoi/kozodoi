@@ -11,8 +11,10 @@ X offers no free API for reading posts, so they are read through Apify actors,
 and X breaks those often: in testing, apidojo's scraper returned "no results"
 for a profile it had read minutes earlier, and kaitoeasyapi's missed nothing
 then but has its own outages. Both run on every call and their posts are merged
-by id, so the feed only goes stale when both fail on the same day. Together
-they cost about $0.01 a day of the Apify plan's free $5 a month.
+by id, so the feed only goes stale when both fail in the same week. Both cap
+free Apify accounts at a handful of runs a month, so this step runs weekly
+(see the workflow) while LinkedIn runs daily; a week whose scrapers are out
+of quota keeps the previous posts.
 
 FILTERING
 ---------
@@ -90,7 +92,8 @@ OVERLAP_THRESHOLD = 0.6
 OVERLAP_MIN_WORDS = 6
 MAX_DAYS_APART = 7
 
-STALE_AFTER_DAYS = 3
+# X is fetched weekly, so a week plus a missed run before anyone is warned
+STALE_AFTER_DAYS = 9
 
 
 def run_actor(token: str, actor: str, body: dict) -> list[dict]:
