@@ -1,0 +1,425 @@
+{
+  "github": {
+    "stars": 411,
+    "commits": 4146,
+    "prs": 21,
+    "repos_counted": 30,
+    "languages": [
+      {
+        "name": "Python",
+        "bytes": 2556190,
+        "percentage": 70.56
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 658858,
+        "percentage": 18.19
+      },
+      {
+        "name": "R",
+        "bytes": 314786,
+        "percentage": 8.69
+      },
+      {
+        "name": "Shell",
+        "bytes": 23360,
+        "percentage": 0.64
+      },
+      {
+        "name": "SCSS",
+        "bytes": 20222,
+        "percentage": 0.56
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 18552,
+        "percentage": 0.51
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 11133,
+        "percentage": 0.31
+      },
+      {
+        "name": "CSS",
+        "bytes": 10076,
+        "percentage": 0.28
+      },
+      {
+        "name": "Makefile",
+        "bytes": 3985,
+        "percentage": 0.11
+      },
+      {
+        "name": "Ruby",
+        "bytes": 1945,
+        "percentage": 0.05
+      },
+      {
+        "name": "Ragel",
+        "bytes": 1913,
+        "percentage": 0.05
+      },
+      {
+        "name": "Smarty",
+        "bytes": 1750,
+        "percentage": 0.05
+      }
+    ]
+  },
+  "updated_at": "2026-11-24T21:54:28.500115+00:00",
+  "scholar": {
+    "citations": 738,
+    "h_index": 7,
+    "citations_per_year": {
+      "2019": 5,
+      "2020": 27,
+      "2021": 39,
+      "2022": 73,
+      "2023": 81,
+      "2024": 110,
+      "2025": 151,
+      "2026": 238
+    }
+  },
+  "linkedin": {
+    "profile": "https://www.linkedin.com/in/kozodoi/",
+    "posts": [
+      {
+        "id": "7529650328271659009",
+        "url": "https://www.linkedin.com/posts/kozodoi_neurips-2026-activity-7529650328271659009-V5z1",
+        "date": "2026-11-20T21:02:12.398Z",
+        "text": "Excited to present our research at NeurIPS 2026 in Sydney! 🇦🇺\n\nThis year, my colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evaluation. I will be presenting at four workshops and hosting Q&A sessions and demos at the Amazon booth. Come say hello at our posters or the booth!\n\n🙌 My colleagues joining me in Sydney:\nZainab A., Jack Butler, Aiham Taleb, Ph.D., Babs Khalidson, ZHAO GAO, PhD, Egor Krasheninnikov\n\n📚 Amazon Science at NeurIPS 2026:\nhttps://lnkd.in/dRi3vs2a",
+        "video": false,
+        "reactions": 54,
+        "comments": 3,
+        "shares": 2,
+        "attachment": {
+          "title": "NeurIPS 2026",
+          "source": "amazon.science",
+          "url": "https://www.amazon.science/conferences-and-events/neurips-2026",
+          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7529650328271659009-attachment.jpg"
+        },
+        "image": null
+      },
+      {
+        "id": "7526286062118313984",
+        "url": "https://www.linkedin.com/posts/activity-7526285794425217025-0v-C",
+        "date": "2026-11-11T14:13:48.842Z",
+        "text": "Happy to share that our paper \"NaijaFacts: A Framework for Disentangling Language from Knowledge in Facts about Nigeria\" has been accepted at a NeurIPS 2026 workshop in Atlanta!  🎉 \n\nWhen an AI model gets a question about Nigeria wrong in Yorùbá, there are two possible reasons. Either it knows the fact but loses it in the language, or it never learned the fact at all. Benchmarks that translate generic questions into African languages cannot tell the two apart.\n\nNaijaFacts can. Native speakers wrote questions grounded in Nigeria's official statistics. We asked each one in five languages (English, Nigerian Pidgin, Yorùbá, Igbo and Hausa) about Nigeria, the UK and the US.\n\nWhat we found across 8 models:\n- Asked in English, LLMs score 49 to 50% on UK and US statistics, but 20% on Nigeria\n- Letting LLMs answer in English instead of the question's language recovers almost nothing\n- Across all 54 African countries, frontier models score 96% on culture but 26% on statistics\n\nThis means that serving African users needs models with more African training data, not just African languages.\n\n  🎥 Attached is a 2-minute explainer (sound on)\n  🔗 Paper: https://lnkd.in/eUwunCH9\n\n🙌 Grateful to my co-authors Zainab A., Nikita Kozodoi, PhD and Jack Butler at Amazon Web Services (AWS) Forward Deployed Engineering, and to our collaborators at Obafemi Awolowo University!",
+        "video": true,
+        "reactions": 60,
+        "comments": 8,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7526286062118313984.jpg"
+      },
+      {
+        "id": "7523282805733089281",
+        "url": "https://www.linkedin.com/posts/ahmed-abdelazim-_generativeai-aws-intelligentdocumentprocessing-activity-7523148909054025728-uHmL",
+        "date": "2026-11-03T07:19:56.722Z",
+        "text": "🚀 From Documents to Decisions: Reimagining Intelligent Document Processing with GenAI\n\n📄 How can Generative AI take document processing beyond simple data extraction to drive smarter business decisions? 🧠\n\n🎤 Join Aiham Taleb, Nikita Kozodoi, PhD, and me at AWS Deep Dive Days – Generative AI!\n\n💡 We'll explore how multimodal AI is transforming Intelligent Document Processing (IDP), and what it takes to bring these solutions from prototype to production. ⚙️\n\n📅 November 5, 2026\n⏰ 13:30–14:15 CET\n📍 AWS Munich (MUC14)\n\n🔗 Event details: https://lnkd.in/eFB-VhyS\n\n🙌 Looking forward to seeing you there!\n#GenerativeAI #AWS #IntelligentDocumentProcessing #MultimodalAI",
+        "video": false,
+        "reactions": 53,
+        "comments": 0,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7523282805733089281.jpg"
+      },
+      {
+        "id": "7521147203466485760",
+        "url": "https://www.linkedin.com/posts/zinov-liza_generation-and-verification-human-agent-activity-7521117006717235200-5k5I",
+        "date": "2026-10-28T09:53:49.464Z",
+        "text": "Happy to be in Budapest for EMNLP 2026! 🇭🇺\n\nTomorrow I'm presenting our joint work from the collaboration between AUMOVIO and the Amazon Web Services (AWS) Generative AI Innovation Center at the REALM workshop: the journey of building an engineering assistant for automotive software, and the tooling behind it. It has been a great collaboration, and I'm really looking forward to sharing it with the research community.\n\nThank you to my co-authors Aiham Taleb, Nikita Kozodoi, PhD, Daniel Schleicher, Amir Mahdi Namazi, Martin Kraus, Levent Kent and Brian Jensen.\n\nIf you're in Budapest and would like to chat about automotive, agentic systems, time series or anything else, let me know or come find me at our poster. Always happy to meet!  😊 \n\nPaper: https://lnkd.in/d3_gRhCd \nWorkshop: https://lnkd.in/dvRykybn",
+        "video": false,
+        "reactions": 42,
+        "comments": 6,
+        "shares": 2,
+        "attachment": {
+          "title": "Generation and Verification: Human-Agent Collaboration for Safety-Critical Automotive Software Engineering",
+          "source": "aclanthology.org",
+          "url": "https://aclanthology.org/2026.realm-1.38/",
+          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7521147203466485760-attachment.jpg"
+        },
+        "image": null
+      },
+      {
+        "id": "7514968623652876288",
+        "url": "https://www.linkedin.com/posts/kozodoi_excited-to-present-3-papers-on-llm-optimization-activity-7514968623652876288-6k-L",
+        "date": "2026-10-11T08:42:21.244Z",
+        "text": "Excited to present 3 papers on LLM optimization, scaling and merging at COLM in San Francisco! 🇺🇸 \n\nAlways happy to chat with fellow scientists at the Amazon booth and exchange ideas on where the field is going, and how to keep up with the speed of research.\n\nKudos to my co-authors from the AWS FDE team: Jack Butler, Zainab A., Egor Krasheninnikov, Sergey I., Natalia Tarasova",
+        "video": false,
+        "reactions": 86,
+        "comments": 5,
+        "shares": 1,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7514968623652876288.jpg"
+      },
+      {
+        "id": "7511804375695261696",
+        "url": "https://www.linkedin.com/posts/kozodoi_great-energy-at-aws-summit-dubai-it-was-activity-7511804375695261696-4KTk",
+        "date": "2026-10-02T15:08:45.742Z",
+        "text": "Great energy at AWS Summit Dubai! It was inspiring to meet so many builders and showcase our team’s work to customers across the region.",
+        "video": false,
+        "reactions": 58,
+        "comments": 2,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7511804375695261696.jpg"
+      },
+      {
+        "id": "7508856804710227970",
+        "url": "https://www.linkedin.com/posts/kozodoi_meet-us-at-aws-summit-dubai-next-week-activity-7508856804710227970-K9RR",
+        "date": "2026-09-24T11:56:10.056Z",
+        "text": "Meet us at AWS Summit Dubai next week! 🇦🇪\n\nOur team will demo custom solutions we built for real business use cases, including voice and video AI, deep research agents, and physical AI. If you want to learn more about AWS Forward Deployed Engineering, and chat about agentic AI and model customization - find us at the AI/ML zone!\n\n📅 September 30, Dubai World Trade Centre\n🔗 Register: https://lnkd.in/ehjXFrW3",
+        "video": true,
+        "reactions": 24,
+        "comments": 1,
+        "shares": 1,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7508856804710227970.jpg"
+      },
+      {
+        "id": "7501383431176675328",
+        "url": "https://www.linkedin.com/posts/kozodoi_great-time-at-aws-summit-zurich-philipp-activity-7501383431176675328-WOKQ",
+        "date": "2026-09-03T20:59:38.957Z",
+        "text": "🇨🇭 Great time at AWS Summit Zurich!\n\nPhilipp Kaindl and I gave a talk on red teaming. As more applications rely on LLMs and AI agents, it becomes critical to know how to protect them against adversarial attacks like prompt injection, agent goal hijacking, context poisoning and many others. Always happy to discuss this topic with the community!",
+        "video": false,
+        "reactions": 48,
+        "comments": 0,
+        "shares": 2,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7501383431176675328.jpg"
+      },
+      {
+        "id": "7500129781859147776",
+        "url": "https://www.linkedin.com/posts/kozodoi_i-completed-all-four-anthropic-certifications-activity-7500129781859147776-Gkbe",
+        "date": "2026-08-31T09:58:05.668Z",
+        "text": "🎓 I completed all four Anthropic certifications this month: Associate, Developer, Architect Foundations, and Architect Professional.\n\nThe material generalizes well beyond Claude. Context management, tool and prompt design, MCP, evaluation, and cost and latency tradeoffs are the same problems whether you build on Claude, Codex, Kiro, or anything else. I face most of these regularly in customer projects.\n\nI would recommend these exams to two groups: anyone building AI agents, and engineers who use coding assistants daily and want to get more out of them. Preparing for the exams showed me a few gaps in my own setup.",
+        "video": false,
+        "reactions": 58,
+        "comments": 6,
+        "shares": 0,
+        "attachment": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/master/profile/linkedin/7500129781859147776.jpg"
+      }
+    ]
+  },
+  "x": {
+    "profile": "https://x.com/n_kozodoi",
+    "filter": {
+      "method": "overlap",
+      "signature": "85c8dc6b0c756669"
+    },
+    "posts": [
+      {
+        "id": "2125276805133484348",
+        "url": "https://x.com/n_kozodoi/status/2125276805133484348",
+        "date": "2026-11-24T17:14:10.000Z",
+        "text": "Looped transformer is all you need",
+        "video": false,
+        "reactions": 4,
+        "comments": 1,
+        "shares": 1,
+        "attachment": {
+          "title": "With yesterday’s GLM-5.4 release, there are 5 looped transformers in my LLM Architecture Gallery now.\n\nI see a trend :)",
+          "source": "@rasbt on X",
+          "url": "https://x.com/rasbt/status/2125249956495953973",
+          "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2125276805133484348-attachment.jpg"
+        },
+        "repost_of": null,
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": null
+      },
+      {
+        "id": "2124158556631081133",
+        "url": "https://x.com/n_kozodoi/status/2124158556631081133",
+        "date": "2026-11-21T15:10:39.000Z",
+        "text": "Excited to go to NeurIPS 2026! 🇦🇺\n\nMy colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evals. I’ll be presenting at four workshops and hosting Q&A sessions and demos at the Amazon booth. Come say hello!",
+        "video": false,
+        "reactions": 1,
+        "comments": 1,
+        "shares": 0,
+        "attachment": null,
+        "repost_of": null,
+        "show": false,
+        "reason": "duplicate",
+        "duplicate_of": "7529650328271659009",
+        "image": null
+      },
+      {
+        "id": "2124157155834003696",
+        "url": "https://x.com/miramurati/status/2123872534970208421",
+        "date": "2026-11-21T15:05:05.000Z",
+        "text": "Inkling 2 Mini is a looped transformer that runs on a laptop.\n\nLooping lets a model think more and write less. At this scale, its thought process remains monitorable; this may not stay the case. We’re also sharing a variable-loop research model to enable further study.",
+        "video": false,
+        "reactions": 10098,
+        "comments": 334,
+        "shares": 783,
+        "attachment": null,
+        "repost_of": {
+          "name": "Mira Murati",
+          "handle": "miramurati"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": null
+      },
+      {
+        "id": "2120160000240693347",
+        "url": "https://x.com/Memoirs/status/2119499187771322765",
+        "date": "2026-11-10T14:21:49.000Z",
+        "text": "Model Merging Does Not Require Uniform LoRA Ranks\n\nZirong Xie, Zainab Afolabi, Nikita Kozodoi, Jack Butler\nhttps://arxiv.org/abs/2611.06486 [𝚌𝚜.𝙻𝙶 𝚌𝚜.𝙰𝙸]",
+        "video": false,
+        "reactions": 9,
+        "comments": 0,
+        "shares": 2,
+        "attachment": null,
+        "repost_of": {
+          "name": "Machine Learning (ML) Papers",
+          "handle": "Memoirs"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2120160000240693347.jpg"
+      },
+      {
+        "id": "2054303770037657722",
+        "url": "https://x.com/AndrewYNg/status/2054236506756370865",
+        "date": "2026-05-12T20:52:40.000Z",
+        "text": "There will be no AI jobpocalypse.\n\nThe story that AI will lead to massive unemployment is stoking unnecessary fear. AI — like any other technology — does affect jobs, but telling overblown stories of large-scale unemployment is irresponsible and damaging. Let’s put a stop to it.\n\nI’ve expressed skepticism about the jobpocalypse in previous posts. I’m glad to see that the popular press is now pushing back on this narrative. The image below features some recent headlines.\n\nSoftware engineering is the sector most affected by AI tools, as coding agents race ahead. Yet hiring of software engineers remains strong! So while there are examples of AI taking away jobs, the trends strongly suggest the net job creation is vastly greater than the job destruction — just like earlier waves of technology. Further, despite all the exciting progress in AI, the U.S. unemployment rate remains a healthy 4.3%.\n\nWhy is the AI jobpocalypse narrative so popular? For one thing, frontier AI labs have a strong incentive to tell stories that make AI technology sound more powerful. At their most extreme, they promote science-fiction scenarios of AI “taking over” and causing human extinction. If a technology can replace many employees, surely that technology must be very valuable!\n\nAlso, a lot of SaaS software companies charge around $100-$1000 per user/year. But if an AI company can replace an employee who makes $100,000 — or make them 50% more productive — then charging even $10,000 starts to look reasonable. By anchoring not to typical SaaS prices but to salaries of employees, AI companies can charge a lot more.\n\nAdditionally, businesses have a strong incentive to talk about layoffs as if they were caused by AI. After all, talking about how they’re using AI to be far more productive with fewer staff makes them look smart. This is a better message than admitting they overhired during the pandemic when capital was abundant due to low interest rates and a massive government financial stimulus.\n\nTo be clear, I recognize that AI is causing a lot of people’s work to change. This is hard. This is stressful. (And to some, it can be fun.) I empathize with everyone affected. At the same time, this is very different from predicting a collapse of the job market.\n\nSocieties are capable of telling themselves stories for years that have little basis in reality and lead to poor society-wide decision making. For example, fears over nuclear plant safety led to under-investment in nuclear power. Fears of the “population bomb” in the 1960s led countries to implement harsh policies to reduce their populations. And worries about dietary fat led governments to promote unhealthy high-sugar diets for decades.\n\nNow that mainstream media is openly skeptical about the jobpocalypse, I hope these stories will start to lose their teeth (much like fears of AI-driven human extinction have).\n\nContrary to the predictions of an AI jobpocalypse, I predict the opposite: There will be an AI jobapalooza! AI will lead to a lot more good AI engineering jobs, and I’m also optimistic about the future of the overall job market. What AI engineers do will be different from traditional software engineering, and many of these jobs will be in businesses other than traditional large employers of developers. In non-AI roles, too, the skills needed will change because of AI. That makes this a good time to encourage more people to become proficient in AI,  and make sure they’re ready for the different but plentiful jobs of the future!\n\n[Original text in The Batch newsletter.]",
+        "video": false,
+        "reactions": 5345,
+        "comments": 583,
+        "shares": 1468,
+        "attachment": null,
+        "repost_of": {
+          "name": "Andrew Ng",
+          "handle": "AndrewYNg"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2054303770037657722.jpg"
+      },
+      {
+        "id": "2041497751100231858",
+        "url": "https://x.com/WhiteHouse/status/2041495294911676771",
+        "date": "2026-04-07T12:46:07.000Z",
+        "text": "THE ARTEMIS II ECLIPSE.\nApril 6, 2026.\n\nTotality, beyond Earth. From lunar orbit, the Moon eclipses the Sun, revealing a view few in human history have ever witnessed. Photo: NASA",
+        "video": false,
+        "reactions": 79316,
+        "comments": 1886,
+        "shares": 15425,
+        "attachment": null,
+        "repost_of": {
+          "name": "The White House",
+          "handle": "WhiteHouse"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2041497751100231858.jpg"
+      },
+      {
+        "id": "2041497739121275381",
+        "url": "https://x.com/WhiteHouse/status/2041493954831540466",
+        "date": "2026-04-07T12:46:04.000Z",
+        "text": "EARTHSET. \nApril 6, 2026.\n\nHumanity, from the other side. First photo from the far side of the Moon. Captured from Orion as Earth dips beyond the lunar horizon. Photo: NASA",
+        "video": false,
+        "reactions": 95764,
+        "comments": 2612,
+        "shares": 18513,
+        "attachment": null,
+        "repost_of": {
+          "name": "The White House",
+          "handle": "WhiteHouse"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2041497739121275381.jpg"
+      },
+      {
+        "id": "2020029488864849938",
+        "url": "https://x.com/arena/status/2019842691442569566",
+        "date": "2026-02-07T06:58:55.000Z",
+        "text": "🚨BREAKING: Claude Opus 4.6 by @AnthropicAI is now #1 across Code, Text and Expert Arena!\n\nOpus 4.6 shows significant gains across the board:\n- #1 Code Arena: +106 score vs Opus 4.5\n- #1 Text Arena: scoring 1496, +10 vs Gemini 3 Pro\n- #1 Expert Arena: +~50 lead\n\nCongrats to the @AnthropicAI team on the incredible milestone! The frontier just moved.",
+        "video": false,
+        "reactions": 715,
+        "comments": 27,
+        "shares": 95,
+        "attachment": null,
+        "repost_of": {
+          "name": "Arena.ai",
+          "handle": "arena"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2020029488864849938.jpg"
+      },
+      {
+        "id": "2010975495605588132",
+        "url": "https://x.com/claudeai/status/2010805682434666759",
+        "date": "2026-01-13T07:21:34.000Z",
+        "text": "Introducing Cowork: Claude Code for the rest of your work.\n\nCowork lets you complete non-technical tasks much like how developers use Claude Code.",
+        "video": true,
+        "reactions": 85114,
+        "comments": 2486,
+        "shares": 15037,
+        "attachment": null,
+        "repost_of": {
+          "name": "Claude",
+          "handle": "claudeai"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": "https://raw.githubusercontent.com/kozodoi/kozodoi/claude/charming-ptolemy-izqynp/preview/x/2010975495605588132.jpg"
+      },
+      {
+        "id": "2007219259513209003",
+        "url": "https://x.com/n_kozodoi/status/2007219259513209003",
+        "date": "2026-01-02T22:35:38.000Z",
+        "text": "I'm Boris and I created Claude Code. Lots of people have asked how I use Claude Code, so I wanted to show off my setup a bit.\n\nMy setup might be surprisingly vanilla! Claude Code works great out of the box, so I personally don't customize it much. There is no one correct way to use Claude Code: we intentionally build it in a way that you can use it, customize it, and hack it however you like. Each person on the Claude Code team uses it very differently.\n\nSo, here goes.",
+        "video": false,
+        "reactions": 54104,
+        "comments": 1300,
+        "shares": 8187,
+        "attachment": null,
+        "repost_of": {
+          "name": "Boris Cherny",
+          "handle": "bcherny"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": null
+      },
+      {
+        "id": "1995595660687802851",
+        "url": "https://x.com/n_kozodoi/status/1995595660687802851",
+        "date": "2025-12-01T20:47:36.000Z",
+        "text": "Amazon researchers have accepted papers at #NeurIPS2025 covering agentic AI, efficient reasoning, and ML systems. Explore the research:",
+        "video": false,
+        "reactions": 8,
+        "comments": 0,
+        "shares": 1,
+        "attachment": null,
+        "repost_of": {
+          "name": "Amazon Science",
+          "handle": "AmazonScience"
+        },
+        "show": true,
+        "reason": "ai",
+        "duplicate_of": null,
+        "image": null
+      }
+    ]
+  }
+}
