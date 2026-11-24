@@ -1,0 +1,2849 @@
+[
+ {
+  "type": "tweet",
+  "id": "2125276805133484348",
+  "url": "https://x.com/n_kozodoi/status/2125276805133484348",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2125276805133484348",
+  "text": "Looped transformer is all you need",
+  "source": "",
+  "retweetCount": 1,
+  "replyCount": 1,
+  "likeCount": 4,
+  "quoteCount": 0,
+  "viewCount": 787,
+  "createdAt": "Tue Nov 24 17:14:10 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 4,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2125276805133484348",
+  "displayTextRange": [
+   0,
+   34
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": []
+  },
+  "isRetweet": false,
+  "isQuote": true,
+  "isConversationControlled": false,
+  "quoted_tweet": {
+   "type": "tweet",
+   "id": "2125249956495953973",
+   "url": "https://x.com/rasbt/status/2125249956495953973",
+   "twitterUrl": "https://twitter.com/rasbt/status/2125249956495953973",
+   "text": "With yesterday’s GLM-5.4 release, there are 5 looped transformers in my LLM Architecture Gallery now.\n\nI see a trend :) https://t.co/reO28tzqJC",
+   "source": "",
+   "retweetCount": 133,
+   "replyCount": 76,
+   "likeCount": 1587,
+   "quoteCount": 20,
+   "viewCount": 50587,
+   "createdAt": "Tue Nov 24 15:27:29 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 773,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2125249956495953973",
+   "displayTextRange": [
+    0,
+    143
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "rasbt",
+    "url": "https://x.com/rasbt",
+    "twitterUrl": "https://twitter.com/rasbt",
+    "id": "865622395",
+    "name": "Sebastian Raschka",
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/1661187442043486209/a3E4t1eV_normal.jpg",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/865622395/1742309979",
+    "description": "ML/AI research engineer. Ex stats professor.\nAuthor of \"Build a Large Language Model From Scratch\" (https://amzn.to/4fqvn0D) & reasoning (https://mng.bz/lZ5B)",
+    "location": "United States",
+    "followers": 542326,
+    "following": 1266,
+    "status": "",
+    "canDm": false,
+    "canMediaTag": false,
+    "createdAt": "Sun Oct 07 02:06:16 +0000 2012",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 26531,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 7103,
+    "mediaCount": 0,
+    "statusesCount": 20480,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "ML/AI research engineer. Ex stats professor.\nAuthor of \"Build a Large Language Model From Scratch\" (https://amzn.to/4fqvn0D) & reasoning (https://mng.bz/lZ5B)",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {
+    "media": [
+     {
+      "display_url": "pic.x.com/reO28tzqJC",
+      "expanded_url": "https://x.com/rasbt/status/2125249956495953973/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2125249934769201152",
+      "indices": [
+       120,
+       143
+      ],
+      "media_key": "3_2125249934769201152",
+      "media_results": {
+       "result": {
+        "media_key": "3_2125249934769201152"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HX5njjzXIAAYbxm.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1632,
+       "width": 2912
+      },
+      "sizes": {
+       "large": {
+        "w": 2048,
+        "h": 1148,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 673,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 381,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/reO28tzqJC"
+     }
+    ]
+   },
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [],
+    "user_mentions": [],
+    "media": [
+     {
+      "display_url": "pic.x.com/reO28tzqJC",
+      "expanded_url": "https://x.com/rasbt/status/2125249956495953973/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2125249934769201152",
+      "indices": [
+       120,
+       143
+      ],
+      "media_key": "3_2125249934769201152",
+      "media_results": {
+       "result": {
+        "media_key": "3_2125249934769201152"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HX5njjzXIAAYbxm.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1632,
+       "width": 2912
+      },
+      "sizes": {
+       "large": {
+        "w": 2048,
+        "h": 1148,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 673,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 381,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/reO28tzqJC"
+     }
+    ]
+   },
+   "isRetweet": false,
+   "isQuote": false,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "retweeted_tweet": null,
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2124158676588208250",
+  "url": "https://x.com/n_kozodoi/status/2124158676588208250",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2124158676588208250",
+  "text": "📚 Amazon Science at NeurIPS:\nhttps://lnkd.in/dRi3vs2a",
+  "source": "",
+  "retweetCount": 0,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 25,
+  "createdAt": "Sat Nov 21 15:11:08 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": true,
+  "possiblySensitive": false,
+  "inReplyToId": "2124158556631081133",
+  "conversationId": "2124158556631081133",
+  "displayTextRange": [
+   0,
+   53
+  ],
+  "inReplyToUserId": "234910505",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [
+    {
+     "display_url": "lnkd.in/dRi3vs2a",
+     "expanded_url": "https://lnkd.in/dRi3vs2a",
+     "indices": [
+      29,
+      53
+     ],
+     "url": "https://t.co/x6pHlsEqTZ"
+    }
+   ],
+   "user_mentions": []
+  },
+  "isRetweet": false,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": null,
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2124158556631081133",
+  "url": "https://x.com/n_kozodoi/status/2124158556631081133",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2124158556631081133",
+  "text": "Excited to go to NeurIPS 2026! 🇦🇺\n\nMy colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evals. I’ll be presenting at four workshops and hosting Q&amp;A sessions and demos at the Amazon booth. Come say hello!",
+  "source": "",
+  "retweetCount": 0,
+  "replyCount": 1,
+  "likeCount": 1,
+  "quoteCount": 0,
+  "viewCount": 72,
+  "createdAt": "Sat Nov 21 15:10:39 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2124158556631081133",
+  "displayTextRange": [
+   0,
+   280
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": []
+  },
+  "isRetweet": false,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": null,
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2124157155834003696",
+  "url": "https://x.com/n_kozodoi/status/2124157155834003696",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2124157155834003696",
+  "text": "RT @miramurati: Inkling 2 Mini is a looped transformer that runs on a laptop.\n\nLooping lets a model think more and write less. At this scal…",
+  "source": "",
+  "retweetCount": 641,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 0,
+  "createdAt": "Sat Nov 21 15:05:05 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2124157155834003696",
+  "displayTextRange": [
+   0,
+   140
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": [
+    {
+     "id_str": "180115578",
+     "indices": [
+      3,
+      14
+     ],
+     "name": "Mira Murati",
+     "screen_name": "miramurati"
+    }
+   ]
+  },
+  "isRetweet": true,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": {
+   "type": "tweet",
+   "id": "2123872534970208421",
+   "url": "https://x.com/miramurati/status/2123872534970208421",
+   "twitterUrl": "https://twitter.com/miramurati/status/2123872534970208421",
+   "text": "Inkling 2 Mini is a looped transformer that runs on a laptop.\n\nLooping lets a model think more and write less. At this scale, its thought process remains monitorable; this may not stay the case. We’re also sharing a variable-loop research model to enable further study.",
+   "source": "",
+   "retweetCount": 641,
+   "replyCount": 334,
+   "likeCount": 10098,
+   "quoteCount": 142,
+   "viewCount": 955029,
+   "createdAt": "Fri Nov 20 20:14:06 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 4712,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2123872534970208421",
+   "displayTextRange": [
+    0,
+    269
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "miramurati",
+    "url": "https://x.com/miramurati",
+    "twitterUrl": "https://twitter.com/miramurati",
+    "id": "180115578",
+    "name": "Mira Murati",
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/2057853902918455296/D_nfq15L_normal.jpg",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/180115578/1665340075",
+    "description": "Now building @thinkymachines. Previously CTO @OpenAI",
+    "location": "San Francisco, CA",
+    "followers": 1037513,
+    "following": 665,
+    "status": "",
+    "canDm": false,
+    "canMediaTag": false,
+    "createdAt": "Wed Aug 18 21:43:38 +0000 2010",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 2469,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 3968,
+    "mediaCount": 0,
+    "statusesCount": 434,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "Now building @thinkymachines. Previously CTO @OpenAI",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {},
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [],
+    "user_mentions": []
+   },
+   "isRetweet": false,
+   "isQuote": true,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2120160000240693347",
+  "url": "https://x.com/n_kozodoi/status/2120160000240693347",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2120160000240693347",
+  "text": "RT @Memoirs: Model Merging Does Not Require Uniform LoRA Ranks\n\nZirong Xie, Zainab Afolabi, Nikita Kozodoi, Jack Butler\nhttps://t.co/lZBmE4…",
+  "source": "",
+  "retweetCount": 2,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 0,
+  "createdAt": "Tue Nov 10 14:21:49 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2120160000240693347",
+  "displayTextRange": [
+   0,
+   140
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [
+    {
+     "display_url": "t.co/lZBmE4",
+     "expanded_url": null,
+     "indices": [
+      120,
+      139
+     ],
+     "url": "https://t.co/lZBmE4"
+    }
+   ],
+   "user_mentions": [
+    {
+     "id_str": "565118338",
+     "indices": [
+      3,
+      11
+     ],
+     "name": "Machine Learning (ML) Papers",
+     "screen_name": "Memoirs"
+    }
+   ]
+  },
+  "isRetweet": true,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": {
+   "type": "tweet",
+   "id": "2119499187771322765",
+   "url": "https://x.com/Memoirs/status/2119499187771322765",
+   "twitterUrl": "https://twitter.com/Memoirs/status/2119499187771322765",
+   "text": "Model Merging Does Not Require Uniform LoRA Ranks\n\nZirong Xie, Zainab Afolabi, Nikita Kozodoi, Jack Butler\nhttps://arxiv.org/abs/2611.06486 [𝚌𝚜.𝙻𝙶 𝚌𝚜.𝙰𝙸] https://t.co/dk671zq0cT",
+   "source": "",
+   "retweetCount": 2,
+   "replyCount": 0,
+   "likeCount": 9,
+   "quoteCount": 0,
+   "viewCount": 354,
+   "createdAt": "Sun Nov 08 18:35:59 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 3,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2119499187771322765",
+   "displayTextRange": [
+    0,
+    177
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "Memoirs",
+    "url": "https://x.com/Memoirs",
+    "twitterUrl": "https://twitter.com/Memoirs",
+    "id": "565118338",
+    "name": "Machine Learning (ML) Papers",
+    "isVerified": false,
+    "isBlueVerified": false,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/2040034563129561089/4QsCFkjI_normal.png",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/565118338/1775217124",
+    "description": "New Machine Learning (ML) papers from http://arxiv.org: supervised, unsupervised. Thank you to arXiv for use of its open access interoperability.",
+    "location": "Worldwide",
+    "followers": 13035,
+    "following": 9,
+    "status": "",
+    "canDm": false,
+    "canMediaTag": false,
+    "createdAt": "Sat Apr 28 03:15:02 +0000 2012",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 0,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 340,
+    "mediaCount": 0,
+    "statusesCount": 45310,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "New Machine Learning (ML) papers from http://arxiv.org: supervised, unsupervised. Thank you to arXiv for use of its open access interoperability.",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {
+    "media": [
+     {
+      "display_url": "pic.x.com/dk671zq0cT",
+      "expanded_url": "https://x.com/Memoirs/status/2119499187771322765/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2119499185212821504",
+      "indices": [
+       154,
+       177
+      ],
+      "media_key": "3_2119499185212821504",
+      "media_results": {
+       "result": {
+        "media_key": "3_2119499185212821504"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HWn5R4RXEAA8wnY.png",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1350,
+       "width": 1080
+      },
+      "sizes": {
+       "large": {
+        "w": 1080,
+        "h": 1350,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 960,
+        "h": 1200,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 544,
+        "h": 680,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/dk671zq0cT"
+     }
+    ]
+   },
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [
+     {
+      "display_url": "arxiv.org/abs/2611.06486",
+      "expanded_url": "https://arxiv.org/abs/2611.06486",
+      "indices": [
+       107,
+       139
+      ],
+      "url": "https://t.co/lZBmE4sZTm"
+     }
+    ],
+    "user_mentions": [],
+    "media": [
+     {
+      "display_url": "pic.x.com/dk671zq0cT",
+      "expanded_url": "https://x.com/Memoirs/status/2119499187771322765/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2119499185212821504",
+      "indices": [
+       154,
+       177
+      ],
+      "media_key": "3_2119499185212821504",
+      "media_results": {
+       "result": {
+        "media_key": "3_2119499185212821504"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HWn5R4RXEAA8wnY.png",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1350,
+       "width": 1080
+      },
+      "sizes": {
+       "large": {
+        "w": 1080,
+        "h": 1350,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 960,
+        "h": 1200,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 544,
+        "h": 680,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/dk671zq0cT"
+     }
+    ]
+   },
+   "isRetweet": false,
+   "isQuote": false,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2054303770037657722",
+  "url": "https://x.com/n_kozodoi/status/2054303770037657722",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2054303770037657722",
+  "text": "RT @AndrewYNg: There will be no AI jobpocalypse.\n\nThe story that AI will lead to massive unemployment is stoking unnecessary fear. AI — lik…",
+  "source": "",
+  "retweetCount": 1184,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 0,
+  "createdAt": "Tue May 12 20:52:40 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2054303770037657722",
+  "displayTextRange": [
+   0,
+   140
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": [
+    {
+     "id_str": "216939636",
+     "indices": [
+      3,
+      13
+     ],
+     "name": "Andrew Ng",
+     "screen_name": "AndrewYNg"
+    }
+   ]
+  },
+  "isRetweet": true,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": {
+   "type": "tweet",
+   "id": "2054236506756370865",
+   "url": "https://x.com/AndrewYNg/status/2054236506756370865",
+   "twitterUrl": "https://twitter.com/AndrewYNg/status/2054236506756370865",
+   "text": "There will be no AI jobpocalypse.\n\nThe story that AI will lead to massive unemployment is stoking unnecessary fear. AI — like any other technology — does affect jobs, but telling overblown stories of large-scale unemployment is irresponsible and damaging. Let’s put a stop to it.\n\nI’ve expressed skepticism about the jobpocalypse in previous posts. I’m glad to see that the popular press is now pushing back on this narrative. The image below features some recent headlines.\n\nSoftware engineering is the sector most affected by AI tools, as coding agents race ahead. Yet hiring of software engineers remains strong! So while there are examples of AI taking away jobs, the trends strongly suggest the net job creation is vastly greater than the job destruction — just like earlier waves of technology. Further, despite all the exciting progress in AI, the U.S. unemployment rate remains a healthy 4.3%.\n\nWhy is the AI jobpocalypse narrative so popular? For one thing, frontier AI labs have a strong incentive to tell stories that make AI technology sound more powerful. At their most extreme, they promote science-fiction scenarios of AI “taking over” and causing human extinction. If a technology can replace many employees, surely that technology must be very valuable!\n\nAlso, a lot of SaaS software companies charge around $100-$1000 per user/year. But if an AI company can replace an employee who makes $100,000 — or make them 50% more productive — then charging even $10,000 starts to look reasonable. By anchoring not to typical SaaS prices but to salaries of employees, AI companies can charge a lot more.\n\nAdditionally, businesses have a strong incentive to talk about layoffs as if they were caused by AI. After all, talking about how they’re using AI to be far more productive with fewer staff makes them look smart. This is a better message than admitting they overhired during the pandemic when capital was abundant due to low interest rates and a massive government financial stimulus.\n\nTo be clear, I recognize that AI is causing a lot of people’s work to change. This is hard. This is stressful. (And to some, it can be fun.) I empathize with everyone affected. At the same time, this is very different from predicting a collapse of the job market.\n\nSocieties are capable of telling themselves stories for years that have little basis in reality and lead to poor society-wide decision making. For example, fears over nuclear plant safety led to under-investment in nuclear power. Fears of the “population bomb” in the 1960s led countries to implement harsh policies to reduce their populations. And worries about dietary fat led governments to promote unhealthy high-sugar diets for decades.\n\nNow that mainstream media is openly skeptical about the jobpocalypse, I hope these stories will start to lose their teeth (much like fears of AI-driven human extinction have).\n\nContrary to the predictions of an AI jobpocalypse, I predict the opposite: There will be an AI jobapalooza! AI will lead to a lot more good AI engineering jobs, and I’m also optimistic about the future of the overall job market. What AI engineers do will be different from traditional software engineering, and many of these jobs will be in businesses other than traditional large employers of developers. In non-AI roles, too, the skills needed will change because of AI. That makes this a good time to encourage more people to become proficient in AI,  and make sure they’re ready for the different but plentiful jobs of the future!\n\n[Original text in The Batch newsletter.]",
+   "source": "",
+   "retweetCount": 1184,
+   "replyCount": 583,
+   "likeCount": 5345,
+   "quoteCount": 284,
+   "viewCount": 831844,
+   "createdAt": "Tue May 12 16:25:23 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 3224,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2054236506756370865",
+   "displayTextRange": [
+    0,
+    3560
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "AndrewYNg",
+    "url": "https://x.com/AndrewYNg",
+    "twitterUrl": "https://twitter.com/AndrewYNg",
+    "id": "216939636",
+    "name": "Andrew Ng",
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/733174243714682880/oyG30NEH_normal.jpg",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/216939636/1483126470",
+    "description": "Co-Founder of Coursera; Stanford CS adjunct faculty. Former head of Baidu AI Group/Google Brain. #ai #machinelearning, #deeplearning #MOOCs",
+    "location": "Palo Alto, CA",
+    "followers": 1984994,
+    "following": 1122,
+    "status": "",
+    "canDm": false,
+    "canMediaTag": false,
+    "createdAt": "Thu Nov 18 03:39:11 +0000 2010",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 1817,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 21696,
+    "mediaCount": 0,
+    "statusesCount": 2032,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "Co-Founder of Coursera; Stanford CS adjunct faculty. Former head of Baidu AI Group/Google Brain. #ai #machinelearning, #deeplearning #MOOCs",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {
+    "media": [
+     {
+      "display_url": "pic.x.com/yfO14FphVf",
+      "expanded_url": "https://x.com/AndrewYNg/status/2054236506756370865/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2054234983045419008",
+      "indices": [
+       0,
+       0
+      ],
+      "media_key": "3_2054234983045419008",
+      "media_results": {
+       "result": {
+        "media_key": "3_2054234983045419008"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HIIb1VGaUAAZoAB.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 563,
+       "width": 1000
+      },
+      "sizes": {
+       "large": {
+        "w": 1000,
+        "h": 563,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1000,
+        "h": 563,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 383,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/yfO14FphVf"
+     }
+    ]
+   },
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [],
+    "user_mentions": [],
+    "media": [
+     {
+      "display_url": "pic.x.com/yfO14FphVf",
+      "expanded_url": "https://x.com/AndrewYNg/status/2054236506756370865/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2054234983045419008",
+      "indices": [
+       0,
+       0
+      ],
+      "media_key": "3_2054234983045419008",
+      "media_results": {
+       "result": {
+        "media_key": "3_2054234983045419008"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HIIb1VGaUAAZoAB.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 563,
+       "width": 1000
+      },
+      "sizes": {
+       "large": {
+        "w": 1000,
+        "h": 563,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1000,
+        "h": 563,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 383,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/yfO14FphVf"
+     }
+    ]
+   },
+   "isRetweet": false,
+   "isQuote": false,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2041497751100231858",
+  "url": "https://x.com/n_kozodoi/status/2041497751100231858",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2041497751100231858",
+  "text": "RT @WhiteHouse: THE ARTEMIS II ECLIPSE.\nApril 6, 2026.\n\nTotality, beyond Earth. From lunar orbit, the Moon eclipses the Sun, revealing a vi…",
+  "source": "",
+  "retweetCount": 14242,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 0,
+  "createdAt": "Tue Apr 07 12:46:07 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2041497751100231858",
+  "displayTextRange": [
+   0,
+   140
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": [
+    {
+     "id_str": "1879644163769335808",
+     "indices": [
+      3,
+      14
+     ],
+     "name": "The White House",
+     "screen_name": "WhiteHouse"
+    }
+   ]
+  },
+  "isRetweet": true,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": {
+   "type": "tweet",
+   "id": "2041495294911676771",
+   "url": "https://x.com/WhiteHouse/status/2041495294911676771",
+   "twitterUrl": "https://twitter.com/WhiteHouse/status/2041495294911676771",
+   "text": "THE ARTEMIS II ECLIPSE.\nApril 6, 2026.\n\nTotality, beyond Earth. From lunar orbit, the Moon eclipses the Sun, revealing a view few in human history have ever witnessed. Photo: NASA https://t.co/2cLJD3oL7p",
+   "source": "",
+   "retweetCount": 14242,
+   "replyCount": 1886,
+   "likeCount": 79316,
+   "quoteCount": 1183,
+   "viewCount": 5830609,
+   "createdAt": "Tue Apr 07 12:36:22 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 5327,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2041495294911676771",
+   "displayTextRange": [
+    0,
+    203
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "WhiteHouse",
+    "url": "https://x.com/WhiteHouse",
+    "twitterUrl": "https://twitter.com/WhiteHouse",
+    "id": "1879644163769335808",
+    "name": "The White House",
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/2062605835256127489/atNMwHxg_normal.jpg",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/1879644163769335808/1769111449",
+    "description": "Welcome to The Golden Age of America. \n📱 Text USA to 45470 to receive alerts.",
+    "location": "Washington, DC",
+    "followers": 5368030,
+    "following": 5,
+    "status": "",
+    "canDm": false,
+    "canMediaTag": false,
+    "createdAt": "Wed Jan 15 21:37:54 +0000 2025",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 273,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 9556,
+    "mediaCount": 0,
+    "statusesCount": 20874,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "Welcome to The Golden Age of America. \n📱 Text USA to 45470 to receive alerts.",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {
+    "media": [
+     {
+      "display_url": "pic.x.com/2cLJD3oL7p",
+      "expanded_url": "https://x.com/WhiteHouse/status/2041495294911676771/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2041495290478215168",
+      "indices": [
+       180,
+       203
+      ],
+      "media_key": "3_2041495290478215168",
+      "media_results": {
+       "result": {
+        "media_key": "3_2041495290478215168"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HFTZJn-WQAAV0Gp.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1366,
+       "width": 2048
+      },
+      "sizes": {
+       "large": {
+        "w": 2048,
+        "h": 1366,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 800,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 454,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/2cLJD3oL7p"
+     }
+    ]
+   },
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [],
+    "user_mentions": [],
+    "media": [
+     {
+      "display_url": "pic.x.com/2cLJD3oL7p",
+      "expanded_url": "https://x.com/WhiteHouse/status/2041495294911676771/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2041495290478215168",
+      "indices": [
+       180,
+       203
+      ],
+      "media_key": "3_2041495290478215168",
+      "media_results": {
+       "result": {
+        "media_key": "3_2041495290478215168"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HFTZJn-WQAAV0Gp.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1366,
+       "width": 2048
+      },
+      "sizes": {
+       "large": {
+        "w": 2048,
+        "h": 1366,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 800,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 454,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/2cLJD3oL7p"
+     }
+    ]
+   },
+   "isRetweet": false,
+   "isQuote": false,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2041497739121275381",
+  "url": "https://x.com/n_kozodoi/status/2041497739121275381",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2041497739121275381",
+  "text": "RT @WhiteHouse: EARTHSET. \nApril 6, 2026.\n\nHumanity, from the other side. First photo from the far side of the Moon. Captured from Orion as…",
+  "source": "",
+  "retweetCount": 16625,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 0,
+  "createdAt": "Tue Apr 07 12:46:04 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2041497739121275381",
+  "displayTextRange": [
+   0,
+   140
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": [
+    {
+     "id_str": "1879644163769335808",
+     "indices": [
+      3,
+      14
+     ],
+     "name": "The White House",
+     "screen_name": "WhiteHouse"
+    }
+   ]
+  },
+  "isRetweet": true,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": {
+   "type": "tweet",
+   "id": "2041493954831540466",
+   "url": "https://x.com/WhiteHouse/status/2041493954831540466",
+   "twitterUrl": "https://twitter.com/WhiteHouse/status/2041493954831540466",
+   "text": "EARTHSET. \nApril 6, 2026.\n\nHumanity, from the other side. First photo from the far side of the Moon. Captured from Orion as Earth dips beyond the lunar horizon. Photo: NASA https://t.co/ZEBTQA85TY",
+   "source": "",
+   "retweetCount": 16625,
+   "replyCount": 2612,
+   "likeCount": 95764,
+   "quoteCount": 1888,
+   "viewCount": 5628727,
+   "createdAt": "Tue Apr 07 12:31:02 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 6130,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2041493954831540466",
+   "displayTextRange": [
+    0,
+    196
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "WhiteHouse",
+    "url": "https://x.com/WhiteHouse",
+    "twitterUrl": "https://twitter.com/WhiteHouse",
+    "id": "1879644163769335808",
+    "name": "The White House",
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/2062605835256127489/atNMwHxg_normal.jpg",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/1879644163769335808/1769111449",
+    "description": "Welcome to The Golden Age of America. \n📱 Text USA to 45470 to receive alerts.",
+    "location": "Washington, DC",
+    "followers": 5368030,
+    "following": 5,
+    "status": "",
+    "canDm": false,
+    "canMediaTag": false,
+    "createdAt": "Wed Jan 15 21:37:54 +0000 2025",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 273,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 9556,
+    "mediaCount": 0,
+    "statusesCount": 20874,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "Welcome to The Golden Age of America. \n📱 Text USA to 45470 to receive alerts.",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {
+    "media": [
+     {
+      "display_url": "pic.x.com/ZEBTQA85TY",
+      "expanded_url": "https://x.com/WhiteHouse/status/2041493954831540466/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2041493950784040960",
+      "indices": [
+       173,
+       196
+      ],
+      "media_key": "3_2041493950784040960",
+      "media_results": {
+       "result": {
+        "media_key": "3_2041493950784040960"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HFTX7pOXcAAKs3G.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1366,
+       "width": 2048
+      },
+      "sizes": {
+       "large": {
+        "w": 2048,
+        "h": 1366,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 800,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 454,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/ZEBTQA85TY"
+     }
+    ]
+   },
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [],
+    "user_mentions": [],
+    "media": [
+     {
+      "display_url": "pic.x.com/ZEBTQA85TY",
+      "expanded_url": "https://x.com/WhiteHouse/status/2041493954831540466/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2041493950784040960",
+      "indices": [
+       173,
+       196
+      ],
+      "media_key": "3_2041493950784040960",
+      "media_results": {
+       "result": {
+        "media_key": "3_2041493950784040960"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HFTX7pOXcAAKs3G.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1366,
+       "width": 2048
+      },
+      "sizes": {
+       "large": {
+        "w": 2048,
+        "h": 1366,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 800,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 454,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/ZEBTQA85TY"
+     }
+    ]
+   },
+   "isRetweet": false,
+   "isQuote": false,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2020029488864849938",
+  "url": "https://x.com/n_kozodoi/status/2020029488864849938",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2020029488864849938",
+  "text": "RT @arena: 🚨BREAKING: Claude Opus 4.6 by @AnthropicAI is now #1 across Code, Text and Expert Arena!\n\nOpus 4.6 shows significant gains acros…",
+  "source": "",
+  "retweetCount": 63,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 0,
+  "createdAt": "Sat Feb 07 06:58:55 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2020029488864849938",
+  "displayTextRange": [
+   0,
+   140
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": [
+    {
+     "id_str": "1641378826537295874",
+     "indices": [
+      3,
+      9
+     ],
+     "name": "Arena.ai",
+     "screen_name": "arena"
+    },
+    {
+     "id_str": "1353836358901501952",
+     "indices": [
+      41,
+      53
+     ],
+     "name": "Anthropic",
+     "screen_name": "AnthropicAI"
+    }
+   ]
+  },
+  "isRetweet": true,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": {
+   "type": "tweet",
+   "id": "2019842691442569566",
+   "url": "https://x.com/arena/status/2019842691442569566",
+   "twitterUrl": "https://twitter.com/arena/status/2019842691442569566",
+   "text": "🚨BREAKING: Claude Opus 4.6 by @AnthropicAI is now #1 across Code, Text and Expert Arena!\n\nOpus 4.6 shows significant gains across the board:\n- #1 Code Arena: +106 score vs Opus 4.5\n- #1 Text Arena: scoring 1496, +10 vs Gemini 3 Pro\n- #1 Expert Arena: +~50 lead\n\nCongrats to the @AnthropicAI team on the incredible milestone! The frontier just moved.",
+   "source": "",
+   "retweetCount": 63,
+   "replyCount": 27,
+   "likeCount": 715,
+   "quoteCount": 32,
+   "viewCount": 213783,
+   "createdAt": "Fri Feb 06 18:36:39 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 80,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2019842691442569566",
+   "displayTextRange": [
+    0,
+    349
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "arena",
+    "url": "https://x.com/arena",
+    "twitterUrl": "https://twitter.com/arena",
+    "id": "1641378826537295874",
+    "name": "Arena.ai",
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/2017015061454438400/iNKfXZ_I_normal.jpg",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/1641378826537295874/1769621104",
+    "description": "Where AI meets the real world. We measure and advance the frontier of AI through community-driven evaluation. We’re hiring → http://arena.ai/jobs",
+    "location": "US",
+    "followers": 244392,
+    "following": 225,
+    "status": "",
+    "canDm": true,
+    "canMediaTag": false,
+    "createdAt": "Thu Mar 30 09:56:38 +0000 2023",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 2898,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 2838,
+    "mediaCount": 0,
+    "statusesCount": 4457,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "Where AI meets the real world. We measure and advance the frontier of AI through community-driven evaluation. We’re hiring → http://arena.ai/jobs",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {
+    "media": [
+     {
+      "display_url": "pic.x.com/bGB9ydFUsp",
+      "expanded_url": "https://x.com/arena/status/2019842691442569566/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2019839656133906432",
+      "indices": [
+       0,
+       0
+      ],
+      "media_key": "3_2019839656133906432",
+      "media_results": {
+       "result": {
+        "media_key": "3_2019839656133906432"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HAfpdzcb0AAmlXE.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1025,
+       "width": 1200
+      },
+      "sizes": {
+       "large": {
+        "w": 1200,
+        "h": 1025,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 1025,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 581,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/bGB9ydFUsp"
+     }
+    ]
+   },
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [],
+    "user_mentions": [
+     {
+      "id_str": "1353836358901501952",
+      "indices": [
+       30,
+       42
+      ],
+      "name": "Anthropic",
+      "screen_name": "AnthropicAI"
+     },
+     {
+      "id_str": "1353836358901501952",
+      "indices": [
+       278,
+       290
+      ],
+      "name": "Anthropic",
+      "screen_name": "AnthropicAI"
+     }
+    ],
+    "media": [
+     {
+      "display_url": "pic.x.com/bGB9ydFUsp",
+      "expanded_url": "https://x.com/arena/status/2019842691442569566/photo/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2019839656133906432",
+      "indices": [
+       0,
+       0
+      ],
+      "media_key": "3_2019839656133906432",
+      "media_results": {
+       "result": {
+        "media_key": "3_2019839656133906432"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/HAfpdzcb0AAmlXE.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1025,
+       "width": 1200
+      },
+      "sizes": {
+       "large": {
+        "w": 1200,
+        "h": 1025,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 1025,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 581,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "photo",
+      "url": "https://t.co/bGB9ydFUsp"
+     }
+    ]
+   },
+   "isRetweet": false,
+   "isQuote": true,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ },
+ {
+  "type": "tweet",
+  "id": "2010975495605588132",
+  "url": "https://x.com/n_kozodoi/status/2010975495605588132",
+  "twitterUrl": "https://twitter.com/n_kozodoi/status/2010975495605588132",
+  "text": "RT @claudeai: Introducing Cowork: Claude Code for the rest of your work.\n\nCowork lets you complete non-technical tasks much like how develo…",
+  "source": "",
+  "retweetCount": 8156,
+  "replyCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "viewCount": 0,
+  "createdAt": "Tue Jan 13 07:21:34 +0000 2026",
+  "lang": "en",
+  "bookmarkCount": 0,
+  "isReply": false,
+  "possiblySensitive": false,
+  "inReplyToId": "",
+  "conversationId": "2010975495605588132",
+  "displayTextRange": [
+   0,
+   140
+  ],
+  "inReplyToUserId": "",
+  "inReplyToUsername": "",
+  "isPinned": false,
+  "author": {
+   "type": "user",
+   "userName": "n_kozodoi",
+   "url": "https://x.com/n_kozodoi",
+   "twitterUrl": "https://twitter.com/n_kozodoi",
+   "id": "234910505",
+   "name": "Nikita Kozodoi",
+   "isVerified": false,
+   "isBlueVerified": false,
+   "verifiedType": null,
+   "profilePicture": "https://pbs.twimg.com/profile_images/1546584789855211521/rZpYg3aY_normal.jpg",
+   "coverPicture": "https://pbs.twimg.com/profile_banners/234910505/1623344163",
+   "description": "Applied AI @ AWS FDE",
+   "location": "Berlin, Germany",
+   "followers": 204,
+   "following": 68,
+   "status": "",
+   "canDm": true,
+   "canMediaTag": false,
+   "createdAt": "Thu Jan 06 21:50:37 +0000 2011",
+   "entities": {
+    "description": {
+     "urls": []
+    },
+    "url": {
+     "urls": []
+    }
+   },
+   "fastFollowersCount": 0,
+   "favouritesCount": 2064,
+   "hasCustomTimelines": false,
+   "isTranslator": false,
+   "listedCount": 7,
+   "mediaCount": 0,
+   "statusesCount": 2541,
+   "withheldInCountries": [],
+   "affiliatesHighlightedLabel": {},
+   "possiblySensitive": false,
+   "pinnedTweetIds": [],
+   "profileInterstitialType": "",
+   "translatorType": "none",
+   "wantRetweets": false,
+   "profile_bio": {
+    "description": "Applied AI @ AWS FDE",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "withheld_in_countries": []
+   },
+   "hasGraduatedAccess": false,
+   "profileImageShape": "Circle",
+   "isAutomated": false,
+   "automatedBy": null
+  },
+  "extendedEntities": {},
+  "card": {},
+  "place": {},
+  "entities": {
+   "hashtags": [],
+   "symbols": [],
+   "urls": [],
+   "user_mentions": [
+    {
+     "id_str": "1943306828697550848",
+     "indices": [
+      3,
+      12
+     ],
+     "name": "Claude",
+     "screen_name": "claudeai"
+    }
+   ]
+  },
+  "isRetweet": true,
+  "isQuote": false,
+  "isConversationControlled": false,
+  "quoted_tweet": null,
+  "retweeted_tweet": {
+   "type": "tweet",
+   "id": "2010805682434666759",
+   "url": "https://x.com/claudeai/status/2010805682434666759",
+   "twitterUrl": "https://twitter.com/claudeai/status/2010805682434666759",
+   "text": "Introducing Cowork: Claude Code for the rest of your work.\n\nCowork lets you complete non-technical tasks much like how developers use Claude Code. https://t.co/EqckycvFH3",
+   "source": "",
+   "retweetCount": 8156,
+   "replyCount": 2486,
+   "likeCount": 85114,
+   "quoteCount": 6881,
+   "viewCount": 49867188,
+   "createdAt": "Mon Jan 12 20:06:48 +0000 2026",
+   "lang": "en",
+   "bookmarkCount": 56471,
+   "isReply": false,
+   "possiblySensitive": false,
+   "inReplyToId": "",
+   "conversationId": "2010805682434666759",
+   "displayTextRange": [
+    0,
+    170
+   ],
+   "inReplyToUserId": "",
+   "inReplyToUsername": "",
+   "isPinned": false,
+   "author": {
+    "type": "user",
+    "userName": "claudeai",
+    "url": "https://x.com/claudeai",
+    "twitterUrl": "https://twitter.com/claudeai",
+    "id": "1943306828697550848",
+    "name": "Claude",
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "profilePicture": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/1943306828697550848/1791401760",
+    "description": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on http://claude.ai or download the app.",
+    "location": "",
+    "followers": 2107853,
+    "following": 2,
+    "status": "",
+    "canDm": false,
+    "canMediaTag": false,
+    "createdAt": "Thu Jul 10 13:50:48 +0000 2025",
+    "entities": {
+     "description": {
+      "urls": []
+     },
+     "url": {
+      "urls": []
+     }
+    },
+    "fastFollowersCount": 0,
+    "favouritesCount": 411,
+    "hasCustomTimelines": false,
+    "isTranslator": false,
+    "listedCount": 10065,
+    "mediaCount": 0,
+    "statusesCount": 830,
+    "withheldInCountries": [],
+    "affiliatesHighlightedLabel": {},
+    "possiblySensitive": false,
+    "pinnedTweetIds": [],
+    "profileInterstitialType": "",
+    "translatorType": "none",
+    "wantRetweets": false,
+    "profile_bio": {
+     "description": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on http://claude.ai or download the app.",
+     "entities": {
+      "description": {
+       "urls": []
+      },
+      "url": {
+       "urls": []
+      }
+     },
+     "withheld_in_countries": []
+    },
+    "hasGraduatedAccess": false,
+    "profileImageShape": "Circle",
+    "isAutomated": false,
+    "automatedBy": null
+   },
+   "extendedEntities": {
+    "media": [
+     {
+      "display_url": "pic.x.com/EqckycvFH3",
+      "expanded_url": "https://x.com/claudeai/status/2010805682434666759/video/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2010792398280929280",
+      "indices": [
+       147,
+       170
+      ],
+      "media_key": "13_2010792398280929280",
+      "media_results": {
+       "result": {
+        "media_key": "13_2010792398280929280"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/G-k8KoibgAAuiOj.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1080,
+       "width": 1920
+      },
+      "sizes": {
+       "large": {
+        "w": 1920,
+        "h": 1080,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 675,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 383,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "video",
+      "url": "https://t.co/EqckycvFH3",
+      "additional_media_info": {
+       "monetizable": false
+      },
+      "video_info": {
+       "aspect_ratio": [
+        16,
+        9
+       ],
+       "duration_millis": 68583,
+       "variants": [
+        {
+         "bitrate": null,
+         "content_type": "application/x-mpegURL",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/pl/G5ABGEddI3ezsWNm.m3u8?tag=21&v=cfc"
+        },
+        {
+         "bitrate": 256000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/480x270/UAbLHsC_KIYSjkuW.mp4?tag=21"
+        },
+        {
+         "bitrate": 832000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/640x360/oAR6hcsAhgob_ZPF.mp4?tag=21"
+        },
+        {
+         "bitrate": 2176000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/1280x720/btL_OlFA7c8TfoCw.mp4?tag=21"
+        },
+        {
+         "bitrate": 10368000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/1920x1080/zWcS5mdvCSLXbBAl.mp4?tag=21"
+        },
+        {
+         "bitrate": 25128000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/3840x2160/28TgKr7KSXuhnodl.mp4?tag=21"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "card": {},
+   "place": {},
+   "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [],
+    "user_mentions": [],
+    "media": [
+     {
+      "display_url": "pic.x.com/EqckycvFH3",
+      "expanded_url": "https://x.com/claudeai/status/2010805682434666759/video/1",
+      "ext_media_availability": {
+       "status": "Available"
+      },
+      "id_str": "2010792398280929280",
+      "indices": [
+       147,
+       170
+      ],
+      "media_key": "13_2010792398280929280",
+      "media_results": {
+       "result": {
+        "media_key": "13_2010792398280929280"
+       }
+      },
+      "media_url_https": "https://pbs.twimg.com/media/G-k8KoibgAAuiOj.jpg",
+      "original_info": {
+       "focus_rects": [],
+       "height": 1080,
+       "width": 1920
+      },
+      "sizes": {
+       "large": {
+        "w": 1920,
+        "h": 1080,
+        "resize": "fit"
+       },
+       "medium": {
+        "w": 1200,
+        "h": 675,
+        "resize": "fit"
+       },
+       "small": {
+        "w": 680,
+        "h": 383,
+        "resize": "fit"
+       },
+       "thumb": {
+        "w": 150,
+        "h": 150,
+        "resize": "crop"
+       }
+      },
+      "type": "video",
+      "url": "https://t.co/EqckycvFH3",
+      "additional_media_info": {
+       "monetizable": false
+      },
+      "video_info": {
+       "aspect_ratio": [
+        16,
+        9
+       ],
+       "duration_millis": 68583,
+       "variants": [
+        {
+         "bitrate": null,
+         "content_type": "application/x-mpegURL",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/pl/G5ABGEddI3ezsWNm.m3u8?tag=21&v=cfc"
+        },
+        {
+         "bitrate": 256000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/480x270/UAbLHsC_KIYSjkuW.mp4?tag=21"
+        },
+        {
+         "bitrate": 832000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/640x360/oAR6hcsAhgob_ZPF.mp4?tag=21"
+        },
+        {
+         "bitrate": 2176000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/1280x720/btL_OlFA7c8TfoCw.mp4?tag=21"
+        },
+        {
+         "bitrate": 10368000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/1920x1080/zWcS5mdvCSLXbBAl.mp4?tag=21"
+        },
+        {
+         "bitrate": 25128000,
+         "content_type": "video/mp4",
+         "url": "https://video.twimg.com/amplify_video/2010792398280929280/vid/avc1/3840x2160/28TgKr7KSXuhnodl.mp4?tag=21"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "isRetweet": false,
+   "isQuote": false,
+   "isConversationControlled": false,
+   "quoted_tweet": null,
+   "retweeted_tweet": null,
+   "isLimitedReply": false,
+   "hasBirdwatchNotes": false,
+   "isTranslatable": false,
+   "grokAnalysisButton": true,
+   "editControl": {},
+   "unmention_data": {},
+   "communityInfo": null
+  },
+  "isLimitedReply": false,
+  "hasBirdwatchNotes": false,
+  "isTranslatable": false,
+  "grokAnalysisButton": true,
+  "editControl": {},
+  "unmention_data": {},
+  "communityInfo": null,
+  "searchTermIndex": 0
+ }
+]

@@ -1,6 +1,6 @@
 {
  "plan_monthly_usage_limit_usd": 5,
- "current_month_usage_usd": 0.7262913215955442,
+ "current_month_usage_usd": 0.7266917215955442,
  "cycle": {
   "startAt": "2026-10-26T00:00:00.000Z",
   "endAt": "2026-11-25T23:59:59.999Z"
@@ -19,6 +19,14 @@
   "pricing": "PAY_PER_EVENT"
  },
  "apidojo~tweet-scraper": {
+  "status": "SUCCEEDED",
+  "usage_usd": 0.0004,
+  "charged_events": {
+   "apify-default-dataset-item": 1
+  },
+  "pricing": "PAY_PER_EVENT"
+ },
+ "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest": {
   "status": "SUCCEEDED",
   "usage_usd": 0,
   "charged_events": {
