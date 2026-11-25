@@ -7,6 +7,11 @@ on:
     # around five hours late
     - cron: "28 2 * * *"
   workflow_dispatch:
+    inputs:
+      fetch_x:
+        description: "Also fetch X posts (uses one of the scrapers' few free monthly runs)"
+        type: boolean
+        default: false
 
 jobs:
   build:
@@ -56,6 +61,31 @@ jobs:
           OUT_DIR: "profile"
         run: python scripts/fetch_linkedin_posts.py
 
+      - name: Fetch latest X posts
+        # Weekly, on Mondays, where LinkedIn is daily: the X scrapers allow free
+        # Apify accounts only a handful of runs a month. A manual run fetches X
+        # only when asked to. Runs even when the LinkedIn step failed, and never
+        # fails on its own account: X trouble only means no new X posts.
+        if: ${{ !cancelled() && (github.event_name == 'schedule' || inputs.fetch_x) }}
+        env:
+          # the same Apify token; both X scrapers run and their posts are merged
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          # Claude API key (repo secret) for the Haiku filter that hides posts
+          # unrelated to AI and repeats of LinkedIn posts; optional, see the script
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_HANDLE: "n_kozodoi"
+          X_COUNT: "20"
+          OUT_DIR: "profile"
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" != "1" ]; then
+            echo "Not Monday; X posts are fetched weekly"
+            exit 0
+          fi
+          # without the SDK the filter falls back to word overlap, so an
+          # install failure must not stop the step
+          pip install --quiet anthropic==2.12.0 || echo "::warning::anthropic SDK not installed"
+          python scripts/fetch_x_posts.py
+
       - name: Commit cards
         # still runs after a failed LinkedIn fetch, so the GitHub and Scholar
         # cards keep updating while the token is fixed; the run stays red
@@ -63,6 +93,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg profile/data.json profile/linkedin
+          git add profile/*.svg profile/data.json profile/linkedin profile/x
           git commit -m "Update README cards" || exit 0
           git push
