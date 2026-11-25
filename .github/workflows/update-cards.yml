@@ -75,6 +75,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           X_HANDLE: "n_kozodoi"
           X_COUNT: "20"
+          # plain reposts, without a comment, stay off the site; reposts with
+          # a comment (quote posts) always show. "true" brings plain ones back
+          X_INCLUDE_REPOSTS: "false"
           OUT_DIR: "profile"
         run: |
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" != "1" ]; then

@@ -41,6 +41,8 @@ Environment variables:
     ANTHROPIC_API_KEY  Claude API key for the filter (optional; see FILTERING)
     X_HANDLE           X handle without the @ (default: n_kozodoi)
     X_COUNT            number of posts to keep in the window (default: 20)
+    X_INCLUDE_REPOSTS  also show plain reposts, without a comment (default: false);
+                       quote posts, reposts with the author's comment, always show
     CDN_BASE           public base URL of the repo (default: raw GitHub, master)
     OUT_DIR            output directory for data.json and images (default: profile)
 """
@@ -70,14 +72,16 @@ from fetch_linkedin_posts import (
 DEFAULT_HANDLE = "n_kozodoi"
 RUN_TIMEOUT_SECONDS = 240
 
-# the actor inputs that read a profile's latest posts, reposts included
+# the actor inputs that read a profile's latest posts; kaitoeasyapi searches,
+# so it is asked for reposts only when they are wanted, which keeps them from
+# using up its small free allowance; apidojo returns them regardless
 ACTORS = {
-    "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest": lambda handle, n: {
-        "searchTerms": [f"from:{handle} include:nativeretweets"],
+    "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest": lambda handle, n, reposts: {
+        "searchTerms": [f"from:{handle}" + (" include:nativeretweets" if reposts else "")],
         "maxItems": n,
         "queryType": "Latest",
     },
-    "apidojo~tweet-scraper": lambda handle, n: {"twitterHandles": [handle], "maxItems": n, "sort": "Latest"},
+    "apidojo~tweet-scraper": lambda handle, n, reposts: {"twitterHandles": [handle], "maxItems": n, "sort": "Latest"},
 }
 
 FILTER_MODEL = "claude-haiku-5-5"
@@ -193,7 +197,7 @@ def store_avatars(posts: list[dict], cdn_base: str, out_dir: str) -> None:
             author["avatar"] = author.pop("image")
 
 
-def normalize_post(item: dict, handle: str) -> dict | None:
+def normalize_post(item: dict, handle: str, include_reposts: bool = False) -> dict | None:
     """
     Map one scraped post onto the shape the site renders for LinkedIn posts
 
@@ -204,7 +208,8 @@ def normalize_post(item: dict, handle: str) -> dict | None:
     that comment as its text, shows the quoted post as its link preview, and
     names the quoted author in ``quote_of``.
     Replies, the author's own thread continuations included, are skipped: the
-    feed shows posts, not conversations.
+    feed shows posts, not conversations. So are plain reposts, without a
+    comment of the author's, unless ``include_reposts`` is set.
 
     Parameters
     ----------
@@ -212,11 +217,13 @@ def normalize_post(item: dict, handle: str) -> dict | None:
         Raw item from either actor
     handle : str
         The profile's handle, to drop anything an actor returned from others
+    include_reposts : bool
+        Keep plain reposts; quote posts are kept either way
 
     Returns
     -------
     dict | None
-        The post, or None for replies, other authors and error items
+        The post, or None for replies, unwanted reposts, other authors and errors
     """
     if item.get("error") or not item.get("id") or item.get("isReply"):
         return None
@@ -224,6 +231,8 @@ def normalize_post(item: dict, handle: str) -> dict | None:
         return None
 
     original = item.get("retweeted_tweet") or item.get("retweet")
+    if (isinstance(original, dict) or item.get("isRetweet")) and not include_reposts:
+        return None
     source = original if isinstance(original, dict) else item
     image, video = first_media(source)
     post = {
@@ -258,7 +267,7 @@ def normalize_post(item: dict, handle: str) -> dict | None:
     return post
 
 
-def fetch_posts(token: str, handle: str, count: int) -> list[dict]:
+def fetch_posts(token: str, handle: str, count: int, include_reposts: bool = False) -> list[dict]:
     """
     Read the profile with every actor and merge what they return by post id
 
@@ -270,6 +279,8 @@ def fetch_posts(token: str, handle: str, count: int) -> list[dict]:
         X handle without the @
     count : int
         Number of posts to ask each actor for
+    include_reposts : bool
+        Keep plain reposts; quote posts are kept either way
 
     Returns
     -------
@@ -279,7 +290,7 @@ def fetch_posts(token: str, handle: str, count: int) -> list[dict]:
     posts: dict[str, dict] = {}
     for actor, make_input in ACTORS.items():
         try:
-            items = run_actor(token, actor, make_input(handle, count))
+            items = run_actor(token, actor, make_input(handle, count, include_reposts))
         except urllib.error.HTTPError as exc:
             if exc.code in CREDENTIAL_ERRORS:
                 fail(f"{CREDENTIAL_ERRORS[exc.code]} (HTTP {exc.code})", title="X posts not updated")
@@ -291,7 +302,7 @@ def fetch_posts(token: str, handle: str, count: int) -> list[dict]:
         found = []
         for item in items:
             try:
-                post = normalize_post(item, handle)
+                post = normalize_post(item, handle, include_reposts)
             except Exception as exc:  # noqa: BLE001 - one odd item must not cost the rest
                 print(f"WARNING: skipping an item {actor} returned in an unexpected shape: {exc}")
                 continue
@@ -521,12 +532,18 @@ def update_posts() -> None:
     cdn_base = (os.environ.get("CDN_BASE") or DEFAULT_CDN_BASE).rstrip("/")
     out_dir = os.environ.get("OUT_DIR", "profile")
 
-    fresh = fetch_posts(token, handle, count)
+    include_reposts = os.environ.get("X_INCLUDE_REPOSTS", "").strip().lower() in ("1", "true", "yes")
+
+    fresh = fetch_posts(token, handle, count, include_reposts)
     if not fresh:
         print("WARNING: keeping existing X posts, no actor returned any")
         return
 
-    posts = merge_posts(fresh, load_previous_posts(out_dir, "x"), count)
+    previous = load_previous_posts(out_dir, "x")
+    if not include_reposts:
+        # also drop plain reposts stored before they were switched off
+        previous = [p for p in previous if not p.get("repost_of")]
+    posts = merge_posts(fresh, previous, count)
     try:
         with open(os.path.join(out_dir, "data.json")) as f:
             previous_filter = (json.load(f).get("x") or {}).get("filter") or {}
