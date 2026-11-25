@@ -1,75 +1,70 @@
 {
   "github": {
-    "stars": 411,
-    "commits": 4146,
-    "prs": 21,
-    "repos_counted": 30,
+    "stars": 366,
+    "commits": 4149,
+    "prs": 22,
+    "repos_counted": 27,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2556190,
-        "percentage": 70.56
+        "bytes": 2005639,
+        "percentage": 72.29
       },
       {
         "name": "TypeScript",
-        "bytes": 658858,
-        "percentage": 18.19
+        "bytes": 380714,
+        "percentage": 13.72
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 8.69
-      },
-      {
-        "name": "Shell",
-        "bytes": 23360,
-        "percentage": 0.64
+        "percentage": 11.35
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.56
+        "percentage": 0.73
+      },
+      {
+        "name": "Shell",
+        "bytes": 20178,
+        "percentage": 0.73
       },
       {
         "name": "JavaScript",
-        "bytes": 18552,
-        "percentage": 0.51
-      },
-      {
-        "name": "Dockerfile",
-        "bytes": 11133,
-        "percentage": 0.31
+        "bytes": 16682,
+        "percentage": 0.6
       },
       {
         "name": "CSS",
-        "bytes": 10076,
-        "percentage": 0.28
+        "bytes": 5038,
+        "percentage": 0.18
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 4713,
+        "percentage": 0.17
       },
       {
         "name": "Makefile",
-        "bytes": 3985,
-        "percentage": 0.11
+        "bytes": 2839,
+        "percentage": 0.1
       },
       {
         "name": "Ruby",
         "bytes": 1945,
-        "percentage": 0.05
-      },
-      {
-        "name": "Ragel",
-        "bytes": 1913,
-        "percentage": 0.05
+        "percentage": 0.07
       },
       {
         "name": "Smarty",
         "bytes": 1750,
-        "percentage": 0.05
+        "percentage": 0.06
       }
     ]
   },
-  "updated_at": "2026-11-24T12:41:20.138874+00:00",
+  "updated_at": "2026-11-25T11:29:33.348311+00:00",
   "scholar": {
-    "citations": 738,
+    "citations": 739,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -91,7 +86,7 @@
         "date": "2026-11-20T21:02:12.398Z",
         "text": "Excited to present our research at NeurIPS 2026 in Sydney! 🇦🇺\n\nThis year, my colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evaluation. I will be presenting at four workshops and hosting Q&A sessions and demos at the Amazon booth. Come say hello at our posters or the booth!\n\n🙌 My colleagues joining me in Sydney:\nZainab A., Jack Butler, Aiham Taleb, Ph.D., Babs Khalidson, ZHAO GAO, PhD, Egor Krasheninnikov\n\n📚 Amazon Science at NeurIPS 2026:\nhttps://lnkd.in/dRi3vs2a",
         "video": false,
-        "reactions": 54,
+        "reactions": 55,
         "comments": 3,
         "shares": 2,
         "attachment": {
