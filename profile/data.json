@@ -1,14 +1,14 @@
 {
   "github": {
-    "stars": 366,
-    "commits": 4149,
-    "prs": 22,
+    "stars": 367,
+    "commits": 4157,
+    "prs": 24,
     "repos_counted": 27,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2005639,
-        "percentage": 72.29
+        "bytes": 2006798,
+        "percentage": 72.3
       },
       {
         "name": "TypeScript",
@@ -18,7 +18,7 @@
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 11.35
+        "percentage": 11.34
       },
       {
         "name": "SCSS",
@@ -62,7 +62,7 @@
       }
     ]
   },
-  "updated_at": "2026-11-25T11:29:33.348311+00:00",
+  "updated_at": "2026-11-26T11:08:36.223780+00:00",
   "scholar": {
     "citations": 739,
     "h_index": 7,
@@ -115,7 +115,7 @@
         "date": "2026-11-03T07:19:56.722Z",
         "text": "🚀 From Documents to Decisions: Reimagining Intelligent Document Processing with GenAI\n\n📄 How can Generative AI take document processing beyond simple data extraction to drive smarter business decisions? 🧠\n\n🎤 Join Aiham Taleb, Nikita Kozodoi, PhD, and me at AWS Deep Dive Days – Generative AI!\n\n💡 We'll explore how multimodal AI is transforming Intelligent Document Processing (IDP), and what it takes to bring these solutions from prototype to production. ⚙️\n\n📅 November 5, 2026\n⏰ 13:30–14:15 CET\n📍 AWS Munich (MUC14)\n\n🔗 Event details: https://lnkd.in/eFB-VhyS\n\n🙌 Looking forward to seeing you there!\n#GenerativeAI #AWS #IntelligentDocumentProcessing #MultimodalAI",
         "video": false,
-        "reactions": 53,
+        "reactions": 54,
         "comments": 0,
         "shares": 0,
         "attachment": null,
