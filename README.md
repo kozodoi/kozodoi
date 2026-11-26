@@ -1,10 +1,9 @@
-AI scientist and engineer working at the frontier of research and business. PhD and 8+ years of applied AI/ML experience, currently focusing on generative and agentic AI. Designing and building end-to-end AI solutions that drive business impact across diverse industries. Active author and speaker with 15 scientific papers and 30+ talks across industry and academia.
+Senior Applied Scientist at [AWS Forward Deployed Engineering](https://aws.amazon.com/professional-services/forward-deployed-engineering/) with a PhD in ML and 9+ years of applied AI experience. I build production systems on frontier models with customer teams, from LLM fine-tuning and evals to multi-agent pipelines. I publish what we learn as applied research and open-source tools.
 
 [![LinkedIn](profile/social/linkedin.svg)](https://linkedin.com/in/kozodoi)
 [![GitHub](profile/social/github.svg)](https://github.com/kozodoi)
 [![Google Scholar](profile/social/scholar.svg)](https://scholar.google.com/citations?user=58tMuD0AAAAJ&hl=en)
-[![Twitter](profile/social/twitter.svg)](https://twitter.com/n_kozodoi)
-[![Instagram](profile/social/instagram.svg)](https://www.instagram.com/n_kozodoi/)
+[![X](profile/social/x.svg)](https://x.com/n_kozodoi)
 [![CV](profile/social/cv.svg)](https://kozodoi.com/CV.pdf)
 [![Website](profile/social/website.svg)](https://kozodoi.com)
 
