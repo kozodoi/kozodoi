@@ -1,39 +1,39 @@
 {
   "github": {
-    "stars": 412,
+    "stars": 385,
     "commits": 4163,
     "prs": 24,
-    "repos_counted": 30,
+    "repos_counted": 28,
     "languages": [
       {
         "name": "Python",
-        "bytes": 2580359,
-        "percentage": 70.75
+        "bytes": 2493061,
+        "percentage": 70.04
       },
       {
         "name": "TypeScript",
         "bytes": 658858,
-        "percentage": 18.07
+        "percentage": 18.51
       },
       {
         "name": "R",
         "bytes": 314786,
-        "percentage": 8.63
+        "percentage": 8.84
       },
       {
         "name": "Shell",
         "bytes": 23360,
-        "percentage": 0.64
+        "percentage": 0.66
       },
       {
         "name": "SCSS",
         "bytes": 20222,
-        "percentage": 0.55
+        "percentage": 0.57
       },
       {
         "name": "JavaScript",
         "bytes": 18552,
-        "percentage": 0.51
+        "percentage": 0.52
       },
       {
         "name": "Dockerfile",
@@ -67,9 +67,9 @@
       }
     ]
   },
-  "updated_at": "2026-11-27T11:01:45.876814+00:00",
+  "updated_at": "2026-11-28T10:38:40.482391+00:00",
   "scholar": {
-    "citations": 739,
+    "citations": 741,
     "h_index": 7,
     "citations_per_year": {
       "2019": 5,
@@ -79,7 +79,7 @@
       "2023": 81,
       "2024": 110,
       "2025": 151,
-      "2026": 238
+      "2026": 240
     }
   },
   "linkedin": {
@@ -91,7 +91,7 @@
         "date": "2026-11-20T21:02:12.398Z",
         "text": "Excited to present our research at NeurIPS 2026 in Sydney! 🇦🇺\n\nThis year, my colleagues at AWS FDE and I are bringing papers on LLM test-time scaling, AI agents for science, inference efficiency, and evaluation. I will be presenting at four workshops and hosting Q&A sessions and demos at the Amazon booth. Come say hello at our posters or the booth!\n\n🙌 My colleagues joining me in Sydney:\nZainab A., Jack Butler, Aiham Taleb, Ph.D., Babs Khalidson, ZHAO GAO, PhD, Egor Krasheninnikov\n\n📚 Amazon Science at NeurIPS 2026:\nhttps://lnkd.in/dRi3vs2a",
         "video": false,
-        "reactions": 56,
+        "reactions": 57,
         "comments": 3,
         "shares": 2,
         "attachment": {
